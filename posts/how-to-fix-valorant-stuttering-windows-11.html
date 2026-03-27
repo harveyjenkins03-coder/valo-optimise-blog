@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Fix VALORANT Stuttering on Windows 11 — The Frame Time Guide (2026)</title>
+  <meta name="description" content="Your FPS counter is lying to you. Fix VALORANT stuttering, micro-stutter, and frame time spikes with these 11 proven fixes for Windows 11. Free and Vanguard-safe.">
+  <meta name="keywords" content="valorant stuttering fix, valorant micro stutter, valorant frame time, valorant 1% lows, valorant freezing fix, valorant hitching windows 11">
+  <link rel="canonical" href="https://blog.valooptimise.com/posts/how-to-fix-valorant-stuttering-windows-11.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How to Fix VALORANT Stuttering on Windows 11 — The Frame Time Guide (2026)">
+  <meta property="og:description" content="Your FPS counter is lying to you. Fix VALORANT stuttering and micro-stutter with 11 proven Windows 11 fixes.">
+  <meta property="og:image" content="https://valooptimise.com/docs/assets/og-image.png">
+  <meta property="og:url" content="https://blog.valooptimise.com/posts/how-to-fix-valorant-stuttering-windows-11.html">
+  <meta property="og:site_name" content="Valo Optimise Blog">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Fix VALORANT Stuttering on Windows 11 — The Frame Time Guide">
+  <meta name="twitter:description" content="Your FPS counter is lying to you. 11 proven stuttering fixes for Windows 11.">
+  <meta name="twitter:image" content="https://valooptimise.com/docs/assets/og-image.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "How to Fix VALORANT Stuttering on Windows 11 — The Frame Time Guide (2026)",
+        "description": "Fix VALORANT stuttering, micro-stutter, and frame time spikes with 11 proven Windows 11 fixes.",
+        "image": "https://valooptimise.com/docs/assets/og-image.png",
+        "author": { "@type": "Person", "name": "Harvey Jenkins" },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Valo Optimise",
+          "logo": { "@type": "ImageObject", "url": "https://valooptimise.com/docs/assets/icon_256.png" }
+        },
+        "datePublished": "2026-03-27",
+        "dateModified": "2026-03-27",
+        "mainEntityOfPage": "https://blog.valooptimise.com/posts/how-to-fix-valorant-stuttering-windows-11.html"
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Fix VALORANT Stuttering on Windows 11",
+        "totalTime": "PT15M",
+        "step": [
+          { "@type": "HowToStep", "position": 1, "name": "Understand Frame Time vs FPS", "text": "Use the built-in VALORANT frame time graph (Shift+F1) to diagnose your specific stutter type before fixing it." },
+          { "@type": "HowToStep", "position": 2, "name": "Fix shader compilation stutters", "text": "Set Shader Cache Size to 10GB in NVIDIA Control Panel > Manage 3D Settings." },
+          { "@type": "HowToStep", "position": 3, "name": "Enable XMP/EXPO for your RAM", "text": "Enter BIOS/UEFI and enable XMP (Intel) or EXPO (AMD) to run RAM at its rated speed." },
+          { "@type": "HowToStep", "position": 4, "name": "Check for thermal throttling", "text": "Use HWiNFO64 to monitor CPU and GPU temperatures. If either hits 90°C+ during play, clean your PC and reapply thermal paste." },
+          { "@type": "HowToStep", "position": 5, "name": "Disable HAGS on older GPUs", "text": "Settings > Display > Graphics > Change default graphics settings > disable Hardware-Accelerated GPU Scheduling for GTX/RX 500 series GPUs." },
+          { "@type": "HowToStep", "position": 6, "name": "Fix Windows paging file", "text": "Set a manual paging file of 1.5x your RAM size on your fastest drive in System Properties > Advanced > Performance > Virtual Memory." },
+          { "@type": "HowToStep", "position": 7, "name": "Update or roll back GPU drivers", "text": "Use DDU (Display Driver Uninstaller) in safe mode to cleanly remove drivers, then install the latest stable version from NVIDIA/AMD." },
+          { "@type": "HowToStep", "position": 8, "name": "Stop background processes spiking", "text": "Disable Windows Update Active Hours, pause OneDrive sync during gaming, and set antivirus to gaming mode." },
+          { "@type": "HowToStep", "position": 9, "name": "Enable Ultimate Performance power plan", "text": "Run powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61 in CMD as Administrator and select the plan." },
+          { "@type": "HowToStep", "position": 10, "name": "Repair VALORANT game files", "text": "Open Riot Client > click the settings cog next to VALORANT > Repair." },
+          { "@type": "HowToStep", "position": 11, "name": "Use Valo Optimise for one-click automation", "text": "Download Valo Optimise to apply all stutter fixes automatically, safely, in seconds." }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="icon" href="https://valooptimise.com/docs/assets/icon_256.png">
+
+  <style>
+    :root {
+      --bg: #0a0e1a;
+      --panel: #111827;
+      --panel2: #1c2a3a;
+      --accent: #ff4655;
+      --accent2: #00d4aa;
+      --text: #f0f4ff;
+      --muted: #6b7a99;
+      --border: #1e2d42;
+      --warn: #f59e0b;
+      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --radius: 10px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    #progress-bar {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      z-index: 9999;
+      transition: width 0.1s linear;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(10,14,26,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 100;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; align-items: center; gap: 20px; }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta {
+      background: var(--accent);
+      color: #fff !important;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 13px !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: #e63946 !important; }
+
+    .article-hero {
+      max-width: 800px;
+      margin: 48px auto 0;
+      padding: 0 24px;
+    }
+
+    .tags { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+
+    .tag {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      color: var(--accent2);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .article-hero h1 {
+      font-size: clamp(24px, 4vw, 38px);
+      line-height: 1.25;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .article-hero h1 em { font-style: normal; color: var(--accent); }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .read-time {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent2);
+    }
+
+    .hook-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .hook-box {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent2);
+      padding: 12px 16px;
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .progress-tracker {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .tracker-label { font-size: 14px; font-weight: 600; }
+    .tracker-label span { color: var(--accent2); }
+
+    .tracker-bar-wrap {
+      flex: 1;
+      background: var(--panel2);
+      height: 8px;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .tracker-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      border-radius: 4px;
+      transition: width 0.3s ease;
+    }
+
+    .article-layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .toc {
+      position: sticky;
+      top: 72px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+
+    .toc-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .toc ol { list-style: none; counter-reset: toc; }
+
+    .toc ol li {
+      counter-increment: toc;
+      margin-bottom: 6px;
+    }
+
+    .toc ol li a {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      line-height: 1.4;
+      padding: 4px 8px;
+      border-radius: 6px;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .toc ol li a::before {
+      content: counter(toc);
+      background: var(--panel2);
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 700;
+      min-width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+
+    .toc ol li a:hover,
+    .toc ol li a.active { background: var(--panel2); color: var(--text); }
+
+    .toc ol li a.active::before { background: var(--accent); color: #fff; }
+
+    .toc-cta { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border); }
+
+    .toc-cta a {
+      display: block;
+      background: var(--accent);
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .toc-cta a:hover { background: #e63946; }
+
+    article { min-width: 0; }
+
+    .article-intro {
+      font-size: 17px;
+      line-height: 1.8;
+      color: #c8d0e0;
+      margin-bottom: 32px;
+      padding: 24px;
+      background: var(--panel);
+      border-radius: var(--radius);
+      border-left: 3px solid var(--accent);
+    }
+
+    .article-intro strong { color: var(--text); }
+
+    /* Frame time explainer visual */
+    .frame-viz {
+      background: #070b14;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin: 24px 0;
+      font-family: 'Consolas', monospace;
+      font-size: 13px;
+    }
+
+    .frame-viz-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 16px;
+      font-family: var(--font);
+    }
+
+    .frame-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .frame-label {
+      width: 120px;
+      font-size: 12px;
+      color: var(--muted);
+      font-family: var(--font);
+      flex-shrink: 0;
+    }
+
+    .frame-bars {
+      display: flex;
+      gap: 3px;
+      align-items: flex-end;
+      height: 40px;
+    }
+
+    .frame-bar {
+      width: 8px;
+      background: var(--accent2);
+      border-radius: 2px 2px 0 0;
+      transition: height 0.3s;
+    }
+
+    .frame-bar.spike { background: var(--accent); }
+
+    .frame-value {
+      font-size: 13px;
+      font-weight: 700;
+      margin-left: 8px;
+    }
+
+    .frame-value.good { color: var(--accent2); }
+    .frame-value.bad  { color: var(--accent); }
+
+    .tip-section {
+      margin-bottom: 48px;
+      scroll-margin-top: 80px;
+    }
+
+    .tip-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .tip-checkbox-wrap { margin-top: 4px; flex-shrink: 0; }
+
+    .tip-check {
+      width: 20px;
+      height: 20px;
+      accent-color: var(--accent2);
+      cursor: pointer;
+    }
+
+    .tip-heading {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--text);
+    }
+
+    .tip-heading .num {
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .tip-section p {
+      color: #c8d0e0;
+      margin-bottom: 14px;
+      line-height: 1.8;
+    }
+
+    .code-block {
+      background: #070b14;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 20px;
+      font-family: 'Consolas', 'Courier New', monospace;
+      font-size: 13px;
+      color: var(--accent2);
+      margin: 16px 0;
+      overflow-x: auto;
+      position: relative;
+    }
+
+    .code-block .copy-code {
+      position: absolute;
+      top: 10px; right: 10px;
+      background: var(--panel2);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: var(--font);
+      transition: color 0.2s;
+    }
+
+    .code-block .copy-code:hover { color: var(--text); }
+
+    .steps { list-style: none; counter-reset: steps; margin: 16px 0; }
+
+    .steps li {
+      counter-increment: steps;
+      display: flex;
+      gap: 14px;
+      margin-bottom: 12px;
+      color: #c8d0e0;
+    }
+
+    .steps li::before {
+      content: counter(steps);
+      background: var(--accent);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      min-width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .callout {
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin: 20px 0;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .callout-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+
+    .callout-body { font-size: 14px; line-height: 1.7; }
+
+    .callout-body strong { display: block; margin-bottom: 4px; font-size: 15px; }
+
+    .callout.fps-gain {
+      background: rgba(0,212,170,0.08);
+      border: 1px solid rgba(0,212,170,0.25);
+    }
+
+    .callout.fps-gain .callout-body { color: var(--accent2); }
+
+    .callout.warning {
+      background: rgba(245,158,11,0.08);
+      border: 1px solid rgba(245,158,11,0.25);
+    }
+
+    .callout.warning .callout-body { color: #f59e0b; }
+
+    .callout.fomo {
+      background: rgba(255,70,85,0.08);
+      border: 1px solid rgba(255,70,85,0.25);
+    }
+
+    .callout.fomo .callout-body { color: #ff9ea6; }
+
+    .settings-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+
+    .settings-table th {
+      text-align: left;
+      padding: 10px 14px;
+      background: var(--panel2);
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .settings-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      color: #c8d0e0;
+      vertical-align: top;
+    }
+
+    .settings-table tr:last-child td { border-bottom: none; }
+    .settings-table td:first-child { color: var(--text); font-weight: 600; }
+    .val-set { color: var(--accent2); font-weight: 700; }
+
+    /* Stutter type diagnosis table */
+    .diag-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+
+    .diag-table th {
+      text-align: left;
+      padding: 10px 14px;
+      background: var(--panel2);
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .diag-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      color: #c8d0e0;
+      vertical-align: top;
+    }
+
+    .diag-table tr:last-child td { border-bottom: none; }
+
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+
+    .email-capture {
+      background: linear-gradient(135deg, #111827, #0f1c2e);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 28px;
+      margin: 48px 0;
+      text-align: center;
+    }
+
+    .email-capture h3 { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+
+    .email-capture p { color: var(--muted); font-size: 14px; margin-bottom: 20px; }
+
+    .email-form { display: flex; gap: 10px; max-width: 440px; margin: 0 auto; }
+
+    .email-form input {
+      flex: 1;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 16px;
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .email-form input:focus { border-color: var(--accent2); }
+
+    .email-form button {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 22px;
+      font-family: var(--font);
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+
+    .email-form button:hover { background: #e63946; }
+    .email-note { font-size: 12px; color: var(--muted); margin-top: 10px; }
+
+    .final-cta {
+      background: linear-gradient(135deg, #0f1824, #1a0d10);
+      border: 1px solid rgba(255,70,85,0.3);
+      border-radius: 14px;
+      padding: 36px;
+      margin: 48px 0;
+      text-align: center;
+    }
+
+    .final-cta h2 { font-size: 26px; font-weight: 800; margin-bottom: 10px; }
+    .final-cta h2 em { font-style: normal; color: var(--accent); }
+
+    .final-cta p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 24px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 14px 36px;
+      border-radius: 8px;
+      transition: background 0.2s, transform 0.2s;
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+
+    .cta-btn:hover { background: #e63946; transform: translateY(-2px); animation: none; }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(255,70,85,0.4); }
+      50% { box-shadow: 0 0 0 10px rgba(255,70,85,0); }
+    }
+
+    .cta-sub { font-size: 13px; color: var(--muted); margin-top: 12px; }
+
+    .share-section {
+      margin: 48px 0;
+      padding: 28px;
+      background: var(--panel);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .share-section h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+    .share-section p { color: var(--muted); font-size: 14px; margin-bottom: 20px; }
+
+    .share-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    .share-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: none;
+      font-family: var(--font);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+      text-decoration: none;
+    }
+
+    .share-btn:hover { opacity: 0.85; transform: translateY(-1px); }
+    .share-btn.twitter  { background: #1da1f2; color: #fff; }
+    .share-btn.reddit   { background: #ff4500; color: #fff; }
+    .share-btn.whatsapp { background: #25d366; color: #fff; }
+    .share-btn.copy     { background: var(--panel2); color: var(--text); border: 1px solid var(--border); }
+
+    #completion-banner {
+      display: none;
+      background: linear-gradient(135deg, rgba(0,212,170,0.15), rgba(0,212,170,0.05));
+      border: 1px solid rgba(0,212,170,0.4);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      text-align: center;
+      margin: 32px 0;
+      animation: fadeIn 0.5s ease;
+    }
+
+    #completion-banner h3 { color: var(--accent2); font-size: 20px; margin-bottom: 6px; }
+    #completion-banner p { color: var(--muted); font-size: 14px; }
+
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; } }
+
+    #floating-cta {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--accent);
+      color: #fff;
+      padding: 14px 22px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 4px 24px rgba(255,70,85,0.4);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.3s, transform 0.3s;
+      pointer-events: none;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    #floating-cta.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
+    #floating-cta:hover { background: #e63946; }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .related-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .related-card:hover { border-color: var(--accent2); transform: translateY(-2px); }
+    .related-card h4 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px; line-height: 1.4; }
+    .related-card p { font-size: 13px; color: var(--muted); }
+
+    footer {
+      background: var(--panel);
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    footer a { color: var(--accent2); text-decoration: none; }
+    footer p { color: var(--muted); font-size: 13px; }
+
+    @media (max-width: 860px) {
+      .article-layout { grid-template-columns: 1fr; }
+      .toc { position: static; }
+      .email-form { flex-direction: column; }
+    }
+
+    @media (max-width: 600px) {
+      .article-hero h1 { font-size: 24px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<nav>
+  <a href="../index.html" class="nav-logo">
+    <span>VALO</span> OPTIMISE BLOG
+  </a>
+  <div class="nav-links">
+    <a href="../index.html">All Articles</a>
+    <a href="https://valo-optimise.pages.dev" target="_blank">About</a>
+    <a href="https://valo-optimise.pages.dev" target="_blank" class="nav-cta">⚡ Free Download</a>
+  </div>
+</nav>
+
+<div class="article-hero">
+  <div class="tags">
+    <span class="tag">Stutter Fix</span>
+    <span class="tag">Frame Time</span>
+    <span class="tag">Windows 11</span>
+    <span class="tag">2026</span>
+  </div>
+
+  <h1>How to Fix VALORANT Stuttering on Windows 11 — <em>The Frame Time Guide (2026)</em></h1>
+
+  <div class="article-meta">
+    <span>March 27, 2026</span>
+    <span style="opacity:0.4">·</span>
+    <span>Harvey Jenkins</span>
+    <span style="opacity:0.4">·</span>
+    <span class="read-time">⏱ 9 min read</span>
+  </div>
+
+  <div class="hook-grid">
+    <div class="hook-box"><span>🎯</span> Your FPS counter is lying to you</div>
+    <div class="hook-box"><span>✓</span> 100% Vanguard-safe fixes</div>
+    <div class="hook-box"><span>⏱</span> Diagnosed and fixed in 15 min</div>
+    <div class="hook-box"><span>🆓</span> All fixes completely free</div>
+  </div>
+
+  <div class="progress-tracker">
+    <div class="tracker-label">Fixes applied: <span id="counter-display">0/11</span></div>
+    <div class="tracker-bar-wrap">
+      <div class="tracker-bar" id="tracker-bar"></div>
+    </div>
+    <div style="font-size:13px;color:var(--muted);white-space:nowrap">Tick each as you go</div>
+  </div>
+</div>
+
+<div class="article-layout">
+
+  <aside class="toc">
+    <div class="toc-title">Contents</div>
+    <ol>
+      <li><a href="#tweak-1">Understand Your Stutter Type</a></li>
+      <li><a href="#tweak-2">Fix Shader Compilation Stutter</a></li>
+      <li><a href="#tweak-3">Enable XMP/EXPO for Your RAM</a></li>
+      <li><a href="#tweak-4">Check for Thermal Throttling</a></li>
+      <li><a href="#tweak-5">Disable HAGS (Older GPUs)</a></li>
+      <li><a href="#tweak-6">Fix Your Windows Paging File</a></li>
+      <li><a href="#tweak-7">Clean Install GPU Drivers</a></li>
+      <li><a href="#tweak-8">Stop Background Process Spikes</a></li>
+      <li><a href="#tweak-9">Ultimate Performance Power Plan</a></li>
+      <li><a href="#tweak-10">Repair VALORANT Game Files</a></li>
+      <li><a href="#tweak-11">One-Click: Valo Optimise</a></li>
+    </ol>
+    <div class="toc-cta">
+      <a href="https://valo-optimise.pages.dev" target="_blank">⚡ Free Download</a>
+    </div>
+  </aside>
+
+  <article>
+
+    <div class="article-intro">
+      <strong>Your FPS counter is not telling you the full story.</strong> You can be sitting at a steady 200fps average and the game still feels like it's hitching, freezing, or stuttering every few seconds. That's because average FPS is almost meaningless for smoothness — what matters is <strong>frame time consistency</strong>.<br><br>
+      This guide explains exactly what's causing your VALORANT stuttering, how to diagnose which type you have, and how to fix it. Every fix here is free, OS-level, and fully Vanguard-safe.
+    </div>
+
+    <div class="callout fomo">
+      <span class="callout-icon">⚡</span>
+      <div class="callout-body">
+        <strong>Stuttering loses more duels than low FPS does.</strong>
+        A single 80ms frame spike during a peek is enough to make an enemy appear to teleport. You can't react to what you can't see — and if your display isn't showing smooth frames, you're fighting at a disadvantage.
+      </div>
+    </div>
+
+    <!-- ── TWEAK 1 ──────────────────────────────────────────── -->
+    <div class="tip-section" id="tweak-1">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Fix 01</span>
+          Diagnose Your Stutter Type First
+        </div>
+      </div>
+
+      <p>Before you fix anything, you need to know what you're actually dealing with. Not all stutters have the same cause — and applying the wrong fix wastes your time.</p>
+
+      <p>VALORANT has a built-in frame time graph. Press <strong>Shift + F1</strong> in-game to open the Performance Stats overlay. Look at the <strong>Client FPS</strong> and <strong>Frame Time (ms)</strong> rows.</p>
+
+      <div class="frame-viz">
+        <div class="frame-viz-title">Frame time graph — what to look for</div>
+        <div class="frame-row">
+          <div class="frame-label">Smooth (good)</div>
+          <div class="frame-bars">
+            <div class="frame-bar" style="height:20px"></div>
+            <div class="frame-bar" style="height:22px"></div>
+            <div class="frame-bar" style="height:19px"></div>
+            <div class="frame-bar" style="height:21px"></div>
+            <div class="frame-bar" style="height:20px"></div>
+            <div class="frame-bar" style="height:22px"></div>
+            <div class="frame-bar" style="height:20px"></div>
+            <div class="frame-bar" style="height:21px"></div>
+            <div class="frame-bar" style="height:19px"></div>
+            <div class="frame-bar" style="height:20px"></div>
+          </div>
+          <span class="frame-value good">~5ms</span>
+        </div>
+        <div class="frame-row">
+          <div class="frame-label">Micro-stutter</div>
+          <div class="frame-bars">
+            <div class="frame-bar" style="height:20px"></div>
+            <div class="frame-bar spike" style="height:38px"></div>
+            <div class="frame-bar" style="height:20px"></div>
+            <div class="frame-bar" style="height:22px"></div>
+            <div class="frame-bar spike" style="height:36px"></div>
+            <div class="frame-bar" style="height:19px"></div>
+            <div class="frame-bar" style="height:21px"></div>
+            <div class="frame-bar spike" style="height:34px"></div>
+            <div class="frame-bar" style="height:20px"></div>
+            <div class="frame-bar" style="height:21px"></div>
+          </div>
+          <span class="frame-value bad">Spikes to 30ms+</span>
+        </div>
+        <div class="frame-row">
+          <div class="frame-label">Hard stutter</div>
+          <div class="frame-bars">
+            <div class="frame-bar" style="height:18px"></div>
+            <div class="frame-bar" style="height:20px"></div>
+            <div class="frame-bar spike" style="height:40px"></div>
+            <div class="frame-bar spike" style="height:40px"></div>
+            <div class="frame-bar spike" style="height:40px"></div>
+            <div class="frame-bar" style="height:19px"></div>
+            <div class="frame-bar" style="height:20px"></div>
+            <div class="frame-bar spike" style="height:40px"></div>
+            <div class="frame-bar spike" style="height:40px"></div>
+            <div class="frame-bar" style="height:20px"></div>
+          </div>
+          <span class="frame-value bad">80ms+ clusters</span>
+        </div>
+      </div>
+
+      <table class="diag-table">
+        <thead>
+          <tr><th>Stutter Pattern</th><th>Most Likely Cause</th><th>Fix</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Only on map load / first 60s</td><td>Shader compilation</td><td>Fix 02</td></tr>
+          <tr><td>Consistent micro-stutter throughout</td><td>RAM not running at rated speed</td><td>Fix 03</td></tr>
+          <tr><td>Gets worse after 20+ minutes</td><td>Thermal throttling</td><td>Fix 04</td></tr>
+          <tr><td>Random hard freezes mid-game</td><td>Background process spike</td><td>Fix 08</td></tr>
+          <tr><td>Stutter started after a driver update</td><td>Driver issue</td><td>Fix 07</td></tr>
+          <tr><td>Stutter on all maps, all the time</td><td>Power plan / HAGS</td><td>Fix 05 + 09</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout warning">
+        <span class="callout-icon">💡</span>
+        <div class="callout-body">
+          <strong>Skip to your specific fix if you've already diagnosed it.</strong>
+          But if you're unsure, work through all 11 — many players have multiple causes stacking on top of each other.
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ── TWEAK 2 ──────────────────────────────────────────── -->
+    <div class="tip-section" id="tweak-2">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Fix 02</span>
+          Fix Shader Compilation Stutter
+        </div>
+      </div>
+
+      <p>If VALORANT stutters for the first 30–90 seconds on every map but smooths out after that, this is your problem. Your GPU is compiling shaders in real-time as new objects appear on screen — and the default cache is too small to hold them all.</p>
+
+      <p><strong>For NVIDIA users:</strong></p>
+      <ol class="steps">
+        <li>Open <strong>NVIDIA Control Panel</strong> → <strong>Manage 3D Settings</strong></li>
+        <li>Under Global Settings, find <strong>Shader Cache Size</strong></li>
+        <li>Change from <strong>4GB</strong> to <span class="val-set">10 GB</span></li>
+        <li>Click <strong>Apply</strong></li>
+      </ol>
+
+      <p><strong>For AMD users:</strong></p>
+      <ol class="steps">
+        <li>Open <strong>AMD Software: Adrenalin Edition</strong></li>
+        <li>Click <strong>Settings (gear icon)</strong> → <strong>Graphics</strong></li>
+        <li>Find <strong>Shader Cache</strong> → set to maximum</li>
+      </ol>
+
+      <p>After changing this, play one full session on each map. The cache will build up and the stutters will stop permanently on those maps.</p>
+
+      <div class="callout fps-gain">
+        <span class="callout-icon">✓</span>
+        <div class="callout-body">
+          <strong>Completely eliminates map-load stutters after one rebuild session</strong>
+          This is the most common cause of "VALORANT stutters every time I load in" complaints.
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ── TWEAK 3 ──────────────────────────────────────────── -->
+    <div class="tip-section" id="tweak-3">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Fix 03</span>
+          Enable XMP/EXPO — Your RAM Is Probably Running at Half Speed
+        </div>
+      </div>
+
+      <p>This is the most underrated stutter fix and affects more systems than any other. When you install RAM into a PC, Windows runs it at a <strong>safe default speed</strong> — usually 2133MHz or 2400MHz — regardless of what speed the RAM is rated for.</p>
+
+      <p>If you bought 3200MHz or 3600MHz RAM, there's a very high chance it's running at 2133MHz right now. This creates a bottleneck between your CPU and RAM that manifests as constant micro-stutter, even with high average FPS.</p>
+
+      <p>The fix is enabling <strong>XMP</strong> (Intel) or <strong>EXPO</strong> (AMD) in your BIOS — a one-time toggle that runs your RAM at its advertised speed.</p>
+
+      <ol class="steps">
+        <li>Restart your PC and press <strong>Delete</strong> or <strong>F2</strong> repeatedly as it boots to enter BIOS (key varies by motherboard — check your manual)</li>
+        <li>Look for a setting called <strong>XMP</strong>, <strong>EXPO</strong>, <strong>D.O.C.P.</strong>, or <strong>Memory Profile</strong></li>
+        <li>Enable it and select <strong>Profile 1</strong> (your RAM's rated speed)</li>
+        <li>Press <strong>F10</strong> to Save and Exit</li>
+      </ol>
+
+      <div class="callout warning">
+        <span class="callout-icon">⚠️</span>
+        <div class="callout-body">
+          <strong>How to check your current RAM speed first:</strong>
+          Press Ctrl+Shift+Esc → Performance → Memory. If your RAM speed shows 2133MHz or 2400MHz but your RAM sticks are rated higher — you need this fix.
+        </div>
+      </div>
+
+      <div class="callout fps-gain">
+        <span class="callout-icon">📈</span>
+        <div class="callout-body">
+          <strong>Expected gain: eliminates constant micro-stutter, +10–20fps on Ryzen systems</strong>
+          AMD CPUs are especially sensitive to RAM speed — Ryzen 5/7 CPUs can see a 15% performance increase from this single change.
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ── TWEAK 4 ──────────────────────────────────────────── -->
+    <div class="tip-section" id="tweak-4">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Fix 04</span>
+          Check for Thermal Throttling
+        </div>
+      </div>
+
+      <p>When your CPU or GPU gets too hot, it automatically reduces its clock speed to protect itself from damage. This is called <strong>thermal throttling</strong> — and it causes stuttering that gets progressively worse the longer you play.</p>
+
+      <p>If your game runs fine for the first 10 minutes then gradually becomes stuttery, this is almost certainly the cause.</p>
+
+      <p><strong>How to check:</strong> Download <a href="https://www.hwinfo.com/download/" target="_blank" style="color:var(--accent2)">HWiNFO64</a> (free) and run it while playing VALORANT. Watch for:</p>
+
+      <table class="settings-table">
+        <thead>
+          <tr><th>Component</th><th>Safe</th><th>Throttling</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>CPU Temperature</td><td>Under 85°C</td><td><span style="color:var(--accent)">90°C+ while gaming</span></td></tr>
+          <tr><td>GPU Temperature</td><td>Under 83°C</td><td><span style="color:var(--accent)">90°C+ while gaming</span></td></tr>
+          <tr><td>CPU Clock Speed</td><td>Stays near max boost</td><td><span style="color:var(--accent)">Drops mid-game</span></td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>If you're throttling, fixes in order of effectiveness:</strong></p>
+      <ol class="steps">
+        <li><strong>Clean your PC</strong> — dust in fans and heatsinks is the #1 cause. Compressed air in the vents every 6 months</li>
+        <li><strong>Improve airflow</strong> — ensure your case has front intake and rear/top exhaust fans</li>
+        <li><strong>Repaste your CPU</strong> — thermal paste dries out after 2–3 years and loses effectiveness</li>
+        <li><strong>Undervolt your CPU/GPU</strong> — reduces heat with no performance loss (advanced, look up your specific chip)</li>
+      </ol>
+
+      <div class="callout fps-gain">
+        <span class="callout-icon">🌡️</span>
+        <div class="callout-body">
+          <strong>Cleaning alone can drop CPU temps by 10–15°C and completely eliminate throttle stutters</strong>
+          Takes 10 minutes with a can of compressed air and costs under £10.
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ── TWEAK 5 ──────────────────────────────────────────── -->
+    <div class="tip-section" id="tweak-5">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Fix 05</span>
+          Disable HAGS on Older GPUs
+        </div>
+      </div>
+
+      <p>Hardware-Accelerated GPU Scheduling (HAGS) is enabled by default in Windows 11. On GPUs released before 2020 (GTX 10/16 series, RX 500 series), it causes consistent frame time spikes that show up as micro-stutter even when average FPS looks fine.</p>
+
+      <ol class="steps">
+        <li>Go to <strong>Settings → System → Display</strong></li>
+        <li>Scroll down to <strong>Graphics</strong> → click <strong>Change default graphics settings</strong></li>
+        <li>Toggle <strong>Hardware-Accelerated GPU Scheduling</strong> to <strong>Off</strong></li>
+        <li>Restart your PC</li>
+      </ol>
+
+      <div class="callout warning">
+        <span class="callout-icon">💡</span>
+        <div class="callout-body">
+          <strong>RTX 30/40 series or RX 6000/7000 series:</strong> Leave HAGS on — it's designed for these GPUs and can actually improve frame pacing on them.
+        </div>
+      </div>
+
+      <div class="callout fps-gain">
+        <span class="callout-icon">📈</span>
+        <div class="callout-body">
+          <strong>Expected gain (GTX/older RX users): Noticeably smoother frame delivery, better 1% lows</strong>
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ── TWEAK 6 ──────────────────────────────────────────── -->
+    <div class="tip-section" id="tweak-6">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Fix 06</span>
+          Fix Your Windows Paging File
+        </div>
+      </div>
+
+      <p>The paging file is Windows' overflow memory — when your RAM fills up, Windows spills data onto your drive. If the paging file is too small, set to a slow drive, or left on "System managed" (which can resize itself mid-game), it causes hard stutters whenever VALORANT hits a memory spike.</p>
+
+      <ol class="steps">
+        <li>Press <strong>Win + R</strong> → type <code>sysdm.cpl</code> → OK</li>
+        <li>Click the <strong>Advanced</strong> tab → under Performance, click <strong>Settings</strong></li>
+        <li>Click the <strong>Advanced</strong> tab again → click <strong>Change</strong> under Virtual Memory</li>
+        <li>Uncheck <strong>"Automatically manage paging file size for all drives"</strong></li>
+        <li>Select your <strong>fastest drive</strong> (your SSD or NVMe, not HDD)</li>
+        <li>Select <strong>Custom size</strong> and enter:</li>
+      </ol>
+
+      <table class="settings-table">
+        <thead><tr><th>Your RAM</th><th>Initial Size</th><th>Maximum Size</th></tr></thead>
+        <tbody>
+          <tr><td>8GB RAM</td><td><span class="val-set">8192 MB</span></td><td><span class="val-set">12288 MB</span></td></tr>
+          <tr><td>16GB RAM</td><td><span class="val-set">8192 MB</span></td><td><span class="val-set">16384 MB</span></td></tr>
+          <tr><td>32GB RAM</td><td><span class="val-set">8192 MB</span></td><td><span class="val-set">8192 MB</span></td></tr>
+        </tbody>
+      </table>
+
+      <ol class="steps" start="7">
+        <li>Click <strong>Set</strong> → <strong>OK</strong> → restart your PC</li>
+      </ol>
+
+      <div class="callout fps-gain">
+        <span class="callout-icon">📈</span>
+        <div class="callout-body">
+          <strong>Eliminates hard stutters caused by memory pressure — especially on 8GB RAM systems</strong>
+          VALORANT regularly uses 6–8GB RAM with Chrome and Discord running — 8GB systems are right at the edge.
+        </div>
+      </div>
+    </div>
+
+    <!-- ── MID-ARTICLE EMAIL CAPTURE ────────────────────────── -->
+    <div class="email-capture">
+      <h3>🎯 You're Halfway Through</h3>
+      <p>Get our full GPU driver guide + thermal management deep-dive sent to you when published. No spam.</p>
+      <form class="email-form" onsubmit="handleEmailSubmit(event)">
+        <input type="email" id="email-input" placeholder="your@email.com" required>
+        <button type="submit">Notify Me →</button>
+      </form>
+      <p class="email-note" id="email-feedback">Free. Unsubscribe anytime.</p>
+    </div>
+
+    <!-- ── TWEAK 7 ──────────────────────────────────────────── -->
+    <div class="tip-section" id="tweak-7">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Fix 07</span>
+          Clean Install Your GPU Drivers
+        </div>
+      </div>
+
+      <p>GPU driver issues are one of the most common causes of stuttering that starts suddenly — particularly after a Windows Update or driver update. A corrupted or partially-conflicting driver installation can cause frame time spikes that no amount of in-game settings will fix.</p>
+
+      <p>A clean driver install using <strong>DDU (Display Driver Uninstaller)</strong> removes every trace of the old driver before reinstalling — unlike the standard update which just overwrites it.</p>
+
+      <ol class="steps">
+        <li>Download <a href="https://www.guru3d.com/files-details/display-driver-uninstaller-download.html" target="_blank" style="color:var(--accent2)">DDU from Guru3D</a> (free, trusted tool)</li>
+        <li>Download the latest <strong>Game Ready Driver</strong> from NVIDIA or AMD but <strong>don't install it yet</strong></li>
+        <li>Disconnect from the internet (prevents Windows auto-reinstalling drivers)</li>
+        <li>Boot into <strong>Safe Mode</strong>: Settings → System → Recovery → Advanced Startup → Restart now → Troubleshoot → Advanced Options → Startup Settings → Restart → press <strong>4</strong></li>
+        <li>In Safe Mode, run DDU → select <strong>GPU</strong> → click <strong>"Clean and restart"</strong></li>
+        <li>After restart (back in normal mode), install the driver you downloaded</li>
+        <li>Reconnect to internet</li>
+      </ol>
+
+      <div class="callout warning">
+        <span class="callout-icon">⚠️</span>
+        <div class="callout-body">
+          <strong>If the latest driver causes stutters, try the previous stable version.</strong>
+          NVIDIA and AMD occasionally release drivers with known issues. Check r/nvidia or r/Amd for reports of your driver version causing stutter before installing.
+        </div>
+      </div>
+
+      <div class="callout fps-gain">
+        <span class="callout-icon">📈</span>
+        <div class="callout-body">
+          <strong>Fixes stutter that appeared suddenly after a driver/Windows update — often completely resolves the issue</strong>
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ── TWEAK 8 ──────────────────────────────────────────── -->
+    <div class="tip-section" id="tweak-8">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Fix 08</span>
+          Stop Background Processes Spiking Mid-Game
+        </div>
+      </div>
+
+      <p>Random hard stutters that happen once every few minutes — especially mid-round — are almost always caused by a background process waking up and demanding CPU or disk time. The three biggest culprits:</p>
+
+      <p><strong>Windows Update:</strong></p>
+      <ol class="steps">
+        <li>Settings → Windows Update → Advanced Options</li>
+        <li>Set <strong>Active Hours</strong> to cover your entire gaming window (e.g. 2pm–4am)</li>
+        <li>Enable <strong>"Pause Updates"</strong> when you're about to play a ranked session</li>
+      </ol>
+
+      <p><strong>OneDrive sync:</strong></p>
+      <ol class="steps">
+        <li>Right-click the OneDrive icon in your system tray</li>
+        <li>Click <strong>Pause syncing</strong> → select <strong>Until tomorrow</strong> before gaming</li>
+      </ol>
+
+      <p><strong>Antivirus real-time scans:</strong></p>
+      <ol class="steps">
+        <li>Most antivirus software has a <strong>Gaming Mode</strong> or <strong>Do Not Disturb</strong> option</li>
+        <li>Enable it — it delays scans until you stop playing</li>
+        <li>For Windows Defender: add your VALORANT folder to exclusions in Windows Security → Virus & Threat Protection → Manage Settings → Exclusions</li>
+      </ol>
+
+      <div class="callout fps-gain">
+        <span class="callout-icon">📈</span>
+        <div class="callout-body">
+          <strong>Eliminates the hard 200–500ms freezes that feel like the game crashed for a second</strong>
+          These are the most infuriating stutters because they happen at the worst moments.
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ── TWEAK 9 ──────────────────────────────────────────── -->
+    <div class="tip-section" id="tweak-9">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Fix 09</span>
+          Ultimate Performance Power Plan
+        </div>
+      </div>
+
+      <p>Windows' default Balanced power plan throttles your CPU between tasks — and those micro-throttles create frame time inconsistency even when average FPS looks fine. The Ultimate Performance plan eliminates all CPU frequency scaling entirely.</p>
+
+      <ol class="steps">
+        <li>Press <strong>Win + S</strong> → search <strong>Command Prompt</strong> → right-click → <strong>Run as Administrator</strong></li>
+        <li>Paste and run:</li>
+      </ol>
+
+      <div class="code-block">
+        powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
+        <button class="copy-code" onclick="copyCode(this)">Copy</button>
+      </div>
+
+      <ol class="steps" start="3">
+        <li>Press <strong>Win + R</strong> → type <code>powercfg.cpl</code> → select <strong>Ultimate Performance</strong></li>
+      </ol>
+
+      <div class="callout fps-gain">
+        <span class="callout-icon">📈</span>
+        <div class="callout-body">
+          <strong>Smooths out frame time consistency — especially noticeable on Ryzen 5/7 and Intel 12th/13th gen</strong>
+          These CPUs have aggressive power management that causes micro-stutter under Balanced plan.
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ── TWEAK 10 ──────────────────────────────────────────── -->
+    <div class="tip-section" id="tweak-10">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Fix 10</span>
+          Repair VALORANT's Game Files
+        </div>
+      </div>
+
+      <p>Corrupted or missing game files can cause stutters that appear completely random and don't match any of the other patterns. This is worth doing if nothing else has worked — it takes 5 minutes and has no downside.</p>
+
+      <ol class="steps">
+        <li>Open the <strong>Riot Client</strong></li>
+        <li>Find <strong>VALORANT</strong> in your library</li>
+        <li>Click the <strong>settings cog</strong> (⚙) next to the Play button</li>
+        <li>Click <strong>Repair</strong></li>
+        <li>Wait for the scan and repair to complete (5–15 minutes)</li>
+        <li>Relaunch VALORANT</li>
+      </ol>
+
+      <div class="callout fps-gain">
+        <span class="callout-icon">✓</span>
+        <div class="callout-body">
+          <strong>Fixes stutters caused by corrupted assets — especially after patch updates or incomplete downloads</strong>
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ── TWEAK 11 ──────────────────────────────────────────── -->
+    <div class="tip-section" id="tweak-11">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Fix 11</span>
+          Let Valo Optimise Handle It Automatically
+        </div>
+      </div>
+
+      <p>Fixes 01, 02, 05, 08, and 09 from this guide — plus 25 more stutter-related optimisations — are automated inside <strong>Valo Optimise</strong>. It applies them in one click, keeps them applied after Windows updates, and monitors your system health in real time.</p>
+
+      <p>It can't fix thermal paste or BIOS settings (those are physical), but everything else on this list it handles automatically — including setting VALORANT CPU priority on every launch, cleaning up background processes, and managing your power plan.</p>
+
+      <div class="callout fps-gain">
+        <span class="callout-icon">🚀</span>
+        <div class="callout-body">
+          <strong>The fixes that reset after Windows updates (power plan, background processes, CPU priority) stay permanently applied</strong>
+          This is where Valo Optimise saves the most time — you set it once and never think about it again.
+        </div>
+      </div>
+    </div>
+
+    <!-- Completion banner -->
+    <div id="completion-banner">
+      <h3>🏆 All 11 Fixes Applied</h3>
+      <p>Your VALORANT should now be noticeably smoother. Load into a practice range and watch that frame time graph — it should be flat lines now, not spikes. Share this guide with your squad.</p>
+    </div>
+
+    <!-- Final CTA -->
+    <div class="final-cta">
+      <h2>Stop Fighting Your <em>Own PC.</em></h2>
+      <p>Valo Optimise applies all the automatable fixes from this guide — and keeps them applied. Free, Vanguard-safe, one click.</p>
+      <a href="https://valo-optimise.pages.dev" class="cta-btn" target="_blank">⚡ Download Free — Windows 11/10</a>
+      <p class="cta-sub">No account required · Vanguard-safe · 7-day free Pro trial included</p>
+    </div>
+
+    <!-- Share -->
+    <div class="share-section">
+      <h3>Know Someone With a Stuttering Problem?</h3>
+      <p>Send this to them. It takes 15 minutes and could fix what's been frustrating them for months.</p>
+      <div class="share-btns">
+        <button class="share-btn twitter"  onclick="shareTwitter()">𝕏 Share on X</button>
+        <button class="share-btn reddit"   onclick="shareReddit()">Share on Reddit</button>
+        <button class="share-btn whatsapp" onclick="shareWhatsApp()">📱 WhatsApp</button>
+        <button class="share-btn copy"     onclick="copyLink(this)">🔗 Copy Link</button>
+      </div>
+    </div>
+
+    <!-- Related -->
+    <div>
+      <h3 style="font-size:18px;font-weight:700;margin-bottom:16px;">Keep Optimising</h3>
+      <div class="related-grid">
+        <a class="related-card" href="how-to-boost-fps-valorant-windows-11-2026.html">
+          <div class="tags"><span class="tag">FPS Boost</span></div>
+          <h4>How to Boost FPS in VALORANT on Windows 11 (2026) — 12 Tweaks</h4>
+          <p>The companion guide to this one — once your frame times are smooth, maximise your average FPS.</p>
+        </a>
+        <a class="related-card" href="#">
+          <div class="tags"><span class="tag">Coming Soon</span></div>
+          <h4>How to Reduce Ping in VALORANT — The Complete Network Guide</h4>
+          <p>Router QoS, DNS, Nagle's Algorithm, and the registry tweaks that cut lag.</p>
+        </a>
+        <a class="related-card" href="#">
+          <div class="tags"><span class="tag">Coming Soon</span></div>
+          <h4>Best VALORANT Settings for Low-End PCs</h4>
+          <p>Hardware-specific settings for GTX 1060, RX 580, and Intel integrated graphics.</p>
+        </a>
+      </div>
+    </div>
+
+  </article>
+</div>
+
+<a href="https://valo-optimise.pages.dev" id="floating-cta" target="_blank">
+  ⚡ Free Download — Valo Optimise
+</a>
+
+<footer>
+  <p style="margin-bottom:8px;">
+    <a href="../index.html">Blog Home</a> &nbsp;·&nbsp;
+    <a href="https://valo-optimise.pages.dev" target="_blank">Valo Optimise App</a> &nbsp;·&nbsp;
+    <a href="https://valo-optimise.pages.dev/docs/privacy.html" target="_blank">Privacy</a>
+  </p>
+  <p>© 2026 Valo Optimise Ltd · Not affiliated with Riot Games · All optimisations are OS-level and Vanguard-safe</p>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    document.getElementById('progress-bar').style.width = Math.min(100, (scrolled / total) * 100) + '%';
+    const cta = document.getElementById('floating-cta');
+    if (scrolled > 500) cta.classList.add('visible');
+    else cta.classList.remove('visible');
+  });
+
+  function updateTracker() {
+    const checks = document.querySelectorAll('.tip-check');
+    const done   = document.querySelectorAll('.tip-check:checked').length;
+    const total  = checks.length;
+    document.getElementById('counter-display').textContent = done + '/' + total;
+    document.getElementById('tracker-bar').style.width = (done / total * 100) + '%';
+    if (done === total) {
+      document.getElementById('completion-banner').style.display = 'block';
+      document.getElementById('completion-banner').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+    document.querySelectorAll('.tip-check').forEach(cb => {
+      const heading = cb.closest('.tip-header').querySelector('.tip-heading');
+      heading.style.opacity = cb.checked ? '0.5' : '1';
+      heading.style.textDecoration = cb.checked ? 'line-through' : 'none';
+    });
+  }
+
+  function copyCode(btn) {
+    const code = btn.parentElement.textContent.replace('Copy', '').trim();
+    navigator.clipboard.writeText(code).then(() => {
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = 'Copy', 2000);
+    });
+  }
+
+  function shareTwitter() {
+    const text = encodeURIComponent('VALORANT stuttering? Here\'s why your FPS counter is lying to you — and 11 fixes that actually work 🎯');
+    const url  = encodeURIComponent(window.location.href);
+    window.open('https://twitter.com/intent/tweet?text=' + text + '&url=' + url, '_blank');
+  }
+
+  function shareReddit() {
+    const title = encodeURIComponent('How to fix VALORANT stuttering on Windows 11 — 11 fixes including shader cache, XMP/EXPO, thermal throttling');
+    const url   = encodeURIComponent(window.location.href);
+    window.open('https://reddit.com/submit?title=' + title + '&url=' + url, '_blank');
+  }
+
+  function shareWhatsApp() {
+    const text = encodeURIComponent('Your FPS counter is lying to you — this guide fixed my VALORANT stutter: ' + window.location.href);
+    window.open('https://wa.me/?text=' + text, '_blank');
+  }
+
+  function copyLink(btn) {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      btn.textContent = '✓ Copied!';
+      setTimeout(() => btn.textContent = '🔗 Copy Link', 2000);
+    });
+  }
+
+  function handleEmailSubmit(e) {
+    e.preventDefault();
+    const feedback = document.getElementById('email-feedback');
+    feedback.textContent = '✓ You\'re in! We\'ll notify you when the next guide drops.';
+    feedback.style.color = 'var(--accent2)';
+    document.getElementById('email-input').value = '';
+    document.querySelector('.email-form button').textContent = '✓ Done';
+    document.querySelector('.email-form button').disabled = true;
+  }
+
+  const sections = document.querySelectorAll('.tip-section');
+  const tocLinks = document.querySelectorAll('.toc a');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        tocLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-60px 0px -70% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
