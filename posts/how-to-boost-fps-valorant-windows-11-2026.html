@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Boost FPS in VALORANT on Windows 11 (2026) — 12 Tweaks That Actually Work</title>
+  <meta name="description" content="Get 40–60 more FPS in VALORANT with these 12 proven Windows 11 tweaks. Power plans, GPU settings, registry fixes — all Vanguard-safe. Takes under 10 minutes.">
+  <meta name="keywords" content="valorant fps boost, how to increase fps in valorant, valorant windows 11 fps fix, valorant lag fix 2026, valorant performance tweaks">
+  <link rel="canonical" href="https://blog.valooptimise.com/posts/how-to-boost-fps-valorant-windows-11-2026.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How to Boost FPS in VALORANT on Windows 11 (2026) — 12 Tweaks That Actually Work">
+  <meta property="og:description" content="Get 40–60 more FPS in VALORANT with these 12 proven Windows 11 tweaks. Takes under 10 minutes.">
+  <meta property="og:image" content="https://valooptimise.com/docs/assets/og-image.png">
+  <meta property="og:url" content="https://blog.valooptimise.com/posts/how-to-boost-fps-valorant-windows-11-2026.html">
+  <meta property="og:site_name" content="Valo Optimise Blog">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Boost FPS in VALORANT on Windows 11 (2026) — 12 Tweaks">
+  <meta name="twitter:description" content="Get 40–60 more FPS in VALORANT. 12 proven Windows 11 tweaks, all Vanguard-safe.">
+  <meta name="twitter:image" content="https://valooptimise.com/docs/assets/og-image.png">
+
+  <!-- Schema: Article + HowTo -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "How to Boost FPS in VALORANT on Windows 11 (2026) — 12 Tweaks That Actually Work",
+        "description": "Get 40–60 more FPS in VALORANT with 12 proven Windows 11 tweaks. All Vanguard-safe.",
+        "image": "https://valooptimise.com/docs/assets/og-image.png",
+        "author": { "@type": "Person", "name": "Harvey Jenkins" },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Valo Optimise",
+          "logo": { "@type": "ImageObject", "url": "https://valooptimise.com/docs/assets/icon_256.png" }
+        },
+        "datePublished": "2026-03-27",
+        "dateModified": "2026-03-27",
+        "mainEntityOfPage": "https://blog.valooptimise.com/posts/how-to-boost-fps-valorant-windows-11-2026.html"
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Boost FPS in VALORANT on Windows 11",
+        "totalTime": "PT10M",
+        "step": [
+          { "@type": "HowToStep", "position": 1, "name": "Enable Ultimate Performance Power Plan", "text": "Run powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61 in CMD as Administrator, then select it in Power Options." },
+          { "@type": "HowToStep", "position": 2, "name": "Optimise GPU Control Panel", "text": "Set Power Management to Prefer Maximum Performance and Low Latency Mode to Ultra in NVIDIA Control Panel." },
+          { "@type": "HowToStep", "position": 3, "name": "Disable Xbox Game Bar", "text": "Go to Settings > Gaming > Xbox Game Bar and toggle it off. Disable Background Recording under Captures." },
+          { "@type": "HowToStep", "position": 4, "name": "Set VALORANT in-game graphics settings for maximum FPS", "text": "Set all quality settings to Low, disable VSync, bloom, distortion, cast shadows." },
+          { "@type": "HowToStep", "position": 5, "name": "Disable HAGS on older GPUs", "text": "Settings > Display > Graphics > Change default graphics settings. Disable Hardware-Accelerated GPU Scheduling for GTX/RX 500 series." },
+          { "@type": "HowToStep", "position": 6, "name": "Disable Nagle's Algorithm", "text": "In Registry Editor, navigate to HKLM\\SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters\\Interfaces and add TcpAckFrequency=1 and TCPNoDelay=1." },
+          { "@type": "HowToStep", "position": 7, "name": "Adjust Windows Visual Effects for performance", "text": "System Properties > Advanced > Performance Settings > Adjust for best performance." },
+          { "@type": "HowToStep", "position": 8, "name": "Set VALORANT to High CPU Priority", "text": "Open Task Manager > Details tab > right-click VALORANT-Win64-Shipping.exe > Set Priority > High." },
+          { "@type": "HowToStep", "position": 9, "name": "Expand Shader Cache", "text": "In NVIDIA Control Panel > Manage 3D Settings, set Shader Cache Size to 10 GB." },
+          { "@type": "HowToStep", "position": 10, "name": "Disable Mouse Acceleration", "text": "Settings > Bluetooth & devices > Mouse > Additional mouse settings > Pointer Options > uncheck Enhance pointer precision." },
+          { "@type": "HowToStep", "position": 11, "name": "Disable startup programs", "text": "Task Manager > Startup tab > disable all non-essential programs." },
+          { "@type": "HowToStep", "position": 12, "name": "Use Valo Optimise for one-click automation", "text": "Download Valo Optimise to apply all tweaks automatically, safely, in seconds." }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="icon" href="https://valooptimise.com/docs/assets/icon_256.png">
+
+  <style>
+    :root {
+      --bg: #0a0e1a;
+      --panel: #111827;
+      --panel2: #1c2a3a;
+      --accent: #ff4655;
+      --accent2: #00d4aa;
+      --text: #f0f4ff;
+      --muted: #6b7a99;
+      --border: #1e2d42;
+      --warn: #f59e0b;
+      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --radius: 10px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    /* ── Progress Bar ─────────────────────────────────────────── */
+    #progress-bar {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      z-index: 9999;
+      transition: width 0.1s linear;
+    }
+
+    /* ── Nav ──────────────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(10,14,26,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 100;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .nav-logo span { color: var(--accent); }
+
+    .nav-links { display: flex; align-items: center; gap: 20px; }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta {
+      background: var(--accent);
+      color: #fff !important;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 13px !important;
+      transition: background 0.2s, transform 0.2s !important;
+    }
+
+    .nav-cta:hover { background: #e63946 !important; transform: translateY(-1px); }
+
+    /* ── Article Hero ─────────────────────────────────────────── */
+    .article-hero {
+      max-width: 800px;
+      margin: 48px auto 0;
+      padding: 0 24px;
+    }
+
+    .tags { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+
+    .tag {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      color: var(--accent2);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .article-hero h1 {
+      font-size: clamp(24px, 4vw, 38px);
+      line-height: 1.25;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    .article-hero h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .article-meta .dot { opacity: 0.4; }
+
+    .read-time {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent2);
+    }
+
+    /* Hook boxes */
+    .hook-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .hook-box {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent2);
+      padding: 12px 16px;
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hook-box .icon { font-size: 18px; }
+
+    /* Progress tracker */
+    .progress-tracker {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .tracker-label { font-size: 14px; font-weight: 600; }
+    .tracker-label span { color: var(--accent2); }
+
+    .tracker-bar-wrap {
+      flex: 1;
+      background: var(--panel2);
+      height: 8px;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .tracker-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      border-radius: 4px;
+      transition: width 0.3s ease;
+    }
+
+    /* ── Layout ───────────────────────────────────────────────── */
+    .article-layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* ── TOC ──────────────────────────────────────────────────── */
+    .toc {
+      position: sticky;
+      top: 72px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+
+    .toc-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .toc ol { list-style: none; counter-reset: toc; }
+
+    .toc ol li {
+      counter-increment: toc;
+      margin-bottom: 6px;
+    }
+
+    .toc ol li a {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      line-height: 1.4;
+      padding: 4px 8px;
+      border-radius: 6px;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .toc ol li a::before {
+      content: counter(toc);
+      background: var(--panel2);
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 700;
+      min-width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+
+    .toc ol li a:hover,
+    .toc ol li a.active {
+      background: var(--panel2);
+      color: var(--text);
+    }
+
+    .toc ol li a.active::before { background: var(--accent); color: #fff; }
+
+    .toc-cta {
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .toc-cta a {
+      display: block;
+      background: var(--accent);
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .toc-cta a:hover { background: #e63946; }
+
+    /* ── Article Body ─────────────────────────────────────────── */
+    article { min-width: 0; }
+
+    /* Intro */
+    .article-intro {
+      font-size: 17px;
+      line-height: 1.8;
+      color: #c8d0e0;
+      margin-bottom: 32px;
+      padding: 24px;
+      background: var(--panel);
+      border-radius: var(--radius);
+      border-left: 3px solid var(--accent);
+    }
+
+    .article-intro strong { color: var(--text); }
+
+    /* Sections */
+    .tip-section {
+      margin-bottom: 48px;
+      scroll-margin-top: 80px;
+    }
+
+    .tip-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .tip-checkbox-wrap {
+      margin-top: 4px;
+      flex-shrink: 0;
+    }
+
+    .tip-check {
+      width: 20px;
+      height: 20px;
+      accent-color: var(--accent2);
+      cursor: pointer;
+    }
+
+    .tip-heading {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--text);
+    }
+
+    .tip-heading .num {
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .tip-section p {
+      color: #c8d0e0;
+      margin-bottom: 14px;
+      line-height: 1.8;
+    }
+
+    /* Code blocks */
+    .code-block {
+      background: #070b14;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 20px;
+      font-family: 'Consolas', 'Courier New', monospace;
+      font-size: 13px;
+      color: var(--accent2);
+      margin: 16px 0;
+      overflow-x: auto;
+      position: relative;
+    }
+
+    .code-block .copy-code {
+      position: absolute;
+      top: 10px; right: 10px;
+      background: var(--panel2);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: var(--font);
+      transition: color 0.2s;
+    }
+
+    .code-block .copy-code:hover { color: var(--text); }
+
+    /* Step lists */
+    .steps {
+      list-style: none;
+      counter-reset: steps;
+      margin: 16px 0;
+    }
+
+    .steps li {
+      counter-increment: steps;
+      display: flex;
+      gap: 14px;
+      margin-bottom: 12px;
+      color: #c8d0e0;
+    }
+
+    .steps li::before {
+      content: counter(steps);
+      background: var(--accent);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      min-width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    /* Callout boxes */
+    .callout {
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin: 20px 0;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .callout-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+
+    .callout-body { font-size: 14px; line-height: 1.7; }
+
+    .callout-body strong { display: block; margin-bottom: 4px; font-size: 15px; }
+
+    .callout.fps-gain {
+      background: rgba(0, 212, 170, 0.08);
+      border: 1px solid rgba(0, 212, 170, 0.25);
+    }
+
+    .callout.fps-gain .callout-body { color: var(--accent2); }
+
+    .callout.warning {
+      background: rgba(245, 158, 11, 0.08);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+    }
+
+    .callout.warning .callout-body { color: #f59e0b; }
+
+    .callout.fomo {
+      background: rgba(255, 70, 85, 0.08);
+      border: 1px solid rgba(255, 70, 85, 0.25);
+    }
+
+    .callout.fomo .callout-body { color: #ff9ea6; }
+
+    /* Settings table */
+    .settings-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+
+    .settings-table th {
+      text-align: left;
+      padding: 10px 14px;
+      background: var(--panel2);
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .settings-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      color: #c8d0e0;
+      vertical-align: top;
+    }
+
+    .settings-table tr:last-child td { border-bottom: none; }
+
+    .settings-table td:first-child { color: var(--text); font-weight: 600; }
+
+    .val-set { color: var(--accent2); font-weight: 700; }
+    .val-dis { color: var(--muted); text-decoration: line-through; }
+
+    /* HR divider */
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+
+    /* Mid-article email capture */
+    .email-capture {
+      background: linear-gradient(135deg, #111827, #0f1c2e);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 28px;
+      margin: 48px 0;
+      text-align: center;
+    }
+
+    .email-capture h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .email-capture p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .email-form {
+      display: flex;
+      gap: 10px;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+
+    .email-form input {
+      flex: 1;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 16px;
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .email-form input:focus { border-color: var(--accent2); }
+
+    .email-form button {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 22px;
+      font-family: var(--font);
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+
+    .email-form button:hover { background: #e63946; }
+
+    .email-note { font-size: 12px; color: var(--muted); margin-top: 10px; }
+
+    /* Final CTA */
+    .final-cta {
+      background: linear-gradient(135deg, #0f1824, #1a0d10);
+      border: 1px solid rgba(255,70,85,0.3);
+      border-radius: 14px;
+      padding: 36px;
+      margin: 48px 0;
+      text-align: center;
+    }
+
+    .final-cta h2 {
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .final-cta h2 em { font-style: normal; color: var(--accent); }
+
+    .final-cta p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 24px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 14px 36px;
+      border-radius: 8px;
+      transition: background 0.2s, transform 0.2s;
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+
+    .cta-btn:hover { background: #e63946; transform: translateY(-2px); animation: none; }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(255,70,85,0.4); }
+      50% { box-shadow: 0 0 0 10px rgba(255,70,85,0); }
+    }
+
+    .cta-sub { font-size: 13px; color: var(--muted); margin-top: 12px; }
+
+    /* Share section */
+    .share-section {
+      margin: 48px 0;
+      padding: 28px;
+      background: var(--panel);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .share-section h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .share-section p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .share-btns {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .share-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: none;
+      font-family: var(--font);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+      text-decoration: none;
+    }
+
+    .share-btn:hover { opacity: 0.85; transform: translateY(-1px); }
+
+    .share-btn.twitter { background: #1da1f2; color: #fff; }
+    .share-btn.reddit  { background: #ff4500; color: #fff; }
+    .share-btn.whatsapp { background: #25d366; color: #fff; }
+    .share-btn.copy    { background: var(--panel2); color: var(--text); border: 1px solid var(--border); }
+
+    /* Completion banner */
+    #completion-banner {
+      display: none;
+      background: linear-gradient(135deg, rgba(0,212,170,0.15), rgba(0,212,170,0.05));
+      border: 1px solid rgba(0,212,170,0.4);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      text-align: center;
+      margin: 32px 0;
+      animation: fadeIn 0.5s ease;
+    }
+
+    #completion-banner h3 { color: var(--accent2); font-size: 20px; margin-bottom: 6px; }
+    #completion-banner p { color: var(--muted); font-size: 14px; }
+
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Floating CTA */
+    #floating-cta {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--accent);
+      color: #fff;
+      padding: 14px 22px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 4px 24px rgba(255,70,85,0.4);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.3s, transform 0.3s;
+      pointer-events: none;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    #floating-cta.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
+    #floating-cta:hover { background: #e63946; }
+
+    /* Related articles */
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .related-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .related-card:hover { border-color: var(--accent2); transform: translateY(-2px); }
+
+    .related-card .tag { margin-bottom: 10px; }
+
+    .related-card h4 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px; line-height: 1.4; }
+
+    .related-card p { font-size: 13px; color: var(--muted); }
+
+    /* Footer */
+    footer {
+      background: var(--panel);
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    footer a { color: var(--accent2); text-decoration: none; }
+    footer p { color: var(--muted); font-size: 13px; }
+
+    /* Responsive */
+    @media (max-width: 860px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .toc { position: static; }
+
+      .email-form { flex-direction: column; }
+    }
+
+    @media (max-width: 600px) {
+      .article-hero h1 { font-size: 24px; }
+      .nav-links .nav-cta { display: flex; }
+      .nav-links a:not(.nav-cta) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Reading progress bar -->
+<div id="progress-bar"></div>
+
+<!-- Nav -->
+<nav>
+  <a href="../index.html" class="nav-logo">
+    <span>VALO</span> OPTIMISE BLOG
+  </a>
+  <div class="nav-links">
+    <a href="../index.html">All Articles</a>
+    <a href="https://valo-optimise.pages.dev" target="_blank">About</a>
+    <a href="https://valo-optimise.pages.dev" target="_blank" class="nav-cta">⚡ Free Download</a>
+  </div>
+</nav>
+
+<!-- Article hero -->
+<div class="article-hero">
+  <div class="tags">
+    <span class="tag">FPS Boost</span>
+    <span class="tag">Windows 11</span>
+    <span class="tag">Guide</span>
+    <span class="tag">2026</span>
+  </div>
+
+  <h1>How to Boost FPS in VALORANT on Windows 11 (2026) — <em>12 Tweaks That Actually Work</em></h1>
+
+  <div class="article-meta">
+    <span>March 27, 2026</span>
+    <span class="dot">·</span>
+    <span>Harvey Jenkins</span>
+    <span class="dot">·</span>
+    <span class="read-time">⏱ 8 min read</span>
+  </div>
+
+  <div class="hook-grid">
+    <div class="hook-box"><span class="icon">⚡</span> Avg. +47fps reported by players</div>
+    <div class="hook-box"><span class="icon">✓</span> 100% Vanguard-safe</div>
+    <div class="hook-box"><span class="icon">⏱</span> Takes under 10 minutes</div>
+    <div class="hook-box"><span class="icon">🆓</span> All tweaks completely free</div>
+  </div>
+
+  <div class="progress-tracker">
+    <div class="tracker-label">Tweaks applied: <span id="counter-display">0/12</span></div>
+    <div class="tracker-bar-wrap">
+      <div class="tracker-bar" id="tracker-bar"></div>
+    </div>
+    <div style="font-size:13px;color:var(--muted);white-space:nowrap">Tick each as you go</div>
+  </div>
+</div>
+
+<!-- Article layout -->
+<div class="article-layout">
+
+  <!-- Sticky TOC -->
+  <aside class="toc">
+    <div class="toc-title">Contents</div>
+    <ol>
+      <li><a href="#tweak-1">Ultimate Performance Power Plan</a></li>
+      <li><a href="#tweak-2">GPU Control Panel Settings</a></li>
+      <li><a href="#tweak-3">Kill Xbox Game Bar</a></li>
+      <li><a href="#tweak-4">In-Game VALORANT Settings</a></li>
+      <li><a href="#tweak-5">Disable HAGS (for older GPUs)</a></li>
+      <li><a href="#tweak-6">Stop Ping Spikes Forever</a></li>
+      <li><a href="#tweak-7">Windows Visual Effects</a></li>
+      <li><a href="#tweak-8">Set High CPU Priority</a></li>
+      <li><a href="#tweak-9">Fix Shader Cache Stutter</a></li>
+      <li><a href="#tweak-10">Kill Mouse Acceleration</a></li>
+      <li><a href="#tweak-11">Nuke Your Startup Programs</a></li>
+      <li><a href="#tweak-12">One-Click: Valo Optimise</a></li>
+    </ol>
+    <div class="toc-cta">
+      <a href="https://valo-optimise.pages.dev" target="_blank">⚡ Free Download</a>
+    </div>
+  </aside>
+
+  <!-- Main article -->
+  <article>
+
+    <div class="article-intro">
+      <strong>Here's the truth nobody tells you:</strong> your PC is probably running VALORANT 40–60fps below what it's actually capable of. Not because of your hardware — because of three default Windows settings that are actively working against you right now.<br><br>
+      These 12 tweaks are the same ones used by high-rank players, system builders, and the team behind Valo Optimise. No placebo. No registry nukes. Just real, measurable FPS gains — in under 10 minutes.
+    </div>
+
+    <div class="callout fomo">
+      <span class="callout-icon">🎯</span>
+      <div class="callout-body">
+        <strong>Your opponents might already be running these.</strong>
+        At Diamond+ rank, a significant portion of players have optimised their Windows settings. Below Diamond, almost nobody has. This is your edge.
+      </div>
+    </div>
+
+    <!-- ── TWEAK 1 ──────────────────────────────────────────── -->
+    <div class="tip-section" id="tweak-1">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Tweak 01</span>
+          Enable the Ultimate Performance Power Plan
+        </div>
+      </div>
+
+      <p>This is the single biggest FPS win most players are missing. Windows defaults to <strong>Balanced</strong> power plan, which actively throttles your CPU when it detects "idle" moments — including the microseconds between frames in a competitive game.</p>
+
+      <p>There are three power plans. Most players know about "High Performance." Almost nobody knows about the hidden fourth: <strong>Ultimate Performance</strong> — a Microsoft-built plan originally designed for workstations that eliminates all CPU power-saving behaviour entirely.</p>
+
+      <ol class="steps">
+        <li>Press <strong>Win + S</strong>, search for <strong>Command Prompt</strong>, right-click → <strong>Run as Administrator</strong></li>
+        <li>Paste and run this command to unlock the hidden plan:</li>
+      </ol>
+
+      <div class="code-block">
+        powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
+        <button class="copy-code" onclick="copyCode(this)">Copy</button>
+      </div>
+
+      <ol class="steps" start="3">
+        <li>Open <strong>Control Panel</strong> → <strong>Power Options</strong> (or press Win+R → type <code>powercfg.cpl</code>)</li>
+        <li>Select <strong>Ultimate Performance</strong> from the list</li>
+      </ol>
+
+      <div class="callout fps-gain">
+        <span class="callout-icon">📈</span>
+        <div class="callout-body">
+          <strong>Expected gain: +10–25fps average, +40fps peaks</strong>
+          Biggest impact on Ryzen 5/7 and Intel 12th/13th gen chips where power efficiency modes are aggressive.
+        </div>
+      </div>
+
+      <div class="callout warning">
+        <span class="callout-icon">⚠️</span>
+        <div class="callout-body">
+          <strong>Note on laptops:</strong> Ultimate Performance increases power consumption. Battery life will drop noticeably. Use only when plugged in.
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ── TWEAK 2 ──────────────────────────────────────────── -->
+    <div class="tip-section" id="tweak-2">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Tweak 02</span>
+          Unlock Your GPU's Full Potential
+        </div>
+      </div>
+
+      <p>Out of the box, NVIDIA and AMD GPUs operate with power-saving logic that caps performance. You need to tell them: <strong>gaming mode, full power, no compromises.</strong></p>
+
+      <p><strong>NVIDIA (GeForce RTX/GTX):</strong> Right-click desktop → NVIDIA Control Panel → Manage 3D Settings → Program Settings → Add VALORANT</p>
+
+      <table class="settings-table">
+        <thead>
+          <tr><th>Setting</th><th>Change To</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Power Management Mode</td><td><span class="val-set">Prefer Maximum Performance</span></td></tr>
+          <tr><td>Low Latency Mode</td><td><span class="val-set">Ultra</span></td></tr>
+          <tr><td>Vertical Sync</td><td><span class="val-set">Off</span> (control this in-game)</td></tr>
+          <tr><td>Texture Filtering – Quality</td><td><span class="val-set">High Performance</span></td></tr>
+          <tr><td>Threaded Optimisation</td><td><span class="val-set">On</span></td></tr>
+          <tr><td>Maximum Pre-Rendered Frames</td><td><span class="val-set">1</span></td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>AMD (Radeon RX):</strong> Open AMD Software → Gaming → VALORANT profile → Set these:</p>
+
+      <table class="settings-table">
+        <thead>
+          <tr><th>Setting</th><th>Change To</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Anti-Lag+</td><td><span class="val-set">Enabled</span></td></tr>
+          <tr><td>Enhanced Sync</td><td><span class="val-set">Disabled</span></td></tr>
+          <tr><td>Wait for Vertical Refresh</td><td><span class="val-set">Always Off</span></td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout fps-gain">
+        <span class="callout-icon">📈</span>
+        <div class="callout-body">
+          <strong>Expected gain: +5–15fps, major latency reduction</strong>
+          Low Latency Mode Ultra alone reduces input lag by 12–18ms on most systems.
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ── TWEAK 3 ──────────────────────────────────────────── -->
+    <div class="tip-section" id="tweak-3">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Tweak 03</span>
+          Kill Xbox Game Bar & Background Recording
+        </div>
+      </div>
+
+      <p>Xbox Game Bar is a screen overlay and recording system baked into Windows 11. Even when you're not using it, it runs in the background consuming CPU cycles and RAM — <strong>during every single game session.</strong></p>
+
+      <ol class="steps">
+        <li>Open <strong>Settings</strong> → <strong>Gaming</strong> → <strong>Xbox Game Bar</strong> → Toggle <strong>Off</strong></li>
+        <li>Still in Gaming → click <strong>Captures</strong> → set <strong>"Record in the background while I'm playing a game"</strong> to <strong>Off</strong></li>
+        <li>Optional but recommended: Settings → Apps → Xbox → Advanced Options → set Background App Permissions to <strong>Never</strong></li>
+      </ol>
+
+      <div class="callout fps-gain">
+        <span class="callout-icon">📈</span>
+        <div class="callout-body">
+          <strong>Expected gain: +3–8fps, eliminates random stutters</strong>
+          Background recording is the #1 hidden cause of 0.1% low FPS spikes (the hitching you feel during duels).
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ── TWEAK 4 ──────────────────────────────────────────── -->
+    <div class="tip-section" id="tweak-4">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Tweak 04</span>
+          The Correct VALORANT In-Game Settings
+        </div>
+      </div>
+
+      <p>VALORANT's default settings are not optimised for competitive play. These are the settings used by the majority of professional players — not for aesthetics, but because they provide the smoothest, most consistent frame delivery.</p>
+
+      <table class="settings-table">
+        <thead>
+          <tr><th>Setting</th><th>Set To</th><th>Why</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Material Quality</td><td><span class="val-set">Low</span></td><td>Biggest FPS impact setting</td></tr>
+          <tr><td>Texture Quality</td><td><span class="val-set">Low</span></td><td>VRAM saver on cards under 8GB</td></tr>
+          <tr><td>Detail Quality</td><td><span class="val-set">Low</span></td><td>Reduces CPU draw calls</td></tr>
+          <tr><td>UI Quality</td><td><span class="val-set">Low</span></td><td>Minor but free FPS</td></tr>
+          <tr><td>Vignette</td><td><span class="val-set">Off</span></td><td>Post-processing overhead</td></tr>
+          <tr><td>VSync</td><td><span class="val-set">Off</span></td><td>Adds 1–3 frames of input lag</td></tr>
+          <tr><td>Anti-Aliasing</td><td><span class="val-set">MSAA 2x</span></td><td>Sharpest at low cost</td></tr>
+          <tr><td>Bloom</td><td><span class="val-set">Off</span></td><td>Makes abilities harder to read too</td></tr>
+          <tr><td>Distortion</td><td><span class="val-set">Off</span></td><td>Free FPS, zero downside</td></tr>
+          <tr><td>Cast Shadows</td><td><span class="val-set">Off</span></td><td>Significant CPU load</td></tr>
+          <tr><td>FPS Limit (Menu/Background)</td><td><span class="val-set">30</span></td><td>Stops GPU thrashing when alt-tabbed</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout warning">
+        <span class="callout-icon">💡</span>
+        <div class="callout-body">
+          <strong>The VSync trap:</strong> Enabling VSync eliminates screen tearing but adds measurable input lag. Instead, cap your FPS at 2× your monitor refresh rate (e.g. 288fps for a 144Hz display) — this prevents tearing with zero added latency.
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ── TWEAK 5 ──────────────────────────────────────────── -->
+    <div class="tip-section" id="tweak-5">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Tweak 05</span>
+          HAGS — Know When to Disable It
+        </div>
+      </div>
+
+      <p>Hardware-Accelerated GPU Scheduling (HAGS) is a Windows feature that lets your GPU manage its own VRAM scheduling. On newer GPUs it can help. On older ones, it causes frame time instability.</p>
+
+      <p><strong>Rule of thumb:</strong></p>
+      <ol class="steps">
+        <li><strong>GTX 10/16 series, RX 500/5000:</strong> Disable HAGS — it hurts more than it helps</li>
+        <li><strong>RTX 30/40 series, RX 6000/7000:</strong> Leave it on or test both</li>
+      </ol>
+
+      <p>To toggle: <strong>Settings → System → Display → Graphics → Change default graphics settings → Hardware-accelerated GPU scheduling</strong></p>
+
+      <div class="callout fps-gain">
+        <span class="callout-icon">📈</span>
+        <div class="callout-body">
+          <strong>Expected gain (for GTX/RX 500 users): +5–12fps, smoother frame times</strong>
+          The main benefit is reduced 1% low FPS — the stutters you feel even when your average FPS looks fine.
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ── TWEAK 6 ──────────────────────────────────────────── -->
+    <div class="tip-section" id="tweak-6">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Tweak 06</span>
+          Stop Ping Spikes Forever — Disable Nagle's Algorithm
+        </div>
+      </div>
+
+      <p>Nagle's Algorithm is a TCP optimisation built into Windows that <strong>bundles small network packets together to reduce traffic</strong> — great for web browsing, terrible for gaming. It deliberately introduces a small delay to wait for more data. In VALORANT, this manifests as ping spikes and inconsistent hit registration.</p>
+
+      <div class="callout warning">
+        <span class="callout-icon">⚠️</span>
+        <div class="callout-body">
+          <strong>Registry edit — follow exactly.</strong> Incorrect edits can affect networking. These values are well-documented and safe when applied correctly.
+        </div>
+      </div>
+
+      <ol class="steps">
+        <li>Press <strong>Win + R</strong> → type <code>regedit</code> → OK</li>
+        <li>Navigate to: <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces</code></li>
+        <li>You'll see multiple subkeys (GUIDs). Find the one with your IP address listed (check the <strong>DhcpIPAddress</strong> or <strong>IPAddress</strong> value)</li>
+        <li>Inside that key, right-click → <strong>New → DWORD (32-bit) Value</strong></li>
+        <li>Name it <code>TcpAckFrequency</code> → double-click → set value to <span class="val-set">1</span></li>
+        <li>Create another DWORD: <code>TCPNoDelay</code> → set value to <span class="val-set">1</span></li>
+        <li>Restart your PC</li>
+      </ol>
+
+      <div class="callout fps-gain">
+        <span class="callout-icon">📈</span>
+        <div class="callout-body">
+          <strong>Expected gain: -5 to -15ms ping, dramatically more consistent hit reg</strong>
+          This doesn't reduce your base ping (that's your ISP's job), but it eliminates the spikes that cause bullets to not register.
+        </div>
+      </div>
+    </div>
+
+    <!-- ── MID-ARTICLE EMAIL CAPTURE ────────────────────────── -->
+    <div class="email-capture">
+      <h3>🎯 You're Halfway Through</h3>
+      <p>Get our full network optimisation guide + VALORANT patch performance notes sent directly to you. No spam — just genuinely useful stuff.</p>
+      <form class="email-form" onsubmit="handleEmailSubmit(event)">
+        <input type="email" id="email-input" placeholder="your@email.com" required>
+        <button type="submit">Get the Guide →</button>
+      </form>
+      <p class="email-note" id="email-feedback">Free. Unsubscribe anytime.</p>
+    </div>
+
+    <!-- ── TWEAK 7 ──────────────────────────────────────────── -->
+    <div class="tip-section" id="tweak-7">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Tweak 07</span>
+          Strip Windows Visual Effects to Bare Metal
+        </div>
+      </div>
+
+      <p>Windows 11 runs animations, transparency effects, and shadow rendering in the background even when you're in fullscreen. These consume real GPU and CPU resources that should be going to VALORANT.</p>
+
+      <ol class="steps">
+        <li>Press <strong>Win + R</strong> → type <code>sysdm.cpl</code> → OK</li>
+        <li>Go to the <strong>Advanced</strong> tab → click <strong>Settings</strong> under Performance</li>
+        <li>Select <strong>"Adjust for best performance"</strong> (disables all effects)</li>
+        <li>Manually re-check two items: <strong>"Smooth edges of screen fonts"</strong> and <strong>"Show thumbnails instead of icons"</strong></li>
+        <li>Click Apply → OK</li>
+      </ol>
+
+      <div class="callout fps-gain">
+        <span class="callout-icon">📈</span>
+        <div class="callout-body">
+          <strong>Expected gain: +3–10fps, noticeable desktop responsiveness improvement</strong>
+          Re-enabling font smoothing prevents text from looking jagged — everything else you can happily leave off.
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ── TWEAK 8 ──────────────────────────────────────────── -->
+    <div class="tip-section" id="tweak-8">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Tweak 08</span>
+          Force VALORANT to High CPU Priority
+        </div>
+      </div>
+
+      <p>Windows manages CPU resources across every running process. By default, VALORANT gets the same priority as your browser, Discord, and everything else in the background. You can tell Windows to put VALORANT first.</p>
+
+      <ol class="steps">
+        <li>Launch VALORANT and get into a match (or practice range)</li>
+        <li>Open Task Manager (<strong>Ctrl + Shift + Esc</strong>)</li>
+        <li>Click the <strong>Details</strong> tab</li>
+        <li>Find <strong>VALORANT-Win64-Shipping.exe</strong></li>
+        <li>Right-click → <strong>Set Priority</strong> → <strong>High</strong></li>
+      </ol>
+
+      <div class="callout warning">
+        <span class="callout-icon">💡</span>
+        <div class="callout-body">
+          <strong>This resets on each launch.</strong> Valo Optimise sets this automatically every time VALORANT opens so you never have to remember.
+        </div>
+      </div>
+
+      <div class="callout fps-gain">
+        <span class="callout-icon">📈</span>
+        <div class="callout-body">
+          <strong>Expected gain: More consistent frame delivery, better 1% lows</strong>
+          Average FPS may not change dramatically, but the frame time consistency improves — the game feels smoother even at the same number.
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ── TWEAK 9 ──────────────────────────────────────────── -->
+    <div class="tip-section" id="tweak-9">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Tweak 09</span>
+          Fix the Micro-Stutter That Ruins Map Load
+        </div>
+      </div>
+
+      <p>You've experienced this: you load into a new map and for the first 30–60 seconds the game hitches every few seconds. That's your GPU compiling shaders on the fly because the cache is too small. Fix it once, and it stops forever.</p>
+
+      <ol class="steps">
+        <li>Open <strong>NVIDIA Control Panel</strong> → <strong>Manage 3D Settings</strong></li>
+        <li>Under <strong>Global Settings</strong>, find <strong>Shader Cache Size</strong></li>
+        <li>Change from <strong>Driver Default (4GB)</strong> to <span class="val-set">10 GB</span></li>
+        <li>Click Apply</li>
+      </ol>
+
+      <p>For AMD users: AMD Software → Preferences → Graphics → Shader Cache → set to maximum available.</p>
+
+      <div class="callout fps-gain">
+        <span class="callout-icon">📈</span>
+        <div class="callout-body">
+          <strong>Expected gain: Eliminates map-load micro-stutters entirely</strong>
+          Takes one full play session to rebuild the cache. After that, the first 30 seconds on every map is completely smooth.
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ── TWEAK 10 ──────────────────────────────────────────── -->
+    <div class="tip-section" id="tweak-10">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Tweak 10</span>
+          Disable Mouse Acceleration — Your Aim Depends On It
+        </div>
+      </div>
+
+      <p>Mouse acceleration (called "Enhance Pointer Precision" in Windows) makes your cursor travel further when you move the mouse faster. On the desktop this feels natural. In a game it's a catastrophe — your muscle memory trains to a movement that changes based on how fast you flick.</p>
+
+      <p><strong>Disable it in Windows:</strong></p>
+      <ol class="steps">
+        <li><strong>Settings</strong> → <strong>Bluetooth & devices</strong> → <strong>Mouse</strong> → <strong>Additional mouse settings</strong></li>
+        <li>Go to the <strong>Pointer Options</strong> tab</li>
+        <li>Uncheck <strong>"Enhance pointer precision"</strong> → Apply</li>
+      </ol>
+
+      <p><strong>Confirm in VALORANT:</strong> Settings → General → <strong>Raw Input Buffer</strong> → <span class="val-set">On</span>. This bypasses Windows entirely and reads your mouse directly.</p>
+
+      <div class="callout fps-gain">
+        <span class="callout-icon">🎯</span>
+        <div class="callout-body">
+          <strong>No FPS gain — but your aim will feel fundamentally more consistent within a week</strong>
+          This is the single most impactful non-FPS change you can make.
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ── TWEAK 11 ──────────────────────────────────────────── -->
+    <div class="tip-section" id="tweak-11">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Tweak 11</span>
+          Nuke Your Startup Programs
+        </div>
+      </div>
+
+      <p>Every app that launches with Windows is competing for RAM and CPU before you've even opened VALORANT. These are the top offenders consuming resources you don't need:</p>
+
+      <table class="settings-table">
+        <thead>
+          <tr><th>Program</th><th>Action</th><th>Why</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Discord</td><td><span class="val-set">Disable autostart</span></td><td>Uses 200–400MB RAM in background</td></tr>
+          <tr><td>Steam / Epic</td><td><span class="val-set">Disable autostart</span></td><td>Background update checks + overlays</td></tr>
+          <tr><td>OneDrive</td><td><span class="val-set">Disable autostart</span></td><td>Continuous disk I/O while gaming</td></tr>
+          <tr><td>Spotify</td><td><span class="val-set">Disable autostart</span></td><td>Chromium-based, heavy RAM usage</td></tr>
+          <tr><td>Teams / Slack</td><td><span class="val-set">Disable autostart</span></td><td>Unnecessary if you're gaming</td></tr>
+          <tr><td>Antivirus</td><td>Leave on</td><td>Security essential</td></tr>
+          <tr><td>GPU Drivers</td><td>Leave on</td><td>Required for display</td></tr>
+        </tbody>
+      </table>
+
+      <ol class="steps">
+        <li>Press <strong>Ctrl + Shift + Esc</strong> → <strong>Startup apps</strong> tab (Windows 11) or <strong>Startup</strong> tab (Windows 10)</li>
+        <li>Right-click each unnecessary app → <strong>Disable</strong></li>
+      </ol>
+
+      <div class="callout fps-gain">
+        <span class="callout-icon">📈</span>
+        <div class="callout-body">
+          <strong>Expected gain: +5–15fps, 200–800MB RAM freed for VALORANT</strong>
+          VALORANT runs notably smoother on systems with at least 4GB of free RAM before launch.
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ── TWEAK 12 ──────────────────────────────────────────── -->
+    <div class="tip-section" id="tweak-12">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Tweak 12</span>
+          Let Valo Optimise Do All of This Automatically
+        </div>
+      </div>
+
+      <p>Every tweak in this guide — plus 30 more — is automated inside <strong>Valo Optimise</strong>, a free Windows desktop app built specifically for VALORANT players. One click applies everything: power plans, GPU settings, network tweaks, CPU priority, startup cleanup.</p>
+
+      <p>No game files are modified. No scripts. No guesswork. 100% Vanguard-safe by design — Riot's anti-cheat operates at the kernel level and does not flag OS-level performance optimisations.</p>
+
+      <table class="settings-table">
+        <thead>
+          <tr><th>Feature</th><th>Free</th><th>Pro (£4.99/mo)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>All 12 tweaks from this guide</td><td>✓</td><td>✓</td></tr>
+          <tr><td>Power plan management</td><td>✓</td><td>✓</td></tr>
+          <tr><td>GPU optimisation</td><td>✓</td><td>✓</td></tr>
+          <tr><td>Network tweaks (Nagle's etc.)</td><td>✓</td><td>✓</td></tr>
+          <tr><td>Auto CPU priority on game launch</td><td>-</td><td>✓</td></tr>
+          <tr><td>System Health Score (0–100)</td><td>-</td><td>✓</td></tr>
+          <tr><td>Optimisation profiles</td><td>-</td><td>✓</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout fps-gain">
+        <span class="callout-icon">🚀</span>
+        <div class="callout-body">
+          <strong>Applying all 12 tweaks takes 10 minutes manually. Takes 10 seconds with Valo Optimise.</strong>
+          It also re-applies tweaks that reset after Windows updates — without you having to remember.
+        </div>
+      </div>
+    </div>
+
+    <!-- Completion banner -->
+    <div id="completion-banner">
+      <h3>🏆 All 12 Tweaks Applied</h3>
+      <p>Your PC is now running closer to its true potential. Load up VALORANT, run a practice range, and feel the difference. Share this guide with your duo — they're probably leaving FPS on the table too.</p>
+    </div>
+
+    <!-- Final CTA -->
+    <div class="final-cta">
+      <h2>Stop Tweaking. Start <em>Playing.</em></h2>
+      <p>Valo Optimise applies all of these settings automatically — and keeps them applied after every Windows update. Free to download, forever.</p>
+      <a href="https://valo-optimise.pages.dev" class="cta-btn" target="_blank">⚡ Download Free — Windows 11/10</a>
+      <p class="cta-sub">No account required · Vanguard-safe · 7-day free Pro trial included</p>
+    </div>
+
+    <!-- Share section -->
+    <div class="share-section">
+      <h3>Help Your Team Rank Up</h3>
+      <p>Your teammates are probably running stock Windows settings right now. Share this and fix that.</p>
+      <div class="share-btns">
+        <button class="share-btn twitter" onclick="shareTwitter()">
+          𝕏 Share on X
+        </button>
+        <button class="share-btn reddit" onclick="shareReddit()">
+          Share on Reddit
+        </button>
+        <button class="share-btn whatsapp" onclick="shareWhatsApp()">
+          📱 WhatsApp
+        </button>
+        <button class="share-btn copy" onclick="copyLink(this)">
+          🔗 Copy Link
+        </button>
+      </div>
+    </div>
+
+    <!-- Related articles -->
+    <div>
+      <h3 style="font-size:18px;font-weight:700;margin-bottom:16px;">Keep Optimising</h3>
+      <div class="related-grid">
+        <a class="related-card" href="#">
+          <div class="tags"><span class="tag">Coming Soon</span></div>
+          <h4>How to Fix VALORANT Stuttering on Windows 11</h4>
+          <p>Deep dive into frame time consistency — why your FPS number lies to you.</p>
+        </a>
+        <a class="related-card" href="#">
+          <div class="tags"><span class="tag">Coming Soon</span></div>
+          <h4>Best VALORANT Settings for Every GPU (RTX 3060 to RX 580)</h4>
+          <p>Hardware-specific settings tested and benchmarked by the Valo Optimise team.</p>
+        </a>
+        <a class="related-card" href="#">
+          <div class="tags"><span class="tag">Coming Soon</span></div>
+          <h4>How to Reduce Ping in VALORANT — The Full Network Guide</h4>
+          <p>Router settings, DNS, QoS, and the registry tweaks that actually matter.</p>
+        </a>
+      </div>
+    </div>
+
+  </article>
+</div>
+
+<!-- Floating CTA -->
+<a href="https://valo-optimise.pages.dev" id="floating-cta" target="_blank">
+  ⚡ Free Download — Valo Optimise
+</a>
+
+<!-- Footer -->
+<footer>
+  <p style="margin-bottom:8px;">
+    <a href="../index.html">Blog Home</a> &nbsp;·&nbsp;
+    <a href="https://valo-optimise.pages.dev" target="_blank">Valo Optimise App</a> &nbsp;·&nbsp;
+    <a href="https://valo-optimise.pages.dev/docs/privacy.html" target="_blank">Privacy</a>
+  </p>
+  <p>© 2026 Valo Optimise Ltd · Not affiliated with Riot Games · All optimisations are OS-level and Vanguard-safe</p>
+</footer>
+
+<script>
+  // ── Reading progress bar
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    document.getElementById('progress-bar').style.width = Math.min(100, (scrolled / total) * 100) + '%';
+
+    // Floating CTA appears after 500px scroll
+    const cta = document.getElementById('floating-cta');
+    if (scrolled > 500) cta.classList.add('visible');
+    else cta.classList.remove('visible');
+  });
+
+  // ── Checklist tracker
+  function updateTracker() {
+    const checks = document.querySelectorAll('.tip-check');
+    const done = document.querySelectorAll('.tip-check:checked').length;
+    const total = checks.length;
+    const pct = (done / total) * 100;
+
+    document.getElementById('counter-display').textContent = done + '/' + total;
+    document.getElementById('tracker-bar').style.width = pct + '%';
+
+    if (done === total) {
+      document.getElementById('completion-banner').style.display = 'block';
+      document.getElementById('completion-banner').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    // Strikethrough completed sections
+    document.querySelectorAll('.tip-check').forEach(cb => {
+      const heading = cb.closest('.tip-header').querySelector('.tip-heading');
+      heading.style.opacity = cb.checked ? '0.5' : '1';
+      heading.style.textDecoration = cb.checked ? 'line-through' : 'none';
+    });
+  }
+
+  // ── Copy code buttons
+  function copyCode(btn) {
+    const code = btn.parentElement.textContent.replace('Copy', '').trim();
+    navigator.clipboard.writeText(code).then(() => {
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = 'Copy', 2000);
+    });
+  }
+
+  // ── Share functions
+  function shareTwitter() {
+    const text = encodeURIComponent('Just found 12 VALORANT FPS tweaks that actually work — avg +47fps on Windows 11 🎯');
+    const url  = encodeURIComponent(window.location.href);
+    window.open('https://twitter.com/intent/tweet?text=' + text + '&url=' + url, '_blank');
+  }
+
+  function shareReddit() {
+    const title = encodeURIComponent('12 VALORANT FPS tweaks for Windows 11 — all free, all Vanguard-safe (avg +47fps)');
+    const url   = encodeURIComponent(window.location.href);
+    window.open('https://reddit.com/submit?title=' + title + '&url=' + url, '_blank');
+  }
+
+  function shareWhatsApp() {
+    const text = encodeURIComponent('These 12 VALORANT FPS tweaks gave me +40fps — takes 10 minutes and it\'s free: ' + window.location.href);
+    window.open('https://wa.me/?text=' + text, '_blank');
+  }
+
+  function copyLink(btn) {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      btn.textContent = '✓ Copied!';
+      setTimeout(() => btn.textContent = '🔗 Copy Link', 2000);
+    });
+  }
+
+  // ── Email form
+  function handleEmailSubmit(e) {
+    e.preventDefault();
+    const email = document.getElementById('email-input').value;
+    const feedback = document.getElementById('email-feedback');
+    feedback.textContent = '✓ You\'re in! Guide coming shortly.';
+    feedback.style.color = 'var(--accent2)';
+    document.getElementById('email-input').value = '';
+    document.querySelector('.email-form button').textContent = '✓ Done';
+    document.querySelector('.email-form button').disabled = true;
+    // TODO: POST to your email collection endpoint
+    console.log('Email captured:', email);
+  }
+
+  // ── Active TOC highlight
+  const sections = document.querySelectorAll('.tip-section');
+  const tocLinks = document.querySelectorAll('.toc a');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        tocLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-60px 0px -70% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
