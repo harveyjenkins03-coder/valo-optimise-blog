@@ -144,7 +144,8 @@
       transition: background 0.2s !important;
     }
 
-    .nav-cta:hover { background: #e63946 !important; }
+    .nav-cta:hover, .nav-cta:focus-visible { background: #e63946 !important; }
+    .nav-cta:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
 
     .article-hero {
       max-width: 800px;
@@ -311,7 +312,10 @@
     }
 
     .toc ol li a:hover,
+    .toc ol li a:focus-visible,
     .toc ol li a.active { background: var(--panel2); color: var(--text); }
+
+    .toc ol li a:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
 
     .toc ol li a.active::before { background: var(--accent); color: #fff; }
 
@@ -819,14 +823,14 @@
 
 <div id="progress-bar"></div>
 
-<nav>
+<nav role="navigation" aria-label="Main navigation">
   <a href="../index.html" class="nav-logo">
     <span>VALO</span> OPTIMISE BLOG
   </a>
   <div class="nav-links">
     <a href="../index.html">All Articles</a>
-    <a href="https://discord.gg/Fpx4SnxF" target="_blank">💬 Discord</a>
-    <a href="https://valooptimise.com" target="_blank" class="nav-cta">⚡ Free Download</a>
+    <a href="https://discord.gg/Fpx4SnxF" target="_blank" rel="noopener noreferrer">💬 Discord</a>
+    <a href="https://valooptimise.com" target="_blank" rel="noopener noreferrer" class="nav-cta">⚡ Free Download</a>
   </div>
 </nav>
 
@@ -882,7 +886,7 @@
       <li><a href="#tweak-11">One-Click: Valo Optimise</a></li>
     </ol>
     <div class="toc-cta">
-      <a href="https://valooptimise.com" target="_blank">⚡ Free Download</a>
+      <a href="https://valooptimise.com" target="_blank" rel="noopener noreferrer">⚡ Free Download</a>
     </div>
   </aside>
 
@@ -905,7 +909,7 @@
     <div class="tip-section" id="tweak-1">
       <div class="tip-header">
         <div class="tip-checkbox-wrap">
-          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark fix 1 as complete">
         </div>
         <div class="tip-heading">
           <span class="num">Fix 01</span>
@@ -998,7 +1002,7 @@
     <div class="tip-section" id="tweak-2">
       <div class="tip-header">
         <div class="tip-checkbox-wrap">
-          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark fix 2 as complete">
         </div>
         <div class="tip-heading">
           <span class="num">Fix 02</span>
@@ -1040,7 +1044,7 @@
     <div class="tip-section" id="tweak-3">
       <div class="tip-header">
         <div class="tip-checkbox-wrap">
-          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark fix 3 as complete">
         </div>
         <div class="tip-heading">
           <span class="num">Fix 03</span>
@@ -1084,7 +1088,7 @@
     <div class="tip-section" id="tweak-4">
       <div class="tip-header">
         <div class="tip-checkbox-wrap">
-          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark fix 4 as complete">
         </div>
         <div class="tip-heading">
           <span class="num">Fix 04</span>
@@ -1096,7 +1100,7 @@
 
       <p>If your game runs fine for the first 10 minutes then gradually becomes stuttery, this is almost certainly the cause.</p>
 
-      <p><strong>How to check:</strong> Download <a href="https://www.hwinfo.com/download/" target="_blank" style="color:var(--accent2)">HWiNFO64</a> (free) and run it while playing VALORANT. Watch for:</p>
+      <p><strong>How to check:</strong> Download <a href="https://www.hwinfo.com/download/" target="_blank" rel="noopener noreferrer" style="color:var(--accent2)">HWiNFO64</a> (free) and run it while playing VALORANT. Watch for:</p>
 
       <table class="settings-table">
         <thead>
@@ -1132,7 +1136,7 @@
     <div class="tip-section" id="tweak-5">
       <div class="tip-header">
         <div class="tip-checkbox-wrap">
-          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark fix 5 as complete">
         </div>
         <div class="tip-heading">
           <span class="num">Fix 05</span>
@@ -1170,7 +1174,7 @@
     <div class="tip-section" id="tweak-6">
       <div class="tip-header">
         <div class="tip-checkbox-wrap">
-          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark fix 6 as complete">
         </div>
         <div class="tip-heading">
           <span class="num">Fix 06</span>
@@ -1216,7 +1220,7 @@
       <h3>🎯 You're Halfway Through</h3>
       <p>Get our full GPU driver guide + thermal management deep-dive sent to you when published. No spam.</p>
       <form class="email-form" onsubmit="handleEmailSubmit(event)">
-        <input type="email" id="email-input" placeholder="your@email.com" required>
+        <input type="email" id="email-input" placeholder="your@email.com" required aria-label="Email address">
         <button type="submit">Notify Me →</button>
       </form>
       <p class="email-note" id="email-feedback">Free. Unsubscribe anytime.</p>
@@ -1226,7 +1230,7 @@
     <div class="tip-section" id="tweak-7">
       <div class="tip-header">
         <div class="tip-checkbox-wrap">
-          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark fix 7 as complete">
         </div>
         <div class="tip-heading">
           <span class="num">Fix 07</span>
@@ -1239,7 +1243,7 @@
       <p>A clean driver install using <strong>DDU (Display Driver Uninstaller)</strong> removes every trace of the old driver before reinstalling — unlike the standard update which just overwrites it.</p>
 
       <ol class="steps">
-        <li>Download <a href="https://www.guru3d.com/files-details/display-driver-uninstaller-download.html" target="_blank" style="color:var(--accent2)">DDU from Guru3D</a> (free, trusted tool)</li>
+        <li>Download <a href="https://www.guru3d.com/files-details/display-driver-uninstaller-download.html" target="_blank" rel="noopener noreferrer" style="color:var(--accent2)">DDU from Guru3D</a> (free, trusted tool)</li>
         <li>Download the latest <strong>Game Ready Driver</strong> from NVIDIA or AMD but <strong>don't install it yet</strong></li>
         <li>Disconnect from the internet (prevents Windows auto-reinstalling drivers)</li>
         <li>Boot into <strong>Safe Mode</strong>: Settings → System → Recovery → Advanced Startup → Restart now → Troubleshoot → Advanced Options → Startup Settings → Restart → press <strong>4</strong></li>
@@ -1270,7 +1274,7 @@
     <div class="tip-section" id="tweak-8">
       <div class="tip-header">
         <div class="tip-checkbox-wrap">
-          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark fix 8 as complete">
         </div>
         <div class="tip-heading">
           <span class="num">Fix 08</span>
@@ -1315,7 +1319,7 @@
     <div class="tip-section" id="tweak-9">
       <div class="tip-header">
         <div class="tip-checkbox-wrap">
-          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark fix 9 as complete">
         </div>
         <div class="tip-heading">
           <span class="num">Fix 09</span>
@@ -1354,7 +1358,7 @@
     <div class="tip-section" id="tweak-10">
       <div class="tip-header">
         <div class="tip-checkbox-wrap">
-          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark fix 10 as complete">
         </div>
         <div class="tip-heading">
           <span class="num">Fix 10</span>
@@ -1387,7 +1391,7 @@
     <div class="tip-section" id="tweak-11">
       <div class="tip-header">
         <div class="tip-checkbox-wrap">
-          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark fix 11 as complete">
         </div>
         <div class="tip-heading">
           <span class="num">Fix 11</span>
@@ -1418,7 +1422,7 @@
     <div class="final-cta">
       <h2>Stop Fighting Your <em>Own PC.</em></h2>
       <p>Valo Optimise applies all the automatable fixes from this guide — and keeps them applied. Free, Vanguard-safe, one click.</p>
-      <a href="https://valooptimise.com" class="cta-btn" target="_blank">⚡ Download Free — Windows 11/10</a>
+      <a href="https://valooptimise.com" class="cta-btn" target="_blank" rel="noopener noreferrer">⚡ Download Free — Windows 11/10</a>
       <p class="cta-sub">No account required · Vanguard-safe · 7-day free Pro trial included</p>
     </div>
 
@@ -1459,15 +1463,15 @@
   </article>
 </div>
 
-<a href="https://valooptimise.com" id="floating-cta" target="_blank">
+<a href="https://valooptimise.com" id="floating-cta" target="_blank" rel="noopener noreferrer">
   ⚡ Free Download — Valo Optimise
 </a>
 
 <footer>
   <p style="margin-bottom:8px;">
     <a href="../index.html">Blog Home</a> &nbsp;·&nbsp;
-    <a href="https://valooptimise.com" target="_blank">Valo Optimise App</a> &nbsp;·&nbsp;
-    <a href="https://valooptimise.com/docs/privacy.html" target="_blank">Privacy</a>
+    <a href="https://valooptimise.com" target="_blank" rel="noopener noreferrer">Valo Optimise App</a> &nbsp;·&nbsp;
+    <a href="https://valooptimise.com/docs/privacy.html" target="_blank" rel="noopener noreferrer">Privacy</a>
   </p>
   <p>© 2026 Valo Optimise Ltd · Not affiliated with Riot Games · All optimisations are OS-level and Vanguard-safe</p>
 </footer>

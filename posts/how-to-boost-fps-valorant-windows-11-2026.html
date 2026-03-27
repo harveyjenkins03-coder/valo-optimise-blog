@@ -152,7 +152,8 @@
       transition: background 0.2s, transform 0.2s !important;
     }
 
-    .nav-cta:hover { background: #e63946 !important; transform: translateY(-1px); }
+    .nav-cta:hover, .nav-cta:focus-visible { background: #e63946 !important; transform: translateY(-1px); }
+    .nav-cta:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
 
     /* ── Article Hero ─────────────────────────────────────────── */
     .article-hero {
@@ -332,10 +333,13 @@
     }
 
     .toc ol li a:hover,
+    .toc ol li a:focus-visible,
     .toc ol li a.active {
       background: var(--panel2);
       color: var(--text);
     }
+
+    .toc ol li a:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
 
     .toc ol li a.active::before { background: var(--accent); color: #fff; }
 
@@ -666,7 +670,8 @@
       animation: pulse 2.5s ease-in-out infinite;
     }
 
-    .cta-btn:hover { background: #e63946; transform: translateY(-2px); animation: none; }
+    .cta-btn:hover, .cta-btn:focus-visible { background: #e63946; transform: translateY(-2px); animation: none; }
+    .cta-btn:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
 
     @keyframes pulse {
       0%, 100% { box-shadow: 0 0 0 0 rgba(255,70,85,0.4); }
@@ -719,7 +724,8 @@
       text-decoration: none;
     }
 
-    .share-btn:hover { opacity: 0.85; transform: translateY(-1px); }
+    .share-btn:hover, .share-btn:focus-visible { opacity: 0.85; transform: translateY(-1px); }
+    .share-btn:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
 
     .share-btn.twitter { background: #1da1f2; color: #fff; }
     .share-btn.reddit  { background: #ff4500; color: #fff; }
@@ -830,14 +836,14 @@
 <div id="progress-bar"></div>
 
 <!-- Nav -->
-<nav>
+<nav role="navigation" aria-label="Main navigation">
   <a href="../index.html" class="nav-logo">
     <span>VALO</span> OPTIMISE BLOG
   </a>
   <div class="nav-links">
     <a href="../index.html">All Articles</a>
-    <a href="https://discord.gg/Fpx4SnxF" target="_blank">💬 Discord</a>
-    <a href="https://valooptimise.com" target="_blank" class="nav-cta">⚡ Free Download</a>
+    <a href="https://discord.gg/Fpx4SnxF" target="_blank" rel="noopener noreferrer">💬 Discord</a>
+    <a href="https://valooptimise.com" target="_blank" rel="noopener noreferrer" class="nav-cta">⚡ Free Download</a>
   </div>
 </nav>
 
@@ -897,7 +903,7 @@
       <li><a href="#tweak-12">One-Click: Valo Optimise</a></li>
     </ol>
     <div class="toc-cta">
-      <a href="https://valooptimise.com" target="_blank">⚡ Free Download</a>
+      <a href="https://valooptimise.com" target="_blank" rel="noopener noreferrer">⚡ Free Download</a>
     </div>
   </aside>
 
@@ -921,7 +927,7 @@
     <div class="tip-section" id="tweak-1">
       <div class="tip-header">
         <div class="tip-checkbox-wrap">
-          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark tweak 1 as complete">
         </div>
         <div class="tip-heading">
           <span class="num">Tweak 01</span>
@@ -970,7 +976,7 @@
     <div class="tip-section" id="tweak-2">
       <div class="tip-header">
         <div class="tip-checkbox-wrap">
-          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark tweak 2 as complete">
         </div>
         <div class="tip-heading">
           <span class="num">Tweak 02</span>
@@ -1024,7 +1030,7 @@
     <div class="tip-section" id="tweak-3">
       <div class="tip-header">
         <div class="tip-checkbox-wrap">
-          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark tweak 3 as complete">
         </div>
         <div class="tip-heading">
           <span class="num">Tweak 03</span>
@@ -1055,7 +1061,7 @@
     <div class="tip-section" id="tweak-4">
       <div class="tip-header">
         <div class="tip-checkbox-wrap">
-          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark tweak 4 as complete">
         </div>
         <div class="tip-heading">
           <span class="num">Tweak 04</span>
@@ -1098,7 +1104,7 @@
     <div class="tip-section" id="tweak-5">
       <div class="tip-header">
         <div class="tip-checkbox-wrap">
-          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark tweak 5 as complete">
         </div>
         <div class="tip-heading">
           <span class="num">Tweak 05</span>
@@ -1131,7 +1137,7 @@
     <div class="tip-section" id="tweak-6">
       <div class="tip-header">
         <div class="tip-checkbox-wrap">
-          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark tweak 6 as complete">
         </div>
         <div class="tip-heading">
           <span class="num">Tweak 06</span>
@@ -1172,7 +1178,7 @@
       <h3>🎯 You're Halfway Through</h3>
       <p>Get our full network optimisation guide + VALORANT patch performance notes sent directly to you. No spam — just genuinely useful stuff.</p>
       <form class="email-form" onsubmit="handleEmailSubmit(event)">
-        <input type="email" id="email-input" placeholder="your@email.com" required>
+        <input type="email" id="email-input" placeholder="your@email.com" required aria-label="Email address">
         <button type="submit">Get the Guide →</button>
       </form>
       <p class="email-note" id="email-feedback">Free. Unsubscribe anytime.</p>
@@ -1182,7 +1188,7 @@
     <div class="tip-section" id="tweak-7">
       <div class="tip-header">
         <div class="tip-checkbox-wrap">
-          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark tweak 7 as complete">
         </div>
         <div class="tip-heading">
           <span class="num">Tweak 07</span>
@@ -1215,7 +1221,7 @@
     <div class="tip-section" id="tweak-8">
       <div class="tip-header">
         <div class="tip-checkbox-wrap">
-          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark tweak 8 as complete">
         </div>
         <div class="tip-heading">
           <span class="num">Tweak 08</span>
@@ -1255,7 +1261,7 @@
     <div class="tip-section" id="tweak-9">
       <div class="tip-header">
         <div class="tip-checkbox-wrap">
-          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark tweak 9 as complete">
         </div>
         <div class="tip-heading">
           <span class="num">Tweak 09</span>
@@ -1289,7 +1295,7 @@
     <div class="tip-section" id="tweak-10">
       <div class="tip-header">
         <div class="tip-checkbox-wrap">
-          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark tweak 10 as complete">
         </div>
         <div class="tip-heading">
           <span class="num">Tweak 10</span>
@@ -1323,7 +1329,7 @@
     <div class="tip-section" id="tweak-11">
       <div class="tip-header">
         <div class="tip-checkbox-wrap">
-          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark tweak 11 as complete">
         </div>
         <div class="tip-heading">
           <span class="num">Tweak 11</span>
@@ -1368,7 +1374,7 @@
     <div class="tip-section" id="tweak-12">
       <div class="tip-header">
         <div class="tip-checkbox-wrap">
-          <input type="checkbox" class="tip-check" onchange="updateTracker()">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark tweak 12 as complete">
         </div>
         <div class="tip-heading">
           <span class="num">Tweak 12</span>
@@ -1414,7 +1420,7 @@
     <div class="final-cta">
       <h2>Stop Tweaking. Start <em>Playing.</em></h2>
       <p>Valo Optimise applies all of these settings automatically — and keeps them applied after every Windows update. Free to download, forever.</p>
-      <a href="https://valooptimise.com" class="cta-btn" target="_blank">⚡ Download Free — Windows 11/10</a>
+      <a href="https://valooptimise.com" class="cta-btn" target="_blank" rel="noopener noreferrer">⚡ Download Free — Windows 11/10</a>
       <p class="cta-sub">No account required · Vanguard-safe · 7-day free Pro trial included</p>
     </div>
 
@@ -1464,7 +1470,7 @@
 </div>
 
 <!-- Floating CTA -->
-<a href="https://valooptimise.com" id="floating-cta" target="_blank">
+<a href="https://valooptimise.com" id="floating-cta" target="_blank" rel="noopener noreferrer">
   ⚡ Free Download — Valo Optimise
 </a>
 
@@ -1472,8 +1478,8 @@
 <footer>
   <p style="margin-bottom:8px;">
     <a href="../index.html">Blog Home</a> &nbsp;·&nbsp;
-    <a href="https://valooptimise.com" target="_blank">Valo Optimise App</a> &nbsp;·&nbsp;
-    <a href="https://valooptimise.com/docs/privacy.html" target="_blank">Privacy</a>
+    <a href="https://valooptimise.com" target="_blank" rel="noopener noreferrer">Valo Optimise App</a> &nbsp;·&nbsp;
+    <a href="https://valooptimise.com/docs/privacy.html" target="_blank" rel="noopener noreferrer">Privacy</a>
   </p>
   <p>© 2026 Valo Optimise Ltd · Not affiliated with Riot Games · All optimisations are OS-level and Vanguard-safe</p>
 </footer>
