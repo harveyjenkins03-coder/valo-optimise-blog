@@ -1,0 +1,2 @@
+/blog/* /:splat 301
+/feed /index.html 301
