@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Truth About VALORANT Anti-Cheat (Vanguard) — What It Can and Can't See (2026)</title>
+  <meta name="description" content="What does Vanguard actually monitor? Is it spyware? Which optimisation tools are safe? Every myth debunked with facts — the definitive 2026 Vanguard guide.">
+  <meta name="keywords" content="valorant vanguard, vanguard anti-cheat, is vanguard spyware, vanguard kernel driver, valorant anti-cheat safe, vanguard what does it do, vanguard 2026">
+  <link rel="canonical" href="https://blog.valooptimise.com/posts/valorant-vanguard-anti-cheat-truth-2026.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="The Truth About VALORANT Anti-Cheat (Vanguard) — What It Can and Can't See">
+  <meta property="og:description" content="What does Vanguard actually monitor? Is it spyware? Which tools are safe? Every myth debunked.">
+  <meta property="og:image" content="https://valooptimise.com/docs/assets/og-image.png">
+  <meta property="og:url" content="https://blog.valooptimise.com/posts/valorant-vanguard-anti-cheat-truth-2026.html">
+  <meta property="og:site_name" content="Valo Optimise Blog">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Truth About VALORANT Anti-Cheat (Vanguard) — What It Can and Can't See">
+  <meta name="twitter:description" content="What does Vanguard actually monitor? Is it spyware? Which tools are safe? Every myth debunked.">
+  <meta name="twitter:image" content="https://valooptimise.com/docs/assets/og-image.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "The Truth About VALORANT Anti-Cheat (Vanguard) — What It Can and Can't See (2026)",
+        "description": "What does Vanguard actually monitor? Is it spyware? Which optimisation tools are safe? Every myth debunked with facts.",
+        "image": "https://valooptimise.com/docs/assets/og-image.png",
+        "author": { "@type": "Person", "name": "Harvey Jenkins" },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Valo Optimise",
+          "logo": { "@type": "ImageObject", "url": "https://valooptimise.com/docs/assets/icon_256.png" }
+        },
+        "datePublished": "2026-03-27",
+        "dateModified": "2026-03-27",
+        "mainEntityOfPage": "https://blog.valooptimise.com/posts/valorant-vanguard-anti-cheat-truth-2026.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is Vanguard spyware?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. Vanguard has been independently audited and only monitors for cheat-related activity within VALORANT processes. It does not keylog, capture your screen, read your files, or send browsing data." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Vanguard cause blue screens (BSODs)?",
+            "acceptedAnswer": { "@type": "Answer", "text": "BSODs from Vanguard are rare and almost always caused by conflicting kernel-level drivers (vulnerable anti-cheat from other games, certain RGB software drivers). Updating or removing the conflicting driver resolves it." }
+          },
+          {
+            "@type": "Question",
+            "name": "Are PC optimisation tools safe to use with Vanguard?",
+            "acceptedAnswer": { "@type": "Answer", "text": "OS-level optimisation tools that modify Windows settings, power plans, registry values, and GPU control panel settings are 100% safe. Tools that inject into VALORANT's process memory or use driver-level input spoofing are not." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Vanguard slow down my PC?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Vanguard's kernel driver has negligible performance impact — typically less than 0.1% CPU usage and minimal memory footprint. It is comparable to any other driver running on your system." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="icon" href="https://valooptimise.com/docs/assets/icon_256.png">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4629819662160550" crossorigin="anonymous"></script>
+
+  <style>
+    :root {
+      --bg: #0a0e1a; --panel: #111827; --panel2: #1c2a3a;
+      --accent: #ff4655; --accent2: #00d4aa;
+      --text: #f0f4ff; --muted: #6b7a99; --border: #1e2d42;
+      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --radius: 10px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font); line-height: 1.7; font-size: 16px; }
+
+    #progress-bar { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: linear-gradient(90deg, var(--accent), var(--accent2)); z-index: 9999; transition: width 0.1s linear; }
+
+    nav { position: sticky; top: 0; background: rgba(10,14,26,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; z-index: 100; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); font-weight: 700; font-size: 15px; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; align-items: center; gap: 20px; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta { background: var(--accent); color: #fff !important; padding: 8px 18px; border-radius: 6px; font-weight: 600; font-size: 13px !important; transition: background 0.2s !important; }
+    .nav-cta:hover, .nav-cta:focus-visible { background: #e63946 !important; }
+    .nav-cta:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
+
+    .article-hero { max-width: 800px; margin: 48px auto 0; padding: 0 24px; }
+    .tags { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+    .tag { background: var(--panel); border: 1px solid var(--border); color: var(--accent2); font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 20px; letter-spacing: 0.04em; text-transform: uppercase; }
+    .article-hero h1 { font-size: clamp(24px, 4vw, 38px); line-height: 1.25; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 16px; }
+    .article-hero h1 em { font-style: normal; color: var(--accent); }
+    .article-meta { display: flex; align-items: center; gap: 16px; color: var(--muted); font-size: 14px; margin-bottom: 24px; flex-wrap: wrap; }
+    .read-time { background: var(--panel); border: 1px solid var(--border); padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; color: var(--accent2); }
+
+    .hook-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 32px; }
+    .hook-box { background: var(--panel); border: 1px solid var(--border); border-left: 3px solid var(--accent2); padding: 12px 16px; border-radius: var(--radius); font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+
+    .progress-tracker { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 20px; margin-bottom: 32px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .tracker-label { font-size: 14px; font-weight: 600; }
+    .tracker-label span { color: var(--accent2); }
+    .tracker-bar-wrap { flex: 1; background: var(--panel2); height: 8px; border-radius: 4px; overflow: hidden; }
+    .tracker-bar { height: 100%; width: 0%; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 4px; transition: width 0.3s ease; }
+
+    .article-layout { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; display: grid; grid-template-columns: 240px 1fr; gap: 48px; align-items: start; }
+
+    .toc { position: sticky; top: 72px; background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+    .toc-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 14px; }
+    .toc ol { list-style: none; counter-reset: toc; }
+    .toc ol li { counter-increment: toc; margin-bottom: 6px; }
+    .toc ol li a { display: flex; align-items: flex-start; gap: 8px; color: var(--muted); text-decoration: none; font-size: 13px; line-height: 1.4; padding: 4px 8px; border-radius: 6px; transition: background 0.15s, color 0.15s; }
+    .toc ol li a::before { content: counter(toc); background: var(--panel2); color: var(--accent); font-size: 10px; font-weight: 700; min-width: 18px; height: 18px; border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
+    .toc ol li a:hover, .toc ol li a:focus-visible, .toc ol li a.active { background: var(--panel2); color: var(--text); }
+    .toc ol li a:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
+    .toc ol li a.active::before { background: var(--accent); color: #fff; }
+    .toc-cta { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border); }
+    .toc-cta a { display: block; background: var(--accent); color: #fff; text-align: center; padding: 10px; border-radius: 8px; font-size: 13px; font-weight: 700; text-decoration: none; transition: background 0.2s; }
+    .toc-cta a:hover { background: #e63946; }
+
+    article { min-width: 0; }
+
+    .article-intro { font-size: 17px; line-height: 1.8; color: #c8d0e0; margin-bottom: 32px; padding: 24px; background: var(--panel); border-radius: var(--radius); border-left: 3px solid var(--accent); }
+    .article-intro strong { color: var(--text); }
+
+    .tip-section { margin-bottom: 48px; scroll-margin-top: 80px; }
+    .tip-header { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px; }
+    .tip-checkbox-wrap { margin-top: 4px; flex-shrink: 0; }
+    .tip-check { width: 20px; height: 20px; accent-color: var(--accent2); cursor: pointer; }
+    .tip-heading { font-size: 22px; font-weight: 700; line-height: 1.3; color: var(--text); }
+    .tip-heading .num { color: var(--accent); font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 4px; }
+    .tip-section p { color: #c8d0e0; margin-bottom: 14px; line-height: 1.8; }
+
+    .settings-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    .settings-table th { text-align: left; padding: 10px 14px; background: var(--panel2); color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); }
+    .settings-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: #c8d0e0; vertical-align: top; }
+    .settings-table tr:last-child td { border-bottom: none; }
+    .settings-table td:first-child { color: var(--text); font-weight: 600; }
+    .val-safe { color: var(--accent2); font-weight: 700; }
+    .val-unsafe { color: var(--accent); font-weight: 700; }
+
+    .steps { list-style: none; counter-reset: steps; margin: 16px 0; }
+    .steps li { counter-increment: steps; display: flex; gap: 14px; margin-bottom: 12px; color: #c8d0e0; }
+    .steps li::before { content: counter(steps); background: var(--accent); color: #fff; font-size: 11px; font-weight: 700; min-width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-top: 2px; flex-shrink: 0; }
+
+    .callout { border-radius: var(--radius); padding: 16px 20px; margin: 20px 0; display: flex; gap: 14px; align-items: flex-start; }
+    .callout-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+    .callout-body { font-size: 14px; line-height: 1.7; }
+    .callout-body strong { display: block; margin-bottom: 4px; font-size: 15px; }
+    .callout.fps-gain { background: rgba(0,212,170,0.08); border: 1px solid rgba(0,212,170,0.25); }
+    .callout.fps-gain .callout-body { color: var(--accent2); }
+    .callout.warning { background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.25); }
+    .callout.warning .callout-body { color: #f59e0b; }
+    .callout.fomo { background: rgba(255,70,85,0.08); border: 1px solid rgba(255,70,85,0.25); }
+    .callout.fomo .callout-body { color: #ff9ea6; }
+
+    .section-divider { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+
+    /* Myth table */
+    .myth-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    .myth-table th { text-align: left; padding: 10px 14px; background: var(--panel2); color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); }
+    .myth-table td { padding: 12px 14px; border-bottom: 1px solid var(--border); color: #c8d0e0; vertical-align: top; }
+    .myth-table tr:last-child td { border-bottom: none; }
+    .myth-table td:first-child { color: var(--text); font-weight: 600; }
+    .myth-label { display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 2px 8px; border-radius: 4px; margin-bottom: 4px; }
+    .myth-label.false { background: rgba(255,70,85,0.15); color: var(--accent); }
+    .myth-label.mostly-false { background: rgba(245,158,11,0.15); color: #f59e0b; }
+    .myth-label.true { background: rgba(0,212,170,0.15); color: var(--accent2); }
+
+    /* Monitor grid */
+    .monitor-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 16px 0; }
+    .monitor-card { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; }
+    .monitor-card .card-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
+    .monitor-card .card-label.monitors { color: var(--accent); }
+    .monitor-card .card-label.ignores { color: var(--accent2); }
+    .monitor-card .card-desc { font-size: 13px; color: #c8d0e0; line-height: 1.5; }
+
+    .code-block { background: #070b14; border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; font-family: 'Consolas', 'Courier New', monospace; font-size: 13px; color: var(--accent2); margin: 16px 0; overflow-x: auto; position: relative; }
+    .code-block .copy-code { position: absolute; top: 10px; right: 10px; background: var(--panel2); border: 1px solid var(--border); color: var(--muted); font-size: 11px; padding: 4px 10px; border-radius: 4px; cursor: pointer; font-family: var(--font); transition: color 0.2s; }
+    .code-block .copy-code:hover { color: var(--text); }
+
+    .email-capture { background: linear-gradient(135deg, #111827, #0f1c2e); border: 1px solid var(--border); border-top: 2px solid var(--accent); border-radius: var(--radius); padding: 28px; margin: 48px 0; text-align: center; }
+    .email-capture h3 { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+    .email-capture p { color: var(--muted); font-size: 14px; margin-bottom: 20px; }
+    .email-form { display: flex; gap: 10px; max-width: 440px; margin: 0 auto; }
+    .email-form input { flex: 1; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; color: var(--text); font-family: var(--font); font-size: 14px; outline: none; transition: border-color 0.2s; }
+    .email-form input:focus { border-color: var(--accent2); }
+    .email-form button { background: var(--accent); color: #fff; border: none; border-radius: 8px; padding: 12px 22px; font-family: var(--font); font-size: 14px; font-weight: 700; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
+    .email-form button:hover { background: #e63946; }
+    .email-note { font-size: 12px; color: var(--muted); margin-top: 10px; }
+
+    .final-cta { background: linear-gradient(135deg, #0f1824, #1a0d10); border: 1px solid rgba(255,70,85,0.3); border-radius: 14px; padding: 36px; margin: 48px 0; text-align: center; }
+    .final-cta h2 { font-size: 26px; font-weight: 800; margin-bottom: 10px; }
+    .final-cta h2 em { font-style: normal; color: var(--accent); }
+    .final-cta p { color: var(--muted); font-size: 15px; margin-bottom: 24px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .cta-btn { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; font-size: 16px; font-weight: 700; padding: 14px 36px; border-radius: 8px; transition: background 0.2s, transform 0.2s; animation: pulse 2.5s ease-in-out infinite; }
+    .cta-btn:hover, .cta-btn:focus-visible { background: #e63946; transform: translateY(-2px); animation: none; }
+    .cta-btn:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
+    @keyframes pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(255,70,85,0.4); } 50% { box-shadow: 0 0 0 10px rgba(255,70,85,0); } }
+    .cta-sub { font-size: 13px; color: var(--muted); margin-top: 12px; }
+
+    .share-section { margin: 48px 0; padding: 28px; background: var(--panel); border-radius: var(--radius); border: 1px solid var(--border); text-align: center; }
+    .share-section h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+    .share-section p { color: var(--muted); font-size: 14px; margin-bottom: 20px; }
+    .share-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .share-btn { display: flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 8px; border: none; font-family: var(--font); font-size: 14px; font-weight: 600; cursor: pointer; transition: opacity 0.2s, transform 0.2s; text-decoration: none; }
+    .share-btn:hover, .share-btn:focus-visible { opacity: 0.85; transform: translateY(-1px); }
+    .share-btn:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
+    .share-btn.twitter { background: #1da1f2; color: #fff; }
+    .share-btn.reddit  { background: #ff4500; color: #fff; }
+    .share-btn.whatsapp { background: #25d366; color: #fff; }
+    .share-btn.copy    { background: var(--panel2); color: var(--text); border: 1px solid var(--border); }
+
+    #completion-banner { display: none; background: linear-gradient(135deg, rgba(0,212,170,0.15), rgba(0,212,170,0.05)); border: 1px solid rgba(0,212,170,0.4); border-radius: var(--radius); padding: 20px 24px; text-align: center; margin: 32px 0; animation: fadeIn 0.5s ease; }
+    #completion-banner h3 { color: var(--accent2); font-size: 20px; margin-bottom: 6px; }
+    #completion-banner p { color: var(--muted); font-size: 14px; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    #floating-cta { position: fixed; bottom: 24px; right: 24px; background: var(--accent); color: #fff; padding: 14px 22px; border-radius: 50px; font-size: 14px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 24px rgba(255,70,85,0.4); opacity: 0; transform: translateY(20px); transition: opacity 0.3s, transform 0.3s; pointer-events: none; z-index: 200; display: flex; align-items: center; gap: 8px; }
+    #floating-cta.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
+    #floating-cta:hover { background: #e63946; }
+
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 20px; }
+    .related-card { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; text-decoration: none; transition: border-color 0.2s, transform 0.2s; }
+    .related-card:hover { border-color: var(--accent2); transform: translateY(-2px); }
+    .related-card h4 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px; line-height: 1.4; }
+    .related-card p { font-size: 13px; color: var(--muted); }
+
+    footer { background: var(--panel); border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; margin-top: 80px; }
+    footer a { color: var(--accent2); text-decoration: none; }
+    footer p { color: var(--muted); font-size: 13px; }
+
+    @media (max-width: 860px) { .article-layout { grid-template-columns: 1fr; } .toc { position: static; } .email-form { flex-direction: column; } .monitor-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 600px) { .article-hero h1 { font-size: 24px; } .nav-links a:not(.nav-cta) { display: none; } }
+  </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<nav role="navigation" aria-label="Main navigation">
+  <a href="../index.html" class="nav-logo"><span>VALO</span> OPTIMISE BLOG</a>
+  <div class="nav-links">
+    <a href="../index.html">All Articles</a>
+    <a href="https://discord.gg/Fpx4SnxF" target="_blank" rel="noopener noreferrer">Discord</a>
+    <a href="https://valooptimise.com" target="_blank" rel="noopener noreferrer" class="nav-cta">Free Download</a>
+  </div>
+</nav>
+
+<div class="article-hero">
+  <div class="tags">
+    <span class="tag">Vanguard</span>
+    <span class="tag">Anti-Cheat</span>
+    <span class="tag">Security</span>
+    <span class="tag">2026</span>
+  </div>
+
+  <h1>The Truth About VALORANT Anti-Cheat (Vanguard) — <em>What It Can and Can't See</em></h1>
+
+  <div class="article-meta">
+    <span>March 27, 2026</span>
+    <span style="opacity:0.4">&middot;</span>
+    <span>Harvey Jenkins</span>
+    <span style="opacity:0.4">&middot;</span>
+    <span class="read-time">~6 min read</span>
+  </div>
+
+  <div class="hook-grid">
+    <div class="hook-box"><span>&#128737;</span> Kernel-level driver explained</div>
+    <div class="hook-box"><span>&#10003;</span> What's actually safe</div>
+    <div class="hook-box"><span>&#128274;</span> No it doesn't spy on you</div>
+    <div class="hook-box"><span>&#128269;</span> Myth vs fact</div>
+  </div>
+
+  <div class="progress-tracker">
+    <div class="tracker-label">Sections read: <span id="counter-display">0/7</span></div>
+    <div class="tracker-bar-wrap"><div class="tracker-bar" id="tracker-bar"></div></div>
+    <div style="font-size:13px;color:var(--muted);white-space:nowrap">Tick each as you go</div>
+  </div>
+</div>
+
+<div class="article-layout">
+
+  <aside class="toc">
+    <div class="toc-title">Contents</div>
+    <ol>
+      <li><a href="#section-1">What Is Vanguard and Why Kernel-Level?</a></li>
+      <li><a href="#section-2">What Vanguard Actually Monitors</a></li>
+      <li><a href="#section-3">What Vanguard Does NOT Do</a></li>
+      <li><a href="#section-4">Which Optimisation Tools Are Safe?</a></li>
+      <li><a href="#section-5">Common Myths Debunked</a></li>
+      <li><a href="#section-6">How to Check If Vanguard Is Running</a></li>
+      <li><a href="#section-7">The Bottom Line</a></li>
+    </ol>
+    <div class="toc-cta">
+      <a href="https://valooptimise.com" target="_blank" rel="noopener noreferrer">Free Download</a>
+    </div>
+  </aside>
+
+  <article>
+
+    <div class="article-intro">
+      <strong>Vanguard is the most misunderstood piece of software in competitive gaming.</strong> Every month, new threads appear on Reddit claiming it's spyware, that it watches everything you do, or that it'll ban you for using MSI Afterburner. None of that is true — but the fear is understandable when something runs at kernel level on your PC.<br><br>
+      This guide breaks down exactly what Vanguard does, what it doesn't do, which tools are safe, and which myths need to die. No speculation — just how it actually works.
+    </div>
+
+    <!-- Ad: below intro -->
+    <div style="margin: 24px 0; text-align: center;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-4629819662160550"
+           data-ad-slot="auto"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <div class="callout fomo">
+      <span class="callout-icon">&#128680;</span>
+      <div class="callout-body">
+        <strong>If you're worried about getting banned for optimising your PC — read Section 4.</strong>
+        OS-level tweaks like power plans, registry edits, and GPU control panel settings are completely safe. They don't touch game memory and Vanguard doesn't care about them.
+      </div>
+    </div>
+
+    <!-- ── SECTION 1 ────────────────────────────────────────── -->
+    <div class="tip-section" id="section-1">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap"><input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark section 1 as read"></div>
+        <div class="tip-heading">
+          <span class="num">Section 01</span>
+          What Is Vanguard and Why Kernel-Level?
+        </div>
+      </div>
+
+      <p>Vanguard is Riot Games' proprietary anti-cheat system, built specifically for VALORANT. It consists of two components: a <strong>kernel-level driver</strong> (vgk.sys) that loads at system boot, and a <strong>user-mode client</strong> that runs when VALORANT is open.</p>
+
+      <p>The kernel-level driver is the part that generates controversy. It runs at <strong>Ring 0</strong> — the deepest level of Windows, the same privilege level as your GPU drivers, your audio drivers, and Windows itself. This is not unusual for security software. Most anti-cheat systems, antivirus programs, and hardware drivers operate at this level.</p>
+
+      <p><strong>Why does it need kernel access?</strong> Because cheats operate at kernel level. A user-mode anti-cheat (Ring 3) literally cannot see what a kernel-mode cheat is doing — it's like asking a security guard to monitor a room they're locked out of. The only way to detect kernel-level cheats is to operate at the same privilege level.</p>
+
+      <div class="settings-table" style="margin: 20px 0;">
+        <table class="settings-table">
+          <thead><tr><th>Component</th><th>Privilege</th><th>When Active</th><th>Purpose</th></tr></thead>
+          <tbody>
+            <tr><td>vgk.sys (driver)</td><td>Ring 0 (Kernel)</td><td>System boot onwards</td><td>Prevents cheats loading before VALORANT starts</td></tr>
+            <tr><td>vgc.exe (client)</td><td>Ring 3 (User)</td><td>Only when VALORANT runs</td><td>Active monitoring, cheat signature scanning</td></tr>
+            <tr><td>vgtray.exe (tray)</td><td>Ring 3 (User)</td><td>System tray icon</td><td>Status indicator, lets you disable/enable Vanguard</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p><strong>Why does the driver load at boot?</strong> If Vanguard only started when you launched VALORANT, a cheat could load first and hide itself from Vanguard. By running from boot, Vanguard ensures nothing malicious is already in memory when the game starts. This is the same approach used by enterprise security solutions and other anti-cheat systems like EasyAntiCheat and BattlEye.</p>
+
+      <div class="callout fps-gain">
+        <span class="callout-icon">&#128274;</span>
+        <div class="callout-body">
+          <strong>Kernel-level access is not the same as "full access to your data."</strong>
+          The driver has the technical capability to read memory, but it is designed to monitor only game-related processes. This has been verified by independent security audits.
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ── SECTION 2 ────────────────────────────────────────── -->
+    <div class="tip-section" id="section-2">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap"><input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark section 2 as read"></div>
+        <div class="tip-heading">
+          <span class="num">Section 02</span>
+          What Vanguard Actually Monitors
+        </div>
+      </div>
+
+      <p>Vanguard's monitoring is targeted and specific. It is not a general surveillance tool — it exists to catch one thing: software that tampers with VALORANT's game process. Here is what it actively checks:</p>
+
+      <div class="monitor-grid">
+        <div class="monitor-card">
+          <div class="card-label monitors">Monitors</div>
+          <div class="card-desc"><strong>Process memory injection</strong> — detects any software attempting to inject code into VALORANT's running process</div>
+        </div>
+        <div class="monitor-card">
+          <div class="card-label monitors">Monitors</div>
+          <div class="card-desc"><strong>Driver-level hooks</strong> — catches drivers that intercept system calls to manipulate game data or input</div>
+        </div>
+        <div class="monitor-card">
+          <div class="card-label monitors">Monitors</div>
+          <div class="card-desc"><strong>Known cheat signatures</strong> — maintains a database of known cheat binaries and detects them on disk or in memory</div>
+        </div>
+        <div class="monitor-card">
+          <div class="card-label monitors">Monitors</div>
+          <div class="card-desc"><strong>Hardware IDs</strong> — tracks hardware identifiers to enforce hardware bans on confirmed cheaters</div>
+        </div>
+        <div class="monitor-card">
+          <div class="card-label monitors">Monitors</div>
+          <div class="card-desc"><strong>Vulnerable drivers</strong> — blocks known-exploitable drivers that cheats use to gain kernel access</div>
+        </div>
+        <div class="monitor-card">
+          <div class="card-label monitors">Monitors</div>
+          <div class="card-desc"><strong>System integrity</strong> — verifies that Windows Secure Boot and TPM are in expected states to prevent rootkit-based cheats</div>
+        </div>
+      </div>
+
+      <p>The common thread is clear: <strong>every check relates to game integrity</strong>. Vanguard is looking for software that interacts with VALORANT's process, not software that exists on your PC independently.</p>
+
+      <div class="callout warning">
+        <span class="callout-icon">&#9888;&#65039;</span>
+        <div class="callout-body">
+          <strong>Vanguard can block vulnerable drivers even when VALORANT isn't running.</strong>
+          If you have a driver that's known to be exploitable by cheats (like certain older versions of CPU-Z's driver), Vanguard may prevent it from loading. This is a security measure — not surveillance.
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ── SECTION 3 ────────────────────────────────────────── -->
+    <div class="tip-section" id="section-3">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap"><input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark section 3 as read"></div>
+        <div class="tip-heading">
+          <span class="num">Section 03</span>
+          What Vanguard Does NOT Do
+        </div>
+      </div>
+
+      <p>This is the section that matters most for the privacy-conscious. Despite running at kernel level, Vanguard has a strictly limited scope. Here is what it <strong>does not do</strong>:</p>
+
+      <div class="monitor-grid">
+        <div class="monitor-card">
+          <div class="card-label ignores">Does NOT</div>
+          <div class="card-desc"><strong>Keylog your input</strong> — Vanguard does not record keystrokes outside of VALORANT. It has no keylogger functionality.</div>
+        </div>
+        <div class="monitor-card">
+          <div class="card-label ignores">Does NOT</div>
+          <div class="card-desc"><strong>Screen capture outside VALORANT</strong> — it does not take screenshots of your desktop, other applications, or browser windows.</div>
+        </div>
+        <div class="monitor-card">
+          <div class="card-label ignores">Does NOT</div>
+          <div class="card-desc"><strong>Send browsing data</strong> — your browser history, search queries, and web activity are not collected or transmitted.</div>
+        </div>
+        <div class="monitor-card">
+          <div class="card-label ignores">Does NOT</div>
+          <div class="card-desc"><strong>Read your files</strong> — Vanguard does not scan your documents, photos, downloads, or any personal files.</div>
+        </div>
+        <div class="monitor-card">
+          <div class="card-label ignores">Does NOT</div>
+          <div class="card-desc"><strong>Monitor other apps when VALORANT isn't running</strong> — the kernel driver checks for loaded cheats at boot, but does not actively surveil your other software.</div>
+        </div>
+        <div class="monitor-card">
+          <div class="card-label ignores">Does NOT</div>
+          <div class="card-desc"><strong>Send data to Tencent</strong> — Riot Games operates Vanguard's data pipeline independently. Data is processed by Riot, not its parent company.</div>
+        </div>
+      </div>
+
+      <p>The kernel driver's boot-time presence is purely defensive: it establishes a known-clean system state before VALORANT launches. When VALORANT is not running, the driver is essentially idle — consuming negligible CPU and no network bandwidth.</p>
+
+      <div class="callout fps-gain">
+        <span class="callout-icon">&#128161;</span>
+        <div class="callout-body">
+          <strong>You can verify this yourself.</strong>
+          Use Wireshark or GlassWire to monitor Vanguard's network activity. When VALORANT is closed, vgk.sys sends zero network traffic. The driver is dormant.
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ── SECTION 4 ────────────────────────────────────────── -->
+    <div class="tip-section" id="section-4">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap"><input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark section 4 as read"></div>
+        <div class="tip-heading">
+          <span class="num">Section 04</span>
+          Which Optimisation Tools Are Safe?
+        </div>
+      </div>
+
+      <p>This is the question every VALORANT player asks before tweaking their system: <strong>"Will this get me banned?"</strong> The answer depends entirely on whether the tool interacts with VALORANT's process memory. Here is the definitive breakdown:</p>
+
+      <p><strong>100% Safe — OS-level tweaks:</strong></p>
+      <table class="settings-table">
+        <thead><tr><th>Tool / Tweak</th><th>Status</th><th>Why It's Safe</th></tr></thead>
+        <tbody>
+          <tr><td>Windows power plans (High Performance / Ultimate)</td><td><span class="val-safe">SAFE</span></td><td>OS setting — does not interact with any game process</td></tr>
+          <tr><td>NVIDIA Control Panel / AMD Radeon settings</td><td><span class="val-safe">SAFE</span></td><td>GPU driver settings — game-external configuration</td></tr>
+          <tr><td>Registry edits (Nagle's Algorithm, TCP, etc.)</td><td><span class="val-safe">SAFE</span></td><td>Windows networking stack — no game interaction</td></tr>
+          <tr><td>MSI Afterburner (GPU overclock/monitoring)</td><td><span class="val-safe">SAFE</span></td><td>Reads GPU sensors, doesn't inject into game processes</td></tr>
+          <tr><td>RTSS (RivaTuner Statistics Server)</td><td><span class="val-safe">SAFE</span></td><td>Frame limiter and OSD — uses DirectX hooks but is whitelisted</td></tr>
+          <tr><td>Discord overlay</td><td><span class="val-safe">SAFE</span></td><td>Whitelisted by Riot — uses approved overlay injection</td></tr>
+          <tr><td>Windows Game Mode / Game Bar</td><td><span class="val-safe">SAFE</span></td><td>Microsoft first-party — built into Windows</td></tr>
+          <tr><td>Valo Optimise</td><td><span class="val-safe">SAFE</span></td><td>Only modifies Windows settings — never touches game files or memory</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>UNSAFE — These will get you flagged or banned:</strong></p>
+      <table class="settings-table">
+        <thead><tr><th>Tool / Action</th><th>Status</th><th>Why It's Dangerous</th></tr></thead>
+        <tbody>
+          <tr><td>Cheat Engine (even for other games)</td><td><span class="val-unsafe">BANNED</span></td><td>Memory editor — Vanguard detects it regardless of target process</td></tr>
+          <tr><td>DLL injectors</td><td><span class="val-unsafe">BANNED</span></td><td>Code injection into running processes is a cheat signature</td></tr>
+          <tr><td>Driver-level input spoofing tools</td><td><span class="val-unsafe">BANNED</span></td><td>Simulating hardware input at driver level = aimbot infrastructure</td></tr>
+          <tr><td>Process Hacker / modifying VALORANT memory</td><td><span class="val-unsafe">BANNED</span></td><td>Any tool that reads/writes VALORANT process memory triggers detection</td></tr>
+          <tr><td>Kernel-mode exploits / vulnerable driver loaders</td><td><span class="val-unsafe">BANNED</span></td><td>Loading exploitable drivers is blocked at boot by Vanguard</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout fps-gain">
+        <span class="callout-icon">&#9989;</span>
+        <div class="callout-body">
+          <strong>The rule is simple: if it doesn't touch VALORANT's process, you're safe.</strong>
+          Power plans, registry tweaks, GPU settings, network optimisation — none of these interact with game memory. Vanguard ignores them completely.
+        </div>
+      </div>
+    </div>
+
+    <!-- ── MID-ARTICLE EMAIL ──────────────────────────────── -->
+    <div class="email-capture">
+      <h3>&#127919; Halfway Through</h3>
+      <p>Get notified when we publish our deep-dive on Vanguard updates and compatibility changes.</p>
+      <form class="email-form" onsubmit="handleEmailSubmit(event)">
+        <input type="email" id="email-input" placeholder="your@email.com" required aria-label="Email address">
+        <button type="submit">Notify Me &rarr;</button>
+      </form>
+      <p class="email-note" id="email-feedback">Free. Unsubscribe anytime.</p>
+    </div>
+
+    <!-- Ad: mid-article -->
+    <div style="margin: 24px 0; text-align: center;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-4629819662160550"
+           data-ad-slot="auto"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- ── SECTION 5 ────────────────────────────────────────── -->
+    <div class="tip-section" id="section-5">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap"><input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark section 5 as read"></div>
+        <div class="tip-heading">
+          <span class="num">Section 05</span>
+          Common Myths Debunked
+        </div>
+      </div>
+
+      <p>The misinformation around Vanguard is persistent and widespread. Here are the claims that keep resurfacing — and what's actually true.</p>
+
+      <table class="myth-table">
+        <thead><tr><th style="width:35%">Myth</th><th style="width:15%">Verdict</th><th>Reality</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>"Vanguard is spyware"</td>
+            <td><span class="myth-label false">FALSE</span></td>
+            <td>Vanguard has been independently audited by security researchers. It monitors game-process integrity, not personal data. It sends no personal files, browsing data, or keystrokes to Riot. You can verify its network activity is zero when VALORANT is closed using any packet analyser.</td>
+          </tr>
+          <tr>
+            <td>"Vanguard causes BSODs all the time"</td>
+            <td><span class="myth-label mostly-false">MOSTLY FALSE</span></td>
+            <td>BSODs from Vanguard are rare and almost always caused by conflicting kernel-level drivers — typically vulnerable anti-cheat drivers from other games, certain RGB lighting software drivers (like older iCUE versions), or outdated chipset drivers. Updating the conflicting driver or removing it resolves the issue. Vanguard itself does not randomly crash systems.</td>
+          </tr>
+          <tr>
+            <td>"Vanguard slows down my PC"</td>
+            <td><span class="myth-label false">FALSE</span></td>
+            <td>The vgk.sys kernel driver uses less than 0.1% CPU and a minimal memory footprint (typically under 10MB). It is comparable to any other system driver. In benchmarks, there is no measurable performance difference with Vanguard enabled vs disabled.</td>
+          </tr>
+          <tr>
+            <td>"Vanguard reads all my files"</td>
+            <td><span class="myth-label false">FALSE</span></td>
+            <td>Vanguard scans for cheat-related binaries using signature matching, similar to how antivirus works. It does not open, read, or transmit your documents, photos, or personal files. The file scanning is limited to executable signatures.</td>
+          </tr>
+          <tr>
+            <td>"Vanguard sends data to China / Tencent"</td>
+            <td><span class="myth-label false">FALSE</span></td>
+            <td>Riot Games operates its own data infrastructure. Vanguard's telemetry goes to Riot's servers, not Tencent. While Tencent is Riot's parent company, Riot has repeatedly confirmed operational independence on data handling. Riot's privacy policy is public and auditable.</td>
+          </tr>
+          <tr>
+            <td>"You can't disable Vanguard without uninstalling"</td>
+            <td><span class="myth-label false">FALSE</span></td>
+            <td>Right-click the Vanguard tray icon and select "Exit Vanguard." This disables the user-mode client. To fully unload the kernel driver, disable vgk from starting in msconfig or Services. VALORANT won't launch until Vanguard is re-enabled and you reboot, but you are always in control.</td>
+          </tr>
+          <tr>
+            <td>"Vanguard bans you for having Cheat Engine installed"</td>
+            <td><span class="myth-label mostly-false">MOSTLY FALSE</span></td>
+            <td>Having Cheat Engine <em>installed</em> won't trigger a ban. Having Cheat Engine <em>running</em> while VALORANT is open will. Vanguard detects active memory-editing tools in memory, not programs sitting on your hard drive. That said, it's best practice to close Cheat Engine before launching VALORANT.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout fps-gain">
+        <span class="callout-icon">&#128218;</span>
+        <div class="callout-body">
+          <strong>The pattern behind every myth: people confuse "can" with "does."</strong>
+          A kernel driver technically <em>can</em> do many things. That doesn't mean it <em>does</em>. Your GPU driver also runs at Ring 0 — it could theoretically read your files too. The question is what the software is designed and audited to do.
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ── SECTION 6 ────────────────────────────────────────── -->
+    <div class="tip-section" id="section-6">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap"><input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark section 6 as read"></div>
+        <div class="tip-heading">
+          <span class="num">Section 06</span>
+          How to Check If Vanguard Is Running
+        </div>
+      </div>
+
+      <p>If you want to verify Vanguard's status on your system — whether to confirm it's active before launching VALORANT, or to confirm it's disabled when you don't want it running — here's how:</p>
+
+      <p><strong>Method 1: System tray icon</strong></p>
+      <ol class="steps">
+        <li>Look at your system tray (bottom-right, near the clock)</li>
+        <li>If Vanguard is running, you'll see the Vanguard shield icon</li>
+        <li>Right-click it to see options: "Exit Vanguard" disables the user-mode client</li>
+      </ol>
+
+      <p><strong>Method 2: Task Manager</strong></p>
+      <ol class="steps">
+        <li>Press <strong>Ctrl + Shift + Esc</strong> to open Task Manager</li>
+        <li>Go to the <strong>Details</strong> tab</li>
+        <li>Look for <strong>vgc.exe</strong> (user-mode client) and <strong>vgtray.exe</strong> (tray icon)</li>
+        <li>If vgc.exe is running, the anti-cheat client is active</li>
+      </ol>
+
+      <p><strong>Method 3: Check the kernel driver</strong></p>
+      <ol class="steps">
+        <li>Open <strong>Command Prompt</strong> as Administrator</li>
+        <li>Run the following command:</li>
+      </ol>
+
+      <div class="code-block">
+        sc query vgk
+        <button class="copy-code" onclick="copyCode(this)">Copy</button>
+      </div>
+
+      <p>If Vanguard's kernel driver is loaded, you'll see <code style="background:var(--panel2);padding:2px 8px;border-radius:4px;font-size:13px">STATE: 4 RUNNING</code>. If it's stopped or the service doesn't exist, the driver is not loaded.</p>
+
+      <p><strong>To temporarily disable Vanguard:</strong></p>
+      <ol class="steps">
+        <li>Right-click the tray icon → <strong>Exit Vanguard</strong></li>
+        <li>To prevent the driver from loading on next boot: press <strong>Win + R</strong> → type <code style="background:var(--panel2);padding:2px 8px;border-radius:4px;font-size:13px">msconfig</code> → <strong>Services</strong> tab → uncheck <strong>vgk</strong> → Apply → Restart</li>
+        <li>To re-enable: re-check vgk in msconfig and restart. VALORANT will require a reboot with Vanguard active to launch.</li>
+      </ol>
+
+      <div class="callout warning">
+        <span class="callout-icon">&#9888;&#65039;</span>
+        <div class="callout-body">
+          <strong>VALORANT will not launch if Vanguard has not been active since boot.</strong>
+          If you disabled Vanguard, you must re-enable it and restart your PC before playing. Launching VALORANT without a clean Vanguard boot will show an error.
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ── SECTION 7 ────────────────────────────────────────── -->
+    <div class="tip-section" id="section-7">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap"><input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark section 7 as read"></div>
+        <div class="tip-heading">
+          <span class="num">Section 07</span>
+          The Bottom Line
+        </div>
+      </div>
+
+      <p>Vanguard is aggressive by design — because the cheats it's fighting are aggressive. Kernel-level anti-cheat is the industry standard for competitive shooters in 2026, and Vanguard is one of the most effective implementations, which is why VALORANT has consistently lower cheater rates than competitors.</p>
+
+      <p>Here's what you need to remember:</p>
+
+      <ol class="steps">
+        <li><strong>Vanguard monitors game integrity, not your personal data.</strong> It checks for cheats interacting with VALORANT's process — nothing else.</li>
+        <li><strong>OS-level optimisations are completely safe.</strong> Power plans, registry tweaks, GPU settings, network tuning — Vanguard ignores all of it.</li>
+        <li><strong>Third-party overlays are fine.</strong> Discord, MSI Afterburner, RTSS, and GeForce Experience are all whitelisted or non-interfering.</li>
+        <li><strong>You can disable Vanguard whenever you want.</strong> Exit from the tray or disable the service in msconfig. You just need to reboot with it active before playing VALORANT.</li>
+        <li><strong>The "spyware" narrative has no evidence.</strong> Independent audits, network traffic analysis, and years of public scrutiny have not produced a single verified instance of Vanguard collecting personal data.</li>
+      </ol>
+
+      <p><strong>Valo Optimise is built with this understanding.</strong> Every optimisation in Valo Optimise works at the Windows OS level — modifying power plans, registry values, GPU driver settings, and network configuration. It never reads, writes, or interacts with VALORANT's game files or process memory. It is 100% Vanguard-safe, always has been, and always will be.</p>
+
+      <div class="callout fps-gain">
+        <span class="callout-icon">&#128737;</span>
+        <div class="callout-body">
+          <strong>Optimise your PC without worry. Vanguard doesn't care about Windows tweaks — it cares about cheats.</strong>
+          Every setting Valo Optimise changes is an OS-level configuration that existed before VALORANT was installed and will exist after it's uninstalled.
+        </div>
+      </div>
+    </div>
+
+    <!-- Ad: before completion banner -->
+    <div style="margin: 24px 0; text-align: center;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-4629819662160550"
+           data-ad-slot="auto"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Completion banner -->
+    <div id="completion-banner">
+      <h3>&#127942; All 7 Sections Complete</h3>
+      <p>You now know more about Vanguard than 99% of VALORANT players. Share this with anyone who's still worried about anti-cheat — the myths need to stop.</p>
+    </div>
+
+    <!-- Final CTA -->
+    <div class="final-cta">
+      <h2>Optimise Without <em>Fear.</em></h2>
+      <p>Valo Optimise only touches Windows settings — never game files. Every tweak is Vanguard-safe and designed to maximise your FPS, reduce input lag, and stabilise your network.</p>
+      <a href="https://valooptimise.com" class="cta-btn" target="_blank" rel="noopener noreferrer">Download Free — Windows 11/10</a>
+      <p class="cta-sub">No account required &middot; 100% Vanguard-safe &middot; 7-day free Pro trial included</p>
+    </div>
+
+    <!-- Share -->
+    <div class="share-section">
+      <h3>Someone in Your Squad Still Thinks Vanguard Is Spyware?</h3>
+      <p>Send them this. Facts over fear.</p>
+      <div class="share-btns">
+        <button class="share-btn twitter"  onclick="shareTwitter()">&#120143; Share on X</button>
+        <button class="share-btn reddit"   onclick="shareReddit()">Share on Reddit</button>
+        <button class="share-btn whatsapp" onclick="shareWhatsApp()">WhatsApp</button>
+        <button class="share-btn copy"     onclick="copyLink(this)">Copy Link</button>
+      </div>
+    </div>
+
+    <!-- Related -->
+    <div>
+      <h3 style="font-size:18px;font-weight:700;margin-bottom:16px;">Keep Optimising</h3>
+      <div class="related-grid">
+        <a class="related-card" href="how-to-boost-fps-valorant-windows-11-2026.html">
+          <div class="tags"><span class="tag">FPS Boost</span></div>
+          <h4>How to Boost FPS in VALORANT — 12 Windows 11 Tweaks</h4>
+          <p>Every OS-level tweak to maximise your frame rate. All Vanguard-safe.</p>
+        </a>
+        <a class="related-card" href="how-to-fix-valorant-stuttering-windows-11.html">
+          <div class="tags"><span class="tag">Stutter Fix</span></div>
+          <h4>How to Fix VALORANT Stuttering — The Frame Time Guide</h4>
+          <p>Stuttering isn't an FPS problem — it's a frame time problem. Here's how to fix it.</p>
+        </a>
+        <a class="related-card" href="how-to-reduce-ping-valorant-network-guide-2026.html">
+          <div class="tags"><span class="tag">Network</span></div>
+          <h4>How to Reduce Ping in VALORANT — The Complete Network Guide</h4>
+          <p>Fix high ping, packet loss, and lag spikes with every network tweak explained.</p>
+        </a>
+      </div>
+    </div>
+
+  </article>
+</div>
+
+<a href="https://valooptimise.com" id="floating-cta" target="_blank" rel="noopener noreferrer">Free Download — Valo Optimise</a>
+
+<footer>
+  <p style="margin-bottom:8px;">
+    <a href="../index.html">Blog Home</a> &nbsp;&middot;&nbsp;
+    <a href="https://discord.gg/Fpx4SnxF" target="_blank" rel="noopener noreferrer">Discord</a> &nbsp;&middot;&nbsp;
+    <a href="https://valooptimise.com" target="_blank" rel="noopener noreferrer">Valo Optimise App</a> &nbsp;&middot;&nbsp;
+    <a href="https://valooptimise.com/docs/privacy.html" target="_blank" rel="noopener noreferrer">Privacy</a>
+  </p>
+  <p>&copy; 2026 Valo Optimise Ltd &middot; Not affiliated with Riot Games &middot; All optimisations are OS-level and Vanguard-safe</p>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    document.getElementById('progress-bar').style.width = Math.min(100,(scrolled/total)*100) + '%';
+    const cta = document.getElementById('floating-cta');
+    if (scrolled > 500) cta.classList.add('visible'); else cta.classList.remove('visible');
+  });
+
+  function updateTracker() {
+    const checks = document.querySelectorAll('.tip-check');
+    const done = document.querySelectorAll('.tip-check:checked').length;
+    const total = checks.length;
+    document.getElementById('counter-display').textContent = done + '/' + total;
+    document.getElementById('tracker-bar').style.width = (done/total*100) + '%';
+    if (done === total) {
+      document.getElementById('completion-banner').style.display = 'block';
+      document.getElementById('completion-banner').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+    document.querySelectorAll('.tip-check').forEach(cb => {
+      const h = cb.closest('.tip-header').querySelector('.tip-heading');
+      h.style.opacity = cb.checked ? '0.5' : '1';
+      h.style.textDecoration = cb.checked ? 'line-through' : 'none';
+    });
+  }
+
+  function copyCode(btn) {
+    const code = btn.parentElement.textContent.replace('Copy','').trim();
+    navigator.clipboard.writeText(code).then(() => { btn.textContent = 'Copied!'; setTimeout(() => btn.textContent = 'Copy', 2000); });
+  }
+
+  function shareTwitter() {
+    const text = encodeURIComponent('Vanguard is NOT spyware. Here\'s what it actually does (and doesn\'t do) — the myths need to stop.');
+    window.open('https://twitter.com/intent/tweet?text=' + text + '&url=' + encodeURIComponent(window.location.href), '_blank');
+  }
+
+  function shareReddit() {
+    const title = encodeURIComponent('The truth about VALORANT Vanguard anti-cheat — what it monitors, what it doesn\'t, and which tools are safe (2026)');
+    window.open('https://reddit.com/submit?title=' + title + '&url=' + encodeURIComponent(window.location.href), '_blank');
+  }
+
+  function shareWhatsApp() {
+    window.open('https://wa.me/?text=' + encodeURIComponent('If you\'re worried about Vanguard being spyware, read this: ' + window.location.href), '_blank');
+  }
+
+  function copyLink(btn) {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = 'Copy Link', 2000);
+    });
+  }
+
+  function handleEmailSubmit(e) {
+    e.preventDefault();
+    const feedback = document.getElementById('email-feedback');
+    feedback.textContent = 'You\'re in!';
+    feedback.style.color = 'var(--accent2)';
+    document.getElementById('email-input').value = '';
+    document.querySelector('.email-form button').textContent = 'Done';
+    document.querySelector('.email-form button').disabled = true;
+  }
+
+  const sections = document.querySelectorAll('.tip-section');
+  const tocLinks = document.querySelectorAll('.toc a');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting)
+        tocLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id));
+    });
+  }, { rootMargin: '-60px 0px -70% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>

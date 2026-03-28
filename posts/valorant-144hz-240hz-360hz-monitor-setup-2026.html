@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Set Up VALORANT for 144Hz, 240Hz, and 360Hz Monitors (2026)</title>
+  <meta name="description" content="Configure VALORANT correctly for your 144Hz, 240Hz, or 360Hz monitor. Windows display settings, GPU control panel, FPS caps, and common mistakes — all explained.">
+  <meta name="keywords" content="valorant 144hz setup, valorant 240hz settings, valorant 360hz monitor, valorant refresh rate guide, valorant fps cap, valorant monitor settings 2026">
+  <link rel="canonical" href="https://blog.valooptimise.com/posts/valorant-144hz-240hz-360hz-monitor-setup-2026.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How to Set Up VALORANT for 144Hz, 240Hz, and 360Hz Monitors (2026)">
+  <meta property="og:description" content="Configure VALORANT for your high refresh rate monitor. FPS caps, GPU panel settings, and the mistakes wasting your Hz.">
+  <meta property="og:image" content="https://valooptimise.com/docs/assets/og-image.png">
+  <meta property="og:url" content="https://blog.valooptimise.com/posts/valorant-144hz-240hz-360hz-monitor-setup-2026.html">
+  <meta property="og:site_name" content="Valo Optimise Blog">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Set Up VALORANT for 144Hz, 240Hz, and 360Hz Monitors (2026)">
+  <meta name="twitter:description" content="Configure VALORANT for your high refresh rate monitor. FPS caps, GPU panel settings, and the mistakes wasting your Hz.">
+  <meta name="twitter:image" content="https://valooptimise.com/docs/assets/og-image.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "How to Set Up VALORANT for 144Hz, 240Hz, and 360Hz Monitors (2026)",
+        "description": "Configure VALORANT correctly for your 144Hz, 240Hz, or 360Hz monitor with the right FPS caps, GPU panel settings, and in-game options.",
+        "image": "https://valooptimise.com/docs/assets/og-image.png",
+        "author": { "@type": "Person", "name": "Harvey Jenkins" },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Valo Optimise",
+          "logo": { "@type": "ImageObject", "url": "https://valooptimise.com/docs/assets/icon_256.png" }
+        },
+        "datePublished": "2026-03-27",
+        "dateModified": "2026-03-27",
+        "mainEntityOfPage": "https://blog.valooptimise.com/posts/valorant-144hz-240hz-360hz-monitor-setup-2026.html"
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Set Up VALORANT for 144Hz, 240Hz, and 360Hz Monitors",
+        "totalTime": "PT10M",
+        "step": [
+          { "@type": "HowToStep", "position": 1, "name": "Understand why refresh rate matters", "text": "Higher refresh rate means smoother motion clarity, easier target tracking, and faster visual feedback on flicks. Going from 60Hz to 144Hz is the single biggest upgrade in competitive FPS." },
+          { "@type": "HowToStep", "position": 2, "name": "Set up 144Hz monitor for VALORANT", "text": "Set Windows display to 144Hz, uncap VALORANT FPS or set to 288, disable V-Sync, and enable NVIDIA Low Latency Mode." },
+          { "@type": "HowToStep", "position": 3, "name": "Set up 240Hz monitor for VALORANT", "text": "Ensure consistent 240+ FPS by lowering settings to Medium/Low. Set FPS cap to 0 or 480. Use DisplayPort cable." },
+          { "@type": "HowToStep", "position": 4, "name": "Set up 360Hz monitor for VALORANT", "text": "Set every VALORANT setting to Low, disable all effects, enable multithreaded rendering. Requires high-end GPU." },
+          { "@type": "HowToStep", "position": 5, "name": "Configure GPU control panel", "text": "NVIDIA: Power Management to Prefer Max Performance, Low Latency Mode to Ultra, V-Sync Off. AMD: Anti-Lag On, FreeSync On, Radeon Chill Off." },
+          { "@type": "HowToStep", "position": 6, "name": "Avoid common mistakes", "text": "Check that V-Sync is off, FPS is not capped below refresh rate, Windows is set to the correct Hz, you are using DisplayPort for 240Hz+, and G-Sync/FreeSync is configured properly." }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="icon" href="https://valooptimise.com/docs/assets/icon_256.png">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4629819662160550" crossorigin="anonymous"></script>
+
+  <style>
+    :root {
+      --bg: #0a0e1a; --panel: #111827; --panel2: #1c2a3a;
+      --accent: #ff4655; --accent2: #00d4aa;
+      --text: #f0f4ff; --muted: #6b7a99; --border: #1e2d42;
+      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --radius: 10px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font); line-height: 1.7; font-size: 16px; }
+
+    #progress-bar { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: linear-gradient(90deg, var(--accent), var(--accent2)); z-index: 9999; transition: width 0.1s linear; }
+
+    nav { position: sticky; top: 0; background: rgba(10,14,26,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; z-index: 100; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); font-weight: 700; font-size: 15px; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; align-items: center; gap: 20px; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta { background: var(--accent); color: #fff !important; padding: 8px 18px; border-radius: 6px; font-weight: 600; font-size: 13px !important; transition: background 0.2s !important; }
+    .nav-cta:hover, .nav-cta:focus-visible { background: #e63946 !important; }
+    .nav-cta:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
+
+    .article-hero { max-width: 800px; margin: 48px auto 0; padding: 0 24px; }
+    .tags { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+    .tag { background: var(--panel); border: 1px solid var(--border); color: var(--accent2); font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 20px; letter-spacing: 0.04em; text-transform: uppercase; }
+    .article-hero h1 { font-size: clamp(24px, 4vw, 38px); line-height: 1.25; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 16px; }
+    .article-hero h1 em { font-style: normal; color: var(--accent); }
+    .article-meta { display: flex; align-items: center; gap: 16px; color: var(--muted); font-size: 14px; margin-bottom: 24px; flex-wrap: wrap; }
+    .read-time { background: var(--panel); border: 1px solid var(--border); padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; color: var(--accent2); }
+
+    .hook-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 32px; }
+    .hook-box { background: var(--panel); border: 1px solid var(--border); border-left: 3px solid var(--accent2); padding: 12px 16px; border-radius: var(--radius); font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+
+    .progress-tracker { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 20px; margin-bottom: 32px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .tracker-label { font-size: 14px; font-weight: 600; }
+    .tracker-label span { color: var(--accent2); }
+    .tracker-bar-wrap { flex: 1; background: var(--panel2); height: 8px; border-radius: 4px; overflow: hidden; }
+    .tracker-bar { height: 100%; width: 0%; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 4px; transition: width 0.3s ease; }
+
+    .article-layout { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; display: grid; grid-template-columns: 240px 1fr; gap: 48px; align-items: start; }
+
+    .toc { position: sticky; top: 72px; background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+    .toc-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 14px; }
+    .toc ol { list-style: none; counter-reset: toc; }
+    .toc ol li { counter-increment: toc; margin-bottom: 6px; }
+    .toc ol li a { display: flex; align-items: flex-start; gap: 8px; color: var(--muted); text-decoration: none; font-size: 13px; line-height: 1.4; padding: 4px 8px; border-radius: 6px; transition: background 0.15s, color 0.15s; }
+    .toc ol li a::before { content: counter(toc); background: var(--panel2); color: var(--accent); font-size: 10px; font-weight: 700; min-width: 18px; height: 18px; border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
+    .toc ol li a:hover, .toc ol li a:focus-visible, .toc ol li a.active { background: var(--panel2); color: var(--text); }
+    .toc ol li a:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
+    .toc ol li a.active::before { background: var(--accent); color: #fff; }
+    .toc-cta { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border); }
+    .toc-cta a { display: block; background: var(--accent); color: #fff; text-align: center; padding: 10px; border-radius: 8px; font-size: 13px; font-weight: 700; text-decoration: none; transition: background 0.2s; }
+    .toc-cta a:hover { background: #e63946; }
+
+    article { min-width: 0; }
+
+    .article-intro { font-size: 17px; line-height: 1.8; color: #c8d0e0; margin-bottom: 32px; padding: 24px; background: var(--panel); border-radius: var(--radius); border-left: 3px solid var(--accent); }
+    .article-intro strong { color: var(--text); }
+
+    /* Hz comparison stats */
+    .hz-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 20px 0; }
+    .hz-stat { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; text-align: center; }
+    .hz-stat .label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 8px; }
+    .hz-stat .value { font-size: 30px; font-weight: 900; line-height: 1; letter-spacing: -0.02em; }
+    .hz-stat .desc { font-size: 12px; color: var(--muted); margin-top: 6px; }
+    .hz-stat.good .value { color: var(--accent2); }
+    .hz-stat.better .value { color: #a78bfa; }
+    .hz-stat.best .value { color: var(--accent); }
+
+    .settings-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    .settings-table th { text-align: left; padding: 10px 14px; background: var(--panel2); color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); }
+    .settings-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: #c8d0e0; vertical-align: top; }
+    .settings-table tr:last-child td { border-bottom: none; }
+    .settings-table td:first-child { color: var(--text); font-weight: 600; }
+    .val-set { color: var(--accent2); font-weight: 700; }
+
+    .steps { list-style: none; counter-reset: steps; margin: 16px 0; }
+    .steps li { counter-increment: steps; display: flex; gap: 14px; margin-bottom: 12px; color: #c8d0e0; }
+    .steps li::before { content: counter(steps); background: var(--accent); color: #fff; font-size: 11px; font-weight: 700; min-width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-top: 2px; flex-shrink: 0; }
+
+    .callout { border-radius: var(--radius); padding: 16px 20px; margin: 20px 0; display: flex; gap: 14px; align-items: flex-start; }
+    .callout-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+    .callout-body { font-size: 14px; line-height: 1.7; }
+    .callout-body strong { display: block; margin-bottom: 4px; font-size: 15px; }
+    .callout.fps-gain { background: rgba(0,212,170,0.08); border: 1px solid rgba(0,212,170,0.25); }
+    .callout.fps-gain .callout-body { color: var(--accent2); }
+    .callout.warning { background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.25); }
+    .callout.warning .callout-body { color: #f59e0b; }
+    .callout.fomo { background: rgba(255,70,85,0.08); border: 1px solid rgba(255,70,85,0.25); }
+    .callout.fomo .callout-body { color: #ff9ea6; }
+
+    .section-divider { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+
+    .tip-section { margin-bottom: 48px; scroll-margin-top: 80px; }
+    .tip-header { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px; }
+    .tip-checkbox-wrap { margin-top: 4px; flex-shrink: 0; }
+    .tip-check { width: 20px; height: 20px; accent-color: var(--accent2); cursor: pointer; }
+    .tip-heading { font-size: 22px; font-weight: 700; line-height: 1.3; color: var(--text); }
+    .tip-heading .num { color: var(--accent); font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 4px; }
+    .tip-section p { color: #c8d0e0; margin-bottom: 14px; line-height: 1.8; }
+
+    .code-block { background: #070b14; border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; font-family: 'Consolas', 'Courier New', monospace; font-size: 13px; color: var(--accent2); margin: 16px 0; overflow-x: auto; position: relative; }
+    .code-block .copy-code { position: absolute; top: 10px; right: 10px; background: var(--panel2); border: 1px solid var(--border); color: var(--muted); font-size: 11px; padding: 4px 10px; border-radius: 4px; cursor: pointer; font-family: var(--font); transition: color 0.2s; }
+    .code-block .copy-code:hover { color: var(--text); }
+
+    .email-capture { background: linear-gradient(135deg, #111827, #0f1c2e); border: 1px solid var(--border); border-top: 2px solid var(--accent); border-radius: var(--radius); padding: 28px; margin: 48px 0; text-align: center; }
+    .email-capture h3 { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+    .email-capture p { color: var(--muted); font-size: 14px; margin-bottom: 20px; }
+    .email-form { display: flex; gap: 10px; max-width: 440px; margin: 0 auto; }
+    .email-form input { flex: 1; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; color: var(--text); font-family: var(--font); font-size: 14px; outline: none; transition: border-color 0.2s; }
+    .email-form input:focus { border-color: var(--accent2); }
+    .email-form button { background: var(--accent); color: #fff; border: none; border-radius: 8px; padding: 12px 22px; font-family: var(--font); font-size: 14px; font-weight: 700; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
+    .email-form button:hover { background: #e63946; }
+    .email-note { font-size: 12px; color: var(--muted); margin-top: 10px; }
+
+    .final-cta { background: linear-gradient(135deg, #0f1824, #1a0d10); border: 1px solid rgba(255,70,85,0.3); border-radius: 14px; padding: 36px; margin: 48px 0; text-align: center; }
+    .final-cta h2 { font-size: 26px; font-weight: 800; margin-bottom: 10px; }
+    .final-cta h2 em { font-style: normal; color: var(--accent); }
+    .final-cta p { color: var(--muted); font-size: 15px; margin-bottom: 24px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .cta-btn { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; font-size: 16px; font-weight: 700; padding: 14px 36px; border-radius: 8px; transition: background 0.2s, transform 0.2s; animation: pulse 2.5s ease-in-out infinite; }
+    .cta-btn:hover, .cta-btn:focus-visible { background: #e63946; transform: translateY(-2px); animation: none; }
+    .cta-btn:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
+    @keyframes pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(255,70,85,0.4); } 50% { box-shadow: 0 0 0 10px rgba(255,70,85,0); } }
+    .cta-sub { font-size: 13px; color: var(--muted); margin-top: 12px; }
+
+    .share-section { margin: 48px 0; padding: 28px; background: var(--panel); border-radius: var(--radius); border: 1px solid var(--border); text-align: center; }
+    .share-section h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+    .share-section p { color: var(--muted); font-size: 14px; margin-bottom: 20px; }
+    .share-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .share-btn { display: flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 8px; border: none; font-family: var(--font); font-size: 14px; font-weight: 600; cursor: pointer; transition: opacity 0.2s, transform 0.2s; text-decoration: none; }
+    .share-btn:hover, .share-btn:focus-visible { opacity: 0.85; transform: translateY(-1px); }
+    .share-btn:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
+    .share-btn.twitter { background: #1da1f2; color: #fff; }
+    .share-btn.reddit  { background: #ff4500; color: #fff; }
+    .share-btn.whatsapp { background: #25d366; color: #fff; }
+    .share-btn.copy    { background: var(--panel2); color: var(--text); border: 1px solid var(--border); }
+
+    #completion-banner { display: none; background: linear-gradient(135deg, rgba(0,212,170,0.15), rgba(0,212,170,0.05)); border: 1px solid rgba(0,212,170,0.4); border-radius: var(--radius); padding: 20px 24px; text-align: center; margin: 32px 0; animation: fadeIn 0.5s ease; }
+    #completion-banner h3 { color: var(--accent2); font-size: 20px; margin-bottom: 6px; }
+    #completion-banner p { color: var(--muted); font-size: 14px; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    #floating-cta { position: fixed; bottom: 24px; right: 24px; background: var(--accent); color: #fff; padding: 14px 22px; border-radius: 50px; font-size: 14px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 24px rgba(255,70,85,0.4); opacity: 0; transform: translateY(20px); transition: opacity 0.3s, transform 0.3s; pointer-events: none; z-index: 200; display: flex; align-items: center; gap: 8px; }
+    #floating-cta.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
+    #floating-cta:hover { background: #e63946; }
+
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 20px; }
+    .related-card { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; text-decoration: none; transition: border-color 0.2s, transform 0.2s; }
+    .related-card:hover { border-color: var(--accent2); transform: translateY(-2px); }
+    .related-card h4 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px; line-height: 1.4; }
+    .related-card p { font-size: 13px; color: var(--muted); }
+
+    footer { background: var(--panel); border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; margin-top: 80px; }
+    footer a { color: var(--accent2); text-decoration: none; }
+    footer p { color: var(--muted); font-size: 13px; }
+
+    @media (max-width: 860px) { .article-layout { grid-template-columns: 1fr; } .toc { position: static; } .email-form { flex-direction: column; } .hz-stats { grid-template-columns: 1fr; } }
+    @media (max-width: 600px) { .article-hero h1 { font-size: 24px; } .nav-links a:not(.nav-cta) { display: none; } }
+  </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<nav role="navigation" aria-label="Main navigation">
+  <a href="../index.html" class="nav-logo"><span>VALO</span> OPTIMISE BLOG</a>
+  <div class="nav-links">
+    <a href="../index.html">All Articles</a>
+    <a href="https://discord.gg/Fpx4SnxF" target="_blank" rel="noopener noreferrer">Discord</a>
+    <a href="https://valooptimise.com" target="_blank" rel="noopener noreferrer" class="nav-cta">Free Download</a>
+  </div>
+</nav>
+
+<div class="article-hero">
+  <div class="tags">
+    <span class="tag">Monitor</span>
+    <span class="tag">Refresh Rate</span>
+    <span class="tag">Settings</span>
+    <span class="tag">2026</span>
+  </div>
+
+  <h1>How to Set Up VALORANT for <em>144Hz, 240Hz, and 360Hz Monitors</em></h1>
+
+  <div class="article-meta">
+    <span>March 27, 2026</span>
+    <span style="opacity:0.4">&middot;</span>
+    <span>Harvey Jenkins</span>
+    <span style="opacity:0.4">&middot;</span>
+    <span class="read-time">~5 min read</span>
+  </div>
+
+  <div class="hook-grid">
+    <div class="hook-box"><span>&#9881;</span> Correct FPS cap per Hz</div>
+    <div class="hook-box"><span>&#127918;</span> NVIDIA/AMD panel settings</div>
+    <div class="hook-box"><span>&#10003;</span> In-game settings optimised</div>
+    <div class="hook-box"><span>&#9889;</span> Feel the difference instantly</div>
+  </div>
+
+  <div class="progress-tracker">
+    <div class="tracker-label">Sections complete: <span id="counter-display">0/6</span></div>
+    <div class="tracker-bar-wrap"><div class="tracker-bar" id="tracker-bar"></div></div>
+    <div style="font-size:13px;color:var(--muted);white-space:nowrap">Tick each as you go</div>
+  </div>
+</div>
+
+<div class="article-layout">
+
+  <aside class="toc">
+    <div class="toc-title">Contents</div>
+    <ol>
+      <li><a href="#section-1">Does Refresh Rate Actually Matter?</a></li>
+      <li><a href="#section-2">Setting Up 144Hz</a></li>
+      <li><a href="#section-3">Setting Up 240Hz</a></li>
+      <li><a href="#section-4">Setting Up 360Hz</a></li>
+      <li><a href="#section-5">GPU Control Panel Settings</a></li>
+      <li><a href="#section-6">Common Mistakes</a></li>
+    </ol>
+    <div class="toc-cta">
+      <a href="https://valooptimise.com" target="_blank" rel="noopener noreferrer">Free Download</a>
+    </div>
+  </aside>
+
+  <article>
+
+    <div class="article-intro">
+      <strong>Your 144Hz monitor might still be running at 60Hz.</strong> It sounds impossible, but it happens constantly. Windows defaults to 60Hz on many displays, VALORANT respects whatever Windows is set to, and players spend months wondering why their expensive monitor doesn't feel any different. Worse still — V-Sync, wrong FPS caps, and bad GPU panel settings can add <strong>20-50ms of input lag</strong> that completely cancels out whatever refresh rate advantage you paid for.<br><br>
+      This guide walks through the exact setup for each refresh rate tier — from 144Hz all the way to 360Hz — so your monitor is actually doing what it was built to do.
+    </div>
+
+    <!-- Ad: below intro -->
+    <div style="margin: 24px 0; text-align: center;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-4629819662160550"
+           data-ad-slot="auto"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <div class="callout fomo">
+      <span class="callout-icon">&#127918;</span>
+      <div class="callout-body">
+        <strong>Going from 60Hz to 144Hz is the single biggest hardware upgrade in competitive FPS.</strong>
+        It is not a subtle improvement. Motion becomes visibly smoother, enemy models are clearer during movement, and your flicks feel more connected to what you see. Every pro player in the world uses at least 240Hz — and most are on 360Hz.
+      </div>
+    </div>
+
+    <!-- SECTION 1 -->
+    <div class="tip-section" id="section-1">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap"><input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark section 1 as complete"></div>
+        <div class="tip-heading">
+          <span class="num">Section 01</span>
+          Does Refresh Rate Actually Matter in VALORANT?
+        </div>
+      </div>
+
+      <p>Refresh rate is how many times per second your monitor updates the image. At 60Hz, you see 60 frames per second. At 144Hz, you see 144. At 360Hz, you see 360. The difference is not just cosmetic — it directly affects your ability to track moving targets and react to peeks.</p>
+
+      <p>In VALORANT, where enemies swing corners in under 200ms and headshots are decided by single-pixel differences, <strong>seeing information faster is a real competitive advantage</strong>. A 360Hz monitor shows you a new frame every 2.8ms. A 60Hz monitor shows you one every 16.7ms. That is a <strong>14ms head start on every visual update</strong>.</p>
+
+      <div class="hz-stats">
+        <div class="hz-stat good">
+          <div class="label">144Hz</div>
+          <div class="value">6.9ms</div>
+          <div class="desc">Frame interval — 2.4x faster than 60Hz</div>
+        </div>
+        <div class="hz-stat better">
+          <div class="label">240Hz</div>
+          <div class="value">4.2ms</div>
+          <div class="desc">Frame interval — used by most ranked grinders</div>
+        </div>
+        <div class="hz-stat best">
+          <div class="label">360Hz</div>
+          <div class="value">2.8ms</div>
+          <div class="desc">Frame interval — pro-level standard</div>
+        </div>
+      </div>
+
+      <p>The jump from 60Hz to 144Hz is enormous and universally noticeable. The jump from 144Hz to 240Hz is smaller but still clear during fast flicks. The jump from 240Hz to 360Hz is marginal — but at the highest level of play, marginal matters.</p>
+
+      <p><strong>Here's the minimum GPU you need to actually hit each tier:</strong></p>
+
+      <table class="settings-table">
+        <thead><tr><th>Refresh Rate</th><th>Target FPS</th><th>Minimum GPU (NVIDIA)</th><th>Minimum GPU (AMD)</th></tr></thead>
+        <tbody>
+          <tr><td>144Hz</td><td><span class="val-set">144+ FPS</span></td><td>GTX 1060 / RTX 2060</td><td>RX 580 / RX 5600 XT</td></tr>
+          <tr><td>240Hz</td><td><span class="val-set">240+ FPS</span></td><td>RTX 3060 Ti / RTX 4060</td><td>RX 6700 XT / RX 7600</td></tr>
+          <tr><td>360Hz</td><td><span class="val-set">360+ FPS</span></td><td>RTX 3080 / RTX 4070 Ti</td><td>RX 6800 XT / RX 7800 XT</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout warning">
+        <span class="callout-icon">&#9888;&#65039;</span>
+        <div class="callout-body">
+          <strong>Your refresh rate is only useful if your GPU can keep up.</strong>
+          A 360Hz monitor showing 150 FPS is functionally identical to a 150Hz monitor. You need consistent FPS at or above your refresh rate for the full benefit.
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- SECTION 2 -->
+    <div class="tip-section" id="section-2">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap"><input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark section 2 as complete"></div>
+        <div class="tip-heading">
+          <span class="num">Section 02</span>
+          Setting Up 144Hz — The Sweet Spot
+        </div>
+      </div>
+
+      <p>144Hz is the sweet spot for competitive gaming. It's where the biggest perceptual jump happens and almost any modern GPU can hit 144+ FPS in VALORANT. Here's the complete setup:</p>
+
+      <p><strong>Step 1 — Set Windows to 144Hz:</strong></p>
+      <ol class="steps">
+        <li>Right-click your desktop &rarr; <strong>Display settings</strong></li>
+        <li>Scroll down to <strong>Advanced display</strong></li>
+        <li>Under "Choose a refresh rate," select <span class="val-set">144 Hz</span></li>
+        <li>If 144Hz is not listed, check your cable — you may need DisplayPort or a higher-spec HDMI cable</li>
+      </ol>
+
+      <div class="callout warning">
+        <span class="callout-icon">&#9888;&#65039;</span>
+        <div class="callout-body">
+          <strong>This is the #1 mistake.</strong>
+          If Windows is set to 60Hz, your monitor runs at 60Hz — no matter what it's capable of. VALORANT does not override this. Check it now.
+        </div>
+      </div>
+
+      <p><strong>Step 2 — VALORANT settings for 144Hz:</strong></p>
+
+      <table class="settings-table">
+        <thead><tr><th>Setting</th><th>Value</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td>Limit FPS on Battery</td><td><span class="val-set">Off</span></td><td>Desktop — not applicable, but disable to be safe</td></tr>
+          <tr><td>Max FPS Always</td><td><span class="val-set">Off (uncapped)</span></td><td>Let the engine produce as many frames as possible</td></tr>
+          <tr><td>Limit FPS in Menus</td><td><span class="val-set">60</span></td><td>Saves GPU power in menus — no competitive impact</td></tr>
+          <tr><td>Limit FPS in Background</td><td><span class="val-set">30</span></td><td>Saves power when alt-tabbed</td></tr>
+          <tr><td>V-Sync</td><td><span class="val-set">Off</span></td><td>V-Sync adds 1-3 frames of input lag — never use in competitive</td></tr>
+          <tr><td>Anti-Aliasing</td><td><span class="val-set">MSAA 2x or None</span></td><td>Keep it light or off for max FPS headroom</td></tr>
+          <tr><td>Material / Texture / Detail Quality</td><td><span class="val-set">Medium</span></td><td>Looks fine, minimal FPS impact</td></tr>
+          <tr><td>Multithreaded Rendering</td><td><span class="val-set">On</span></td><td>Uses more CPU cores — always on</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout fps-gain">
+        <span class="callout-icon">&#128200;</span>
+        <div class="callout-body">
+          <strong>Pro tip: Set your FPS cap to 288 (2x refresh rate) if uncapped feels jittery.</strong>
+          This gives the engine headroom to always have a frame ready without producing wildly variable frame times. Some players prefer this over fully uncapped.
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- SECTION 3 -->
+    <div class="tip-section" id="section-3">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap"><input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark section 3 as complete"></div>
+        <div class="tip-heading">
+          <span class="num">Section 03</span>
+          Setting Up 240Hz — Competitive Edge
+        </div>
+      </div>
+
+      <p>240Hz is where serious ranked players land. The motion clarity improvement over 144Hz is most noticeable during fast crosshair swipes and tracking strafing targets. The setup is similar but the FPS demand is higher, so we tighten the settings.</p>
+
+      <p><strong>Step 1 — Confirm Windows is at 240Hz:</strong></p>
+      <ol class="steps">
+        <li>Right-click desktop &rarr; Display settings &rarr; Advanced display</li>
+        <li>Select <span class="val-set">240 Hz</span></li>
+        <li><strong>You must use DisplayPort</strong> — HDMI 2.0 caps at 144Hz for most 240Hz monitors. Only HDMI 2.1 supports 240Hz, and many 240Hz monitors don't include an HDMI 2.1 port</li>
+      </ol>
+
+      <p><strong>Step 2 — VALORANT settings for 240Hz:</strong></p>
+
+      <table class="settings-table">
+        <thead><tr><th>Setting</th><th>Value</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td>Max FPS Always</td><td><span class="val-set">Off (uncapped) or 480</span></td><td>Uncapped or 2x refresh rate — both work</td></tr>
+          <tr><td>V-Sync</td><td><span class="val-set">Off</span></td><td>Absolutely critical at 240Hz — V-Sync adds unacceptable lag</td></tr>
+          <tr><td>Material Quality</td><td><span class="val-set">Low</span></td><td>Shave off every unnecessary frame of GPU work</td></tr>
+          <tr><td>Texture Quality</td><td><span class="val-set">Medium or Low</span></td><td>Almost no visual difference below Medium in-game</td></tr>
+          <tr><td>Detail Quality</td><td><span class="val-set">Low</span></td><td>Reduces background clutter — actually helps visibility</td></tr>
+          <tr><td>UI Quality</td><td><span class="val-set">Low</span></td><td>Minor savings but every frame counts at 240</td></tr>
+          <tr><td>Distortion / Cast Shadows</td><td><span class="val-set">Off</span></td><td>Pure visual flair with no competitive benefit</td></tr>
+          <tr><td>Multithreaded Rendering</td><td><span class="val-set">On</span></td><td>Essential for hitting 240+ consistently</td></tr>
+        </tbody>
+      </table>
+
+      <p>The goal at 240Hz is <strong>consistency</strong>. It's better to hold 260 FPS steady than to spike between 200 and 400. Inconsistent frame times cause micro-stutter that erases the smoothness advantage of 240Hz entirely.</p>
+
+      <div class="callout fps-gain">
+        <span class="callout-icon">&#128200;</span>
+        <div class="callout-body">
+          <strong>If your FPS dips below 240 during fights, you're not getting 240Hz when it matters most.</strong>
+          Drop every visual setting to Low and test in Deathmatch — the most GPU-intensive mode because of 14 players + abilities on screen simultaneously.
+        </div>
+      </div>
+    </div>
+
+    <!-- Mid-article email capture -->
+    <div class="email-capture">
+      <h3>&#127919; Halfway Through</h3>
+      <p>Get our GPU optimisation deep-dive and display latency guide sent to you when published.</p>
+      <form class="email-form" onsubmit="handleEmailSubmit(event)">
+        <input type="email" id="email-input" placeholder="your@email.com" required aria-label="Email address">
+        <button type="submit">Notify Me &rarr;</button>
+      </form>
+      <p class="email-note" id="email-feedback">Free. Unsubscribe anytime.</p>
+    </div>
+
+    <!-- Ad: mid-article (before section 4) -->
+    <div style="margin: 24px 0; text-align: center;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-4629819662160550"
+           data-ad-slot="auto"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- SECTION 4 -->
+    <div class="tip-section" id="section-4">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap"><input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark section 4 as complete"></div>
+        <div class="tip-heading">
+          <span class="num">Section 04</span>
+          Setting Up 360Hz — Pro Level
+        </div>
+      </div>
+
+      <p>360Hz monitors are the current ceiling for competitive gaming. This is what you'll find at VCT LAN events and in the setups of players like TenZ, Aspas, and Demon1. The improvement over 240Hz is subtle — but at the highest level, subtle is the difference between a won duel and a traded round.</p>
+
+      <p><strong>Step 1 — Confirm Windows is at 360Hz:</strong></p>
+      <ol class="steps">
+        <li>Right-click desktop &rarr; Display settings &rarr; Advanced display</li>
+        <li>Select <span class="val-set">360 Hz</span></li>
+        <li><strong>DisplayPort 1.4 required</strong> — no HDMI cable supports 360Hz at 1080p</li>
+        <li>Make sure you're connected to the right port on your GPU — some GPUs have different bandwidth per port</li>
+      </ol>
+
+      <p><strong>Step 2 — VALORANT settings for 360Hz:</strong></p>
+
+      <table class="settings-table">
+        <thead><tr><th>Setting</th><th>Value</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td>Max FPS Always</td><td><span class="val-set">Off (uncapped)</span></td><td>Let the engine fly — you need every frame</td></tr>
+          <tr><td>V-Sync</td><td><span class="val-set">Off</span></td><td>Non-negotiable</td></tr>
+          <tr><td>All Quality Settings</td><td><span class="val-set">Low</span></td><td>Material, Texture, Detail, UI — all Low</td></tr>
+          <tr><td>Anti-Aliasing</td><td><span class="val-set">None</span></td><td>At 360Hz, aliasing is less visible due to frame overlap</td></tr>
+          <tr><td>Anisotropic Filtering</td><td><span class="val-set">1x</span></td><td>Minor savings, add up at 360+ target</td></tr>
+          <tr><td>Improve Clarity</td><td><span class="val-set">Off</span></td><td>Post-processing filter — costs frames</td></tr>
+          <tr><td>Bloom / Distortion / Shadows</td><td><span class="val-set">All Off</span></td><td>Competitive players turn all effects off</td></tr>
+          <tr><td>Multithreaded Rendering</td><td><span class="val-set">On</span></td><td>Absolutely essential at 360Hz target</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout fomo">
+        <span class="callout-icon">&#128293;</span>
+        <div class="callout-body">
+          <strong>At 360Hz, your CPU matters more than your GPU.</strong>
+          VALORANT is CPU-bound at very high frame rates. An RTX 4090 paired with an i5-10400 will not hit 360 FPS consistently. You need a strong single-core CPU — think i7-13700K / i9-14900K or Ryzen 7 7800X3D.
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- SECTION 5 -->
+    <div class="tip-section" id="section-5">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap"><input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark section 5 as complete"></div>
+        <div class="tip-heading">
+          <span class="num">Section 05</span>
+          GPU Control Panel Settings for Each Tier
+        </div>
+      </div>
+
+      <p>Your GPU driver has its own layer of settings that override or interact with in-game options. Getting these wrong can silently add input lag or cap your performance. Here are the correct settings for both NVIDIA and AMD.</p>
+
+      <p><strong>NVIDIA Control Panel (right-click desktop &rarr; NVIDIA Control Panel &rarr; Manage 3D Settings &rarr; Program Settings &rarr; VALORANT):</strong></p>
+
+      <table class="settings-table">
+        <thead><tr><th>Setting</th><th>Value</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td>Power Management Mode</td><td><span class="val-set">Prefer Maximum Performance</span></td><td>Prevents GPU from clocking down during gameplay</td></tr>
+          <tr><td>Low Latency Mode</td><td><span class="val-set">Ultra</span></td><td>Reduces render queue — frames reach your monitor faster</td></tr>
+          <tr><td>Vertical Sync</td><td><span class="val-set">Off</span></td><td>Driver-level V-Sync must also be off</td></tr>
+          <tr><td>Max Frame Rate</td><td><span class="val-set">Off</span></td><td>Let VALORANT's built-in limiter handle this if needed</td></tr>
+          <tr><td>Texture Filtering Quality</td><td><span class="val-set">High Performance</span></td><td>Slight FPS gain, no visible difference in VALORANT</td></tr>
+          <tr><td>Threaded Optimisation</td><td><span class="val-set">On</span></td><td>Allows the driver to use multiple CPU threads</td></tr>
+          <tr><td>NVIDIA Reflex Low Latency</td><td><span class="val-set">On + Boost (in-game)</span></td><td>Enable this inside VALORANT's settings, not the control panel</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>AMD Adrenalin Software (right-click desktop &rarr; AMD Software &rarr; Gaming &rarr; VALORANT profile):</strong></p>
+
+      <table class="settings-table">
+        <thead><tr><th>Setting</th><th>Value</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td>Radeon Anti-Lag</td><td><span class="val-set">Enabled</span></td><td>AMD's equivalent to NVIDIA Low Latency Mode</td></tr>
+          <tr><td>FreeSync</td><td><span class="val-set">Enabled</span></td><td>Eliminates tearing without V-Sync's input lag penalty</td></tr>
+          <tr><td>Radeon Chill</td><td><span class="val-set">Off</span></td><td>Chill dynamically lowers FPS to save power — kills performance</td></tr>
+          <tr><td>Radeon Boost</td><td><span class="val-set">Off</span></td><td>Lowers resolution during movement — bad for aim precision</td></tr>
+          <tr><td>Wait for Vertical Refresh</td><td><span class="val-set">Off, unless application specifies</span></td><td>Driver-level V-Sync must be off</td></tr>
+          <tr><td>Surface Format Optimisation</td><td><span class="val-set">Enabled</span></td><td>Minor performance gain</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout fps-gain">
+        <span class="callout-icon">&#128200;</span>
+        <div class="callout-body">
+          <strong>NVIDIA Reflex is built into VALORANT — enable it in the game's settings under Video > Stats.</strong>
+          It reduces system latency by 15-30ms on average. Set it to "On + Boost" for maximum effect. This is separate from the control panel's Low Latency Mode — use both.
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- SECTION 6 -->
+    <div class="tip-section" id="section-6">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap"><input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark section 6 as complete"></div>
+        <div class="tip-heading">
+          <span class="num">Section 06</span>
+          Common Mistakes That Waste Your Monitor
+        </div>
+      </div>
+
+      <p>You can have a 360Hz monitor and still be playing at effectively 60Hz if any of these are wrong. Check every single one — at least one probably applies to you.</p>
+
+      <table class="settings-table">
+        <thead><tr><th>Mistake</th><th>What Happens</th><th>Fix</th></tr></thead>
+        <tbody>
+          <tr><td>Windows still set to 60Hz</td><td>Monitor runs at 60Hz regardless of its capability</td><td>Display settings &rarr; Advanced display &rarr; select correct Hz</td></tr>
+          <tr><td>V-Sync enabled (in-game or GPU driver)</td><td>Adds 1-3 frames of input lag (7-50ms depending on Hz)</td><td>Disable in VALORANT settings AND GPU control panel</td></tr>
+          <tr><td>FPS capped below refresh rate</td><td>Monitor cannot display frames it never receives</td><td>Set Max FPS to Off or 2x your refresh rate</td></tr>
+          <tr><td>Using HDMI instead of DisplayPort</td><td>HDMI 2.0 caps at 144Hz. Many monitors only do 240Hz+ over DP</td><td>Switch to DisplayPort cable — they're cheaper than HDMI anyway</td></tr>
+          <tr><td>Wrong cable version</td><td>Old DisplayPort 1.2 cables may not support 360Hz</td><td>Use a VESA-certified DisplayPort 1.4 cable</td></tr>
+          <tr><td>G-Sync/FreeSync + competitive settings conflict</td><td>G-Sync caps FPS to refresh rate by default</td><td>Disable V-Sync in control panel, enable G-Sync only for fullscreen, cap FPS 3 below refresh rate OR uncap entirely</td></tr>
+          <tr><td>Running in Windowed/Borderless mode</td><td>Adds compositor latency — extra frame of lag vs Fullscreen</td><td>Use <span class="val-set">Fullscreen</span> display mode in VALORANT</td></tr>
+          <tr><td>Monitor's own OSD set to wrong mode</td><td>Some monitors have an "overclock" refresh rate that must be enabled in the monitor's own menu</td><td>Check your monitor's on-screen display for a refresh rate or "overclocking" option</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>How to verify your actual refresh rate right now:</strong></p>
+      <ol class="steps">
+        <li>Open VALORANT &rarr; Settings &rarr; Video &rarr; Stats &rarr; enable <strong>Client FPS</strong></li>
+        <li>The FPS counter should consistently match or exceed your refresh rate</li>
+        <li>Open <a href="https://www.testufo.com" target="_blank" rel="noopener noreferrer" style="color:var(--accent2)">testufo.com</a> in your browser — it shows your actual display refresh rate at the top of the page. If it says 60Hz, Windows is misconfigured</li>
+        <li>Check the <strong>NVIDIA/AMD overlay</strong> — press Alt+R (NVIDIA) to see current refresh rate and latency in real time</li>
+      </ol>
+
+      <div class="callout fomo">
+        <span class="callout-icon">&#127919;</span>
+        <div class="callout-body">
+          <strong>Over 30% of players with high-refresh monitors are running at the wrong refresh rate in Windows.</strong>
+          It takes 30 seconds to check. Right-click desktop &rarr; Display settings &rarr; Advanced display. If the number doesn't match your monitor's spec, fix it now.
+        </div>
+      </div>
+
+      <div class="callout fps-gain">
+        <span class="callout-icon">&#9889;</span>
+        <div class="callout-body">
+          <strong>Valo Optimise auto-detects your monitor's refresh rate and configures everything accordingly.</strong>
+          It sets the correct Windows refresh rate, disables V-Sync at every level, configures your GPU control panel, and sets the optimal FPS cap — all in one click. No manual tweaking needed.
+        </div>
+      </div>
+    </div>
+
+    <!-- Ad: before completion banner -->
+    <div style="margin: 24px 0; text-align: center;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-4629819662160550"
+           data-ad-slot="auto"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Completion banner -->
+    <div id="completion-banner">
+      <h3>All 6 Sections Complete</h3>
+      <p>Your monitor is now properly configured for VALORANT. Load into The Range and feel the difference — crosshair movement should feel noticeably smoother and more responsive. Share this with anyone still stuck on 60Hz.</p>
+    </div>
+
+    <!-- Final CTA -->
+    <div class="final-cta">
+      <h2>Stop Leaving Performance <em>on the Table.</em></h2>
+      <p>Your monitor can only show what your system delivers. Valo Optimise configures Windows, your GPU driver, and VALORANT's settings to match your exact hardware — automatically.</p>
+      <a href="https://valooptimise.com" class="cta-btn" target="_blank" rel="noopener noreferrer">Download Free — Windows 11/10</a>
+      <p class="cta-sub">No account required &middot; Vanguard-safe &middot; 7-day free Pro trial included</p>
+    </div>
+
+    <!-- Share -->
+    <div class="share-section">
+      <h3>Know Someone With a 144Hz Monitor Still on 60Hz?</h3>
+      <p>You probably do. Send them this before their next ranked game.</p>
+      <div class="share-btns">
+        <button class="share-btn twitter"  onclick="shareTwitter()">Share on X</button>
+        <button class="share-btn reddit"   onclick="shareReddit()">Share on Reddit</button>
+        <button class="share-btn whatsapp" onclick="shareWhatsApp()">WhatsApp</button>
+        <button class="share-btn copy"     onclick="copyLink(this)">Copy Link</button>
+      </div>
+    </div>
+
+    <!-- Related -->
+    <div>
+      <h3 style="font-size:18px;font-weight:700;margin-bottom:16px;">Keep Optimising</h3>
+      <div class="related-grid">
+        <a class="related-card" href="how-to-boost-fps-valorant-windows-11-2026.html">
+          <div class="tags"><span class="tag">FPS Boost</span></div>
+          <h4>How to Boost FPS in VALORANT — 12 Windows 11 Tweaks</h4>
+          <p>Maximise your FPS to actually feed your high-refresh monitor the frames it needs.</p>
+        </a>
+        <a class="related-card" href="how-to-fix-valorant-stuttering-windows-11.html">
+          <div class="tags"><span class="tag">Stutter Fix</span></div>
+          <h4>How to Fix VALORANT Stuttering — The Frame Time Guide</h4>
+          <p>High FPS but still feels choppy? Frame time spikes are the hidden enemy.</p>
+        </a>
+        <a class="related-card" href="best-valorant-settings-low-end-pc-2026.html">
+          <div class="tags"><span class="tag">Low-End PC</span></div>
+          <h4>Best VALORANT Settings for Low-End PCs — GTX 1060, RX 580, Intel UHD</h4>
+          <p>Hardware-specific settings to hit 144Hz on budget GPUs.</p>
+        </a>
+      </div>
+    </div>
+
+  </article>
+</div>
+
+<a href="https://valooptimise.com" id="floating-cta" target="_blank" rel="noopener noreferrer">Free Download — Valo Optimise</a>
+
+<footer>
+  <p style="margin-bottom:8px;">
+    <a href="../index.html">Blog Home</a> &nbsp;&middot;&nbsp;
+    <a href="https://discord.gg/Fpx4SnxF" target="_blank" rel="noopener noreferrer">Discord</a> &nbsp;&middot;&nbsp;
+    <a href="https://valooptimise.com" target="_blank" rel="noopener noreferrer">Valo Optimise App</a> &nbsp;&middot;&nbsp;
+    <a href="https://valooptimise.com/docs/privacy.html" target="_blank" rel="noopener noreferrer">Privacy</a>
+  </p>
+  <p>&copy; 2026 Valo Optimise Ltd &middot; Not affiliated with Riot Games &middot; All optimisations are OS-level and Vanguard-safe</p>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    document.getElementById('progress-bar').style.width = Math.min(100,(scrolled/total)*100) + '%';
+    const cta = document.getElementById('floating-cta');
+    if (scrolled > 500) cta.classList.add('visible'); else cta.classList.remove('visible');
+  });
+
+  function updateTracker() {
+    const checks = document.querySelectorAll('.tip-check');
+    const done = document.querySelectorAll('.tip-check:checked').length;
+    const total = checks.length;
+    document.getElementById('counter-display').textContent = done + '/' + total;
+    document.getElementById('tracker-bar').style.width = (done/total*100) + '%';
+    if (done === total) {
+      document.getElementById('completion-banner').style.display = 'block';
+      document.getElementById('completion-banner').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+    document.querySelectorAll('.tip-check').forEach(cb => {
+      const h = cb.closest('.tip-header').querySelector('.tip-heading');
+      h.style.opacity = cb.checked ? '0.5' : '1';
+      h.style.textDecoration = cb.checked ? 'line-through' : 'none';
+    });
+  }
+
+  function copyCode(btn) {
+    const code = btn.parentElement.textContent.replace('Copy','').trim();
+    navigator.clipboard.writeText(code).then(() => { btn.textContent = 'Copied!'; setTimeout(() => btn.textContent = 'Copy', 2000); });
+  }
+
+  function shareTwitter() {
+    const text = encodeURIComponent('Your 144Hz monitor might still be running at 60Hz. Here\'s how to actually set up VALORANT for high refresh rate:');
+    window.open('https://twitter.com/intent/tweet?text=' + text + '&url=' + encodeURIComponent(window.location.href), '_blank');
+  }
+
+  function shareReddit() {
+    const title = encodeURIComponent('How to properly set up VALORANT for 144Hz, 240Hz, and 360Hz monitors (complete 2026 guide)');
+    window.open('https://reddit.com/submit?title=' + title + '&url=' + encodeURIComponent(window.location.href), '_blank');
+  }
+
+  function shareWhatsApp() {
+    window.open('https://wa.me/?text=' + encodeURIComponent('Check if your monitor is actually running at the right refresh rate in VALORANT: ' + window.location.href), '_blank');
+  }
+
+  function copyLink(btn) {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = 'Copy Link', 2000);
+    });
+  }
+
+  function handleEmailSubmit(e) {
+    e.preventDefault();
+    const feedback = document.getElementById('email-feedback');
+    feedback.textContent = 'You\'re in!';
+    feedback.style.color = 'var(--accent2)';
+    document.getElementById('email-input').value = '';
+    document.querySelector('.email-form button').textContent = 'Done';
+    document.querySelector('.email-form button').disabled = true;
+  }
+
+  const sections = document.querySelectorAll('.tip-section');
+  const tocLinks = document.querySelectorAll('.toc a');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting)
+        tocLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id));
+    });
+  }, { rootMargin: '-60px 0px -70% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
