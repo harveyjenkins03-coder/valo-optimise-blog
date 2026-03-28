@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valo Security — Freelance Penetration Testing & Web Application Security Audits UK</title>
+  <meta name="description" content="Professional web application security testing from certified ethical hackers. CORS audits, GraphQL security reviews, and full OWASP pentests. Freelance penetration testing UK.">
+  <meta name="keywords" content="freelance penetration testing UK, web application security audit, CORS security testing service, API security review, GraphQL pentest, ethical hacker UK, OWASP penetration test">
+  <link rel="canonical" href="https://blog.valooptimise.com/services.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Valo Security — Web Application Penetration Testing">
+  <meta property="og:description" content="Certified ethical hackers specialising in CORS, GraphQL, and API security audits. Professional penetration testing services from the UK.">
+  <meta property="og:url" content="https://blog.valooptimise.com/services.html">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Valo Security — Web Application Penetration Testing">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Valo Security",
+    "description": "Freelance penetration testing and web application security audits specialising in CORS, GraphQL, and API security.",
+    "url": "https://blog.valooptimise.com/services.html",
+    "areaServed": "GB",
+    "priceRange": "$$",
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Valo Optimise"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Security Testing Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "CORS & Origin Policy Audit",
+          "priceCurrency": "GBP",
+          "price": "499"
+        },
+        {
+          "@type": "Offer",
+          "name": "API & GraphQL Security Review",
+          "priceCurrency": "GBP",
+          "price": "799"
+        },
+        {
+          "@type": "Offer",
+          "name": "Full Web Application Pentest",
+          "priceCurrency": "GBP",
+          "price": "1499"
+        }
+      ]
+    }
+  }
+  </script>
+
+  <link rel="icon" href="https://valooptimise.com/docs/assets/icon_256.png">
+
+  <style>
+    :root {
+      --bg: #0a0e1a;
+      --panel: #111827;
+      --panel2: #1c2a3a;
+      --accent: #ff4655;
+      --accent2: #00d4aa;
+      --text: #f0f4ff;
+      --muted: #6b7a99;
+      --border: #1e2d42;
+      --warn: #f59e0b;
+      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --radius: 10px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.7;
+    }
+
+    /* ── Nav ─────────────────────────────────────────── */
+    nav {
+      background: rgba(10,14,26,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 800;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-logo .accent { color: var(--accent); }
+
+    .nav-links { display: flex; align-items: center; gap: 20px; }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta {
+      background: var(--accent);
+      color: #fff !important;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 13px !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover, .nav-cta:focus-visible { background: #e63946 !important; }
+    .nav-cta:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
+
+    /* ── Hero ────────────────────────────────────────── */
+    .hero {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 72px 24px 56px;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,70,85,0.1);
+      border: 1px solid rgba(255,70,85,0.25);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 em { font-style: normal; color: var(--accent); }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 620px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      font-size: 16px;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .hero-cta:hover { background: #e63946; }
+    .hero-cta:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
+
+    /* ── Credentials Bar ────────────────────────────── */
+    .credentials {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-top: 48px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+    }
+
+    .credential {
+      text-align: center;
+      min-width: 140px;
+    }
+
+    .credential-icon {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .credential-label {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .credential-sub {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* ── Section ─────────────────────────────────────── */
+    .section-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── Package Cards ───────────────────────────────── */
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+      margin-bottom: 64px;
+    }
+
+    .package-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s, transform 0.2s;
+      position: relative;
+    }
+
+    .package-card:hover {
+      border-color: var(--accent2);
+      transform: translateY(-2px);
+    }
+
+    .package-card.featured {
+      border-color: var(--accent);
+      border-width: 2px;
+    }
+
+    .package-popular {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .package-name {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .package-price {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--accent2);
+      margin-bottom: 4px;
+      letter-spacing: -0.02em;
+    }
+
+    .package-price-note {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .package-divider {
+      height: 1px;
+      background: var(--border);
+      margin-bottom: 20px;
+    }
+
+    .package-features {
+      list-style: none;
+      flex: 1;
+      margin-bottom: 24px;
+    }
+
+    .package-features li {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+      padding: 5px 0;
+      padding-left: 24px;
+      position: relative;
+    }
+
+    .package-features li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent2);
+    }
+
+    .package-delivery {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--panel2);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      align-self: flex-start;
+    }
+
+    .package-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s;
+      text-align: center;
+    }
+
+    .package-cta:hover { background: #e63946; }
+    .package-cta:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
+
+    /* ── How It Works ────────────────────────────────── */
+    .how-it-works {
+      margin-bottom: 64px;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .step-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      text-align: center;
+      position: relative;
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255,70,85,0.1);
+      border: 1px solid rgba(255,70,85,0.25);
+      color: var(--accent);
+      font-size: 16px;
+      font-weight: 800;
+      border-radius: 50%;
+      margin-bottom: 16px;
+    }
+
+    .step-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .step-card p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .step-arrow {
+      display: none;
+    }
+
+    /* ── FAQ ──────────────────────────────────────────── */
+    .faq-section {
+      margin-bottom: 64px;
+    }
+
+    .faq-item {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 15px;
+      font-weight: 700;
+      text-align: left;
+      padding: 20px 24px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      transition: color 0.2s;
+    }
+
+    .faq-question:hover { color: var(--accent2); }
+
+    .faq-question:focus-visible { outline: 2px solid var(--accent2); outline-offset: -2px; }
+
+    .faq-chevron {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      color: var(--muted);
+      transition: transform 0.3s;
+    }
+
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .faq-answer-inner {
+      padding: 0 24px 20px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+    }
+
+    /* ── Bottom CTA ──────────────────────────────────── */
+    .bottom-cta {
+      background: linear-gradient(135deg, var(--panel), #0f1c2e);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--accent);
+      border-radius: 14px;
+      padding: 56px 48px;
+      margin-bottom: 64px;
+      text-align: center;
+    }
+
+    .bottom-cta h2 {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .bottom-cta h2 em { font-style: normal; color: var(--accent); }
+
+    .bottom-cta p {
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 540px;
+      margin: 0 auto 28px;
+      line-height: 1.7;
+    }
+
+    .bottom-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      font-size: 16px;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s;
+      margin-bottom: 16px;
+    }
+
+    .bottom-cta-btn:hover { background: #e63946; }
+    .bottom-cta-btn:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
+
+    .bottom-cta .enterprise-note {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    /* ── Footer ──────────────────────────────────────── */
+    footer {
+      background: var(--panel);
+      border-top: 1px solid var(--border);
+      padding: 40px 24px;
+      text-align: center;
+    }
+
+    footer p { color: var(--muted); font-size: 13px; margin-bottom: 6px; }
+    footer a { color: var(--accent2); text-decoration: none; }
+
+    /* ── Responsive ──────────────────────────────────── */
+    @media (max-width: 768px) {
+      .steps-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .bottom-cta { padding: 36px 24px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .credentials { gap: 20px; }
+      .credential { min-width: 120px; }
+    }
+
+    @media (max-width: 480px) {
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+      .packages-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">
+    <span class="accent">VALO</span> SECURITY
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Blog</a>
+    <a href="#">Services</a>
+    <a href="mailto:security@valooptimise.com" class="nav-cta">Get a Quote</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-badge">A Division of Valo Optimise</div>
+  <h1>Web Application<br><em>Security Testing</em></h1>
+  <p>Certified ethical hackers specialising in CORS, GraphQL, and API security audits. We find the vulnerabilities before someone else does.</p>
+  <a href="mailto:security@valooptimise.com" class="hero-cta">Get a Quote</a>
+
+  <div class="credentials">
+    <div class="credential">
+      <div class="credential-icon">&#x1f6e1;</div>
+      <div class="credential-label">CEH Certified</div>
+      <div class="credential-sub">Certified Ethical Hacker</div>
+    </div>
+    <div class="credential">
+      <div class="credential-icon">&#x1f512;</div>
+      <div class="credential-label">Security+ Certified</div>
+      <div class="credential-sub">CompTIA Security+</div>
+    </div>
+    <div class="credential">
+      <div class="credential-icon">&#x2705;</div>
+      <div class="credential-label">HackerOne Verified</div>
+      <div class="credential-sub">Active Bug Bounty Hunter</div>
+    </div>
+    <div class="credential">
+      <div class="credential-icon">&#x1f41b;</div>
+      <div class="credential-label">25+ Vulnerabilities Found</div>
+      <div class="credential-sub">Across Major Platforms</div>
+    </div>
+  </div>
+</section>
+
+<!-- Service Packages -->
+<div class="section-wrap">
+
+  <div class="section-label">Service Packages</div>
+
+  <div class="packages-grid">
+
+    <!-- Package 1 -->
+    <div class="package-card">
+      <div class="package-name">CORS &amp; Origin Policy Audit</div>
+      <div class="package-price">From &pound;499</div>
+      <div class="package-price-note">Per engagement</div>
+      <div class="package-divider"></div>
+      <ul class="package-features">
+        <li>Full CORS misconfiguration testing (7 bypass vectors)</li>
+        <li>Wildcard vs reflected origin analysis</li>
+        <li>Credential exposure assessment</li>
+        <li>JavaScript PoC for verified findings</li>
+        <li>Remediation guidance with code examples</li>
+      </ul>
+      <div class="package-delivery">Delivery: 3-5 business days</div>
+      <a href="mailto:security@valooptimise.com?subject=CORS%20Audit%20Enquiry" class="package-cta">Request CORS Audit</a>
+    </div>
+
+    <!-- Package 2 -->
+    <div class="package-card featured">
+      <div class="package-popular">Most Popular</div>
+      <div class="package-name">API &amp; GraphQL Security Review</div>
+      <div class="package-price">From &pound;799</div>
+      <div class="package-price-note">Per engagement</div>
+      <div class="package-divider"></div>
+      <ul class="package-features">
+        <li>GraphQL introspection &amp; schema analysis</li>
+        <li>Sensitive type/mutation enumeration</li>
+        <li>Query batching &amp; DoS assessment</li>
+        <li>REST API authentication testing</li>
+        <li>Rate limiting &amp; access control review</li>
+      </ul>
+      <div class="package-delivery">Delivery: 5-7 business days</div>
+      <a href="mailto:security@valooptimise.com?subject=API%20Security%20Review%20Enquiry" class="package-cta">Request API Review</a>
+    </div>
+
+    <!-- Package 3 -->
+    <div class="package-card">
+      <div class="package-name">Full Web Application Pentest</div>
+      <div class="package-price">From &pound;1,499</div>
+      <div class="package-price-note">Per engagement</div>
+      <div class="package-divider"></div>
+      <ul class="package-features">
+        <li>Complete OWASP Top 10 assessment</li>
+        <li>Subdomain enumeration &amp; takeover checks</li>
+        <li>CORS, CSP, and header analysis</li>
+        <li>Authentication &amp; session management</li>
+        <li>Detailed PDF report with severity ratings</li>
+      </ul>
+      <div class="package-delivery">Delivery: 7-14 business days</div>
+      <a href="mailto:security@valooptimise.com?subject=Full%20Pentest%20Enquiry" class="package-cta">Request Full Pentest</a>
+    </div>
+
+  </div>
+
+  <!-- How It Works -->
+  <div class="how-it-works">
+    <div class="section-label">How It Works</div>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <h3>Scope</h3>
+        <p>We discuss your application, define the testing scope, agree on rules of engagement, and sign an authorisation agreement.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <h3>Assess</h3>
+        <p>Our team performs manual and automated testing against your application, using the same techniques real attackers use.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <h3>Report</h3>
+        <p>You receive a detailed PDF report with every finding classified by severity, including proof-of-concept demonstrations.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">4</div>
+        <h3>Remediate</h3>
+        <p>We provide clear fix guidance with code examples and offer a free re-test within 30 days to verify your patches.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq-section">
+    <div class="section-label">Frequently Asked Questions</div>
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+        What do I actually receive at the end of an engagement?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          You receive a professional PDF report containing an executive summary, a detailed breakdown of every vulnerability found (classified by severity using CVSS scoring), proof-of-concept demonstrations, and specific remediation guidance with code examples where applicable. For CORS audits, you also receive working JavaScript PoCs.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+        How quickly can you start testing?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Most engagements begin within 2-3 business days of signing the authorisation agreement. For urgent requirements, we can sometimes start within 24 hours — just mention the urgency in your initial email and we will do our best to accommodate.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+        Will testing disrupt my live application?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          We take every precaution to avoid disruption. Testing is performed carefully and we avoid destructive actions. We always recommend testing against a staging environment where possible, but we are experienced in testing production applications safely. We will agree on boundaries and out-of-scope actions before testing begins.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+        Do you offer re-testing after we fix the issues?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Yes. Every engagement includes one free re-test within 30 days of delivering the report. We will verify that each finding has been properly remediated and issue an updated report confirming the fixes. Additional re-tests beyond the 30-day window can be arranged at a reduced rate.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+        What if you do not find any vulnerabilities?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          You still receive a full report documenting the testing methodology, scope covered, and confirmation that no significant vulnerabilities were identified. A clean report is valuable evidence for compliance, client assurance, and internal security posture documentation.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+        Can you test applications behind authentication?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Absolutely. We regularly test authenticated areas of applications including admin panels, user dashboards, and API endpoints that require tokens or session cookies. We will agree on the access level and test accounts during the scoping phase. We also test for privilege escalation and broken access controls between user roles.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom CTA -->
+  <div class="bottom-cta">
+    <h2>Ready to Secure <em>Your Application?</em></h2>
+    <p>Tell us about your application and security requirements. We will respond within 24 hours with a tailored proposal and timeline.</p>
+    <a href="mailto:security@valooptimise.com?subject=Security%20Testing%20Enquiry" class="bottom-cta-btn">Get a Quote</a>
+    <p class="enterprise-note">Need a custom scope or ongoing retainer? We offer enterprise pricing for larger applications and continuous testing arrangements. Email us to discuss.</p>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer>
+  <p style="margin-bottom: 12px;">
+    <a href="index.html">Blog</a> &nbsp;&middot;&nbsp;
+    <a href="services.html">Security Services</a> &nbsp;&middot;&nbsp;
+    <a href="https://valooptimise.com" target="_blank" rel="noopener noreferrer">Valo Optimise App</a> &nbsp;&middot;&nbsp;
+    <a href="https://valooptimise.com/docs/privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a> &nbsp;&middot;&nbsp;
+    <a href="https://valooptimise.com/docs/terms.html" target="_blank" rel="noopener noreferrer">Terms</a>
+  </p>
+  <p>&copy; 2026 Valo Optimise Ltd &middot; Valo Security is a division of Valo Optimise</p>
+</footer>
+
+<script>
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+
+    // Close all other items
+    document.querySelectorAll('.faq-item.open').forEach(function(openItem) {
+      openItem.classList.remove('open');
+      openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+    });
+
+    // Toggle the clicked item
+    if (!isOpen) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  }
+</script>
+
+</body>
+</html>

