@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Valo Security — Freelance Penetration Testing & Web Application Security Audits UK</title>
-  <meta name="description" content="Professional web application security testing from HackerOne-verified researchers. CORS audits, GraphQL security reviews, and full OWASP pentests. Freelance penetration testing UK.">
-  <meta name="keywords" content="freelance penetration testing UK, web application security audit, CORS security testing service, API security review, GraphQL pentest, ethical hacker UK, OWASP penetration test">
+  <title>Valo Security — Penetration Testing, Cloud Audits & Attack Surface Monitoring UK</title>
+  <meta name="description" content="Professional penetration testing from HackerOne-verified researchers. External & internal pentests, CORS audits, API reviews, cloud security audits, and continuous attack surface monitoring. UK-based.">
+  <meta name="keywords" content="penetration testing UK, web application security audit, CORS security testing, API security review, GraphQL pentest, cloud security audit AWS Azure, attack surface monitoring, internal network pentest, ethical hacker UK">
   <link rel="canonical" href="https://blog.valooptimise.com/services.html">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Valo Security — Web Application Penetration Testing">
-  <meta property="og:description" content="HackerOne-verified researchers specialising in CORS, GraphQL, and API security audits. Professional penetration testing services from the UK.">
+  <meta property="og:title" content="Valo Security — Penetration Testing & Cloud Security Audits">
+  <meta property="og:description" content="HackerOne-verified researchers offering external & internal pentests, cloud audits, API reviews, and continuous attack surface monitoring.">
   <meta property="og:url" content="https://blog.valooptimise.com/services.html">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Valo Security — Web Application Penetration Testing">
+  <meta name="twitter:title" content="Valo Security — Penetration Testing & Cloud Security Audits">
 
   <script type="application/ld+json">
   {
@@ -68,6 +68,22 @@
           "@type": "Answer",
           "text": "Absolutely. We regularly test authenticated areas including admin panels, user dashboards, and API endpoints. We test for privilege escalation and broken access controls between user roles."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "What does attack surface monitoring include?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our continuous monitoring service runs daily automated scans to discover new subdomains, detect new hosts, scan for vulnerabilities on newly exposed assets, and monitor TLS certificate expiry. You receive instant alerts for critical findings and a monthly executive summary report."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which cloud platforms do you audit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We audit AWS, Azure, and Google Cloud Platform environments. Our cloud security audits cover IAM configuration, storage permissions, network security, CIS Benchmark compliance, publicly exposed resources, and secrets management. We provide a prioritised remediation matrix."
+        }
       }
     ]
   }
@@ -78,7 +94,7 @@
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Valo Security",
-    "description": "Freelance penetration testing and web application security audits specialising in CORS, GraphQL, and API security.",
+    "description": "Professional penetration testing, attack surface monitoring, and cloud security audits from HackerOne-verified researchers. Dual-server distributed scanning infrastructure.",
     "url": "https://blog.valooptimise.com/services.html",
     "areaServed": "GB",
     "priceRange": "$$",
@@ -94,19 +110,37 @@
           "@type": "Offer",
           "name": "CORS & Origin Policy Audit",
           "priceCurrency": "GBP",
-          "price": "999"
+          "price": "499"
         },
         {
           "@type": "Offer",
           "name": "API & GraphQL Security Review",
           "priceCurrency": "GBP",
+          "price": "1499"
+        },
+        {
+          "@type": "Offer",
+          "name": "External Penetration Test",
+          "priceCurrency": "GBP",
+          "price": "2999"
+        },
+        {
+          "@type": "Offer",
+          "name": "Internal Network Penetration Test",
+          "priceCurrency": "GBP",
+          "price": "3999"
+        },
+        {
+          "@type": "Offer",
+          "name": "Cloud Security Audit",
+          "priceCurrency": "GBP",
           "price": "1999"
         },
         {
           "@type": "Offer",
-          "name": "Full Web Application Pentest",
+          "name": "Continuous Attack Surface Monitoring",
           "priceCurrency": "GBP",
-          "price": "3999"
+          "price": "299"
         }
       ]
     }
@@ -636,6 +670,160 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* ── Quote Form ──────────────────────────────────── */
+    .quote-section {
+      margin-bottom: 64px;
+    }
+
+    .quote-form-wrap {
+      background: linear-gradient(135deg, var(--panel), #0f1c2e);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--accent);
+      border-radius: 14px;
+      padding: 48px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .quote-form-wrap h2 {
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 6px;
+      text-align: center;
+    }
+
+    .quote-form-wrap h2 em { font-style: normal; color: var(--accent); }
+
+    .quote-form-wrap > p {
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group.full { grid-column: 1 / -1; }
+
+    .form-group label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .form-group label .required {
+      color: var(--accent);
+      margin-left: 2px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 14px;
+      padding: 12px 14px;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent2);
+    }
+
+    .form-group select {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7a99' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+    }
+
+    .form-group select option {
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-submit {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      background: var(--accent);
+      color: #fff;
+      font-family: var(--font);
+      font-weight: 700;
+      font-size: 16px;
+      padding: 14px 32px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 8px;
+    }
+
+    .form-submit:hover { background: #e63946; }
+    .form-submit:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
+
+    .form-note {
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 16px;
+    }
+
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+      .quote-form-wrap { padding: 28px 20px; }
+    }
+
+    /* ── New service badge ───────────────────────────── */
+    .package-new {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      background: var(--accent2);
+      color: #0a0e1a;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .package-card.new-service {
+      border-color: rgba(0,212,170,0.3);
+    }
+
+    .package-card.new-service:hover {
+      border-color: var(--accent2);
+    }
   </style>
 </head>
 <body>
@@ -648,16 +836,16 @@
   <div class="nav-links">
     <a href="index.html">Blog</a>
     <a href="#">Services</a>
-    <a href="mailto:security@valooptimise.com" class="nav-cta">Get a Quote</a>
+    <a href="#quote-form" class="nav-cta">Get a Quote</a>
   </div>
 </nav>
 
 <!-- Hero -->
 <section class="hero">
   <div class="hero-badge">A Division of Valo Optimise</div>
-  <h1>Web Application<br><em>Security Testing</em></h1>
-  <p>HackerOne-verified researchers specialising in CORS, GraphQL, and API security audits. We find the vulnerabilities before someone else does.</p>
-  <a href="mailto:security@valooptimise.com" class="hero-cta">Get a Quote</a>
+  <h1>Professional<br><em>Penetration Testing</em></h1>
+  <p>HackerOne-verified researchers with dual-server distributed scanning infrastructure. External pentests, internal network assessments, cloud security audits, and continuous attack surface monitoring.</p>
+  <a href="#quote-form" class="hero-cta">Get a Quote</a>
 
   <div class="credentials">
     <div class="credential">
@@ -671,14 +859,14 @@
       <div class="credential-sub">Reported to Major Tech Companies</div>
     </div>
     <div class="credential">
-      <div class="credential-icon">&#x1f6e1;</div>
-      <div class="credential-label">OWASP Methodology</div>
-      <div class="credential-sub">Industry-Standard Testing</div>
+      <div class="credential-icon">&#x1f5a5;</div>
+      <div class="credential-label">Dual-Server Infrastructure</div>
+      <div class="credential-sub">Distributed Scanning at Scale</div>
     </div>
     <div class="credential">
-      <div class="credential-icon">&#x1f4cb;</div>
-      <div class="credential-label">Published Researcher</div>
-      <div class="credential-sub">Security Methodology Guides</div>
+      <div class="credential-icon">&#x1f6e1;</div>
+      <div class="credential-label">OWASP Methodology</div>
+      <div class="credential-sub">8,000+ Vulnerability Templates</div>
     </div>
   </div>
 </section>
@@ -690,56 +878,117 @@
 
   <div class="packages-grid">
 
-    <!-- Package 1 -->
+    <!-- Package 1: CORS Audit -->
     <div class="package-card">
       <div class="package-name">CORS &amp; Origin Policy Audit</div>
-      <div class="package-price">From &pound;999</div>
+      <div class="package-price">From &pound;499</div>
       <div class="package-price-note">Per engagement</div>
       <div class="package-divider"></div>
       <ul class="package-features">
-        <li>Full CORS misconfiguration testing (7 bypass vectors)</li>
-        <li>Wildcard vs reflected origin analysis</li>
-        <li>Credential exposure assessment</li>
-        <li>JavaScript PoC for verified findings</li>
+        <li>7 bypass vectors tested (reflected, null, regex, subdomain, wildcard, pre-flight, credential)</li>
+        <li>Automated + manual validation</li>
+        <li>JavaScript PoC for every confirmed finding</li>
         <li>Remediation guidance with code examples</li>
+        <li>Free re-test within 30 days</li>
       </ul>
       <div class="package-delivery">Delivery: 3-5 business days</div>
-      <a href="mailto:security@valooptimise.com?subject=CORS%20Audit%20Enquiry" class="package-cta">Request CORS Audit</a>
+      <a href="#quote-form" class="package-cta" onclick="preselectService('CORS &amp; Origin Policy Audit')">Request CORS Audit</a>
     </div>
 
-    <!-- Package 2 -->
+    <!-- Package 2: API & GraphQL -->
     <div class="package-card featured">
       <div class="package-popular">Most Popular</div>
       <div class="package-name">API &amp; GraphQL Security Review</div>
-      <div class="package-price">From &pound;1,999</div>
+      <div class="package-price">From &pound;1,499</div>
       <div class="package-price-note">Per engagement</div>
       <div class="package-divider"></div>
       <ul class="package-features">
         <li>GraphQL introspection &amp; schema analysis</li>
-        <li>Sensitive type/mutation enumeration</li>
-        <li>Query batching &amp; DoS assessment</li>
-        <li>REST API authentication testing</li>
-        <li>Rate limiting &amp; access control review</li>
+        <li>JWT authentication bypass testing</li>
+        <li>IDOR &amp; broken access control checks</li>
+        <li>Rate limiting &amp; query batching assessment</li>
+        <li>API key exposure scanning</li>
+        <li>Free re-test within 30 days</li>
       </ul>
       <div class="package-delivery">Delivery: 5-7 business days</div>
-      <a href="mailto:security@valooptimise.com?subject=API%20Security%20Review%20Enquiry" class="package-cta">Request API Review</a>
+      <a href="#quote-form" class="package-cta" onclick="preselectService('API &amp; GraphQL Security Review')">Request API Review</a>
     </div>
 
-    <!-- Package 3 -->
+    <!-- Package 3: External Pentest -->
     <div class="package-card">
-      <div class="package-name">Full Web Application Pentest</div>
+      <div class="package-name">External Penetration Test</div>
+      <div class="package-price">From &pound;2,999</div>
+      <div class="package-price-note">Per engagement</div>
+      <div class="package-divider"></div>
+      <ul class="package-features">
+        <li>Full OWASP Top 10 assessment</li>
+        <li>Distributed subdomain enumeration &amp; takeover checks</li>
+        <li>Port scanning across all discovered hosts</li>
+        <li>CORS, CSP, TLS, and security header analysis</li>
+        <li>JavaScript secret scanning</li>
+        <li>Branded PDF report with CVSS severity ratings</li>
+        <li>Free re-test within 30 days</li>
+      </ul>
+      <div class="package-delivery">Delivery: 7-14 business days</div>
+      <a href="#quote-form" class="package-cta" onclick="preselectService('External Penetration Test')">Request External Pentest</a>
+    </div>
+
+    <!-- Package 4: Internal Network Pentest (NEW) -->
+    <div class="package-card new-service">
+      <div class="package-new">New</div>
+      <div class="package-name">Internal Network Pentest</div>
       <div class="package-price">From &pound;3,999</div>
       <div class="package-price-note">Per engagement</div>
       <div class="package-divider"></div>
       <ul class="package-features">
-        <li>Complete OWASP Top 10 assessment</li>
-        <li>Subdomain enumeration &amp; takeover checks</li>
-        <li>CORS, CSP, and header analysis</li>
-        <li>Authentication &amp; session management</li>
-        <li>Detailed PDF report with severity ratings</li>
+        <li>Host discovery &amp; service enumeration</li>
+        <li>Default credential &amp; misconfiguration testing</li>
+        <li>Active Directory security assessment</li>
+        <li>Lateral movement &amp; privilege escalation paths</li>
+        <li>Internal web application scanning</li>
+        <li>Branded PDF report with network diagrams</li>
+        <li>Free re-test within 30 days</li>
       </ul>
       <div class="package-delivery">Delivery: 7-14 business days</div>
-      <a href="mailto:security@valooptimise.com?subject=Full%20Pentest%20Enquiry" class="package-cta">Request Full Pentest</a>
+      <a href="#quote-form" class="package-cta" onclick="preselectService('Internal Network Pentest')">Request Internal Pentest</a>
+    </div>
+
+    <!-- Package 5: Cloud Security Audit (NEW) -->
+    <div class="package-card new-service">
+      <div class="package-new">New</div>
+      <div class="package-name">Cloud Security Audit</div>
+      <div class="package-price">From &pound;1,999</div>
+      <div class="package-price-note">AWS / Azure / GCP</div>
+      <div class="package-divider"></div>
+      <ul class="package-features">
+        <li>Full cloud configuration review (IAM, S3, VPC, etc.)</li>
+        <li>CIS Benchmark compliance checking</li>
+        <li>Publicly exposed resources &amp; storage audit</li>
+        <li>Secrets &amp; credential exposure scanning</li>
+        <li>Remediation priority matrix</li>
+        <li>Executive summary for stakeholders</li>
+      </ul>
+      <div class="package-delivery">Delivery: 5-10 business days</div>
+      <a href="#quote-form" class="package-cta" onclick="preselectService('Cloud Security Audit')">Request Cloud Audit</a>
+    </div>
+
+    <!-- Package 6: Continuous Monitoring (NEW) -->
+    <div class="package-card new-service">
+      <div class="package-new">New</div>
+      <div class="package-name">Attack Surface Monitoring</div>
+      <div class="package-price">&pound;299<span style="font-size:16px;font-weight:600;">/month</span></div>
+      <div class="package-price-note">Ongoing protection</div>
+      <div class="package-divider"></div>
+      <ul class="package-features">
+        <li>Daily automated subdomain discovery</li>
+        <li>New host detection &amp; instant alerts</li>
+        <li>Continuous vulnerability scanning on new assets</li>
+        <li>TLS certificate expiry monitoring</li>
+        <li>Monthly executive summary report</li>
+        <li>Priority response for critical findings</li>
+      </ul>
+      <div class="package-delivery">Starts within 24 hours</div>
+      <a href="#quote-form" class="package-cta" onclick="preselectService('Attack Surface Monitoring')">Start Monitoring</a>
     </div>
 
   </div>
@@ -848,14 +1097,117 @@
       </div>
     </div>
 
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+        What does attack surface monitoring include?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Our continuous monitoring service runs daily automated scans using distributed infrastructure to discover new subdomains, detect new hosts, scan for vulnerabilities on newly exposed assets, and monitor TLS certificate expiry. You receive instant alerts for critical findings and a monthly executive summary report with trend analysis.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+        Which cloud platforms do you audit?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          We audit AWS, Azure, and Google Cloud Platform environments. Our cloud security audits cover IAM configuration, storage permissions (S3 buckets, Azure Blobs, GCS), network security groups, CIS Benchmark compliance, publicly exposed resources, and secrets management. You receive a prioritised remediation matrix and executive summary.
+        </div>
+      </div>
+    </div>
+
   </div>
 
-  <!-- Bottom CTA -->
-  <div class="bottom-cta">
-    <h2>Ready to Secure <em>Your Application?</em></h2>
-    <p>Tell us about your application and security requirements. We will respond within 24 hours with a tailored proposal and timeline.</p>
-    <a href="mailto:security@valooptimise.com?subject=Security%20Testing%20Enquiry" class="bottom-cta-btn">Get a Quote</a>
-    <p class="enterprise-note">Need a custom scope or ongoing retainer? We offer enterprise pricing for larger applications and continuous testing arrangements. Email us to discuss.</p>
+  <!-- Quote Form -->
+  <div class="quote-section" id="quote-form">
+    <div class="section-label">Get a Quote</div>
+    <div class="quote-form-wrap">
+      <h2>Request a <em>Free Quote</em></h2>
+      <p>Tell us about your requirements and we will respond within 24 hours with a tailored proposal.</p>
+
+      <form action="https://formsubmit.co/valooptimise@gmail.com" method="POST" id="quoteFormEl">
+        <!-- FormSubmit config -->
+        <input type="hidden" name="_subject" value="New Quote Request — Valo Security">
+        <input type="hidden" name="_captcha" value="true">
+        <input type="hidden" name="_template" value="box">
+        <input type="hidden" name="_next" value="https://blog.valooptimise.com/services.html?submitted=true#quote-form">
+        <input type="text" name="_honey" style="display:none">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name <span class="required">*</span></label>
+            <input type="text" name="name" required placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label>Email Address <span class="required">*</span></label>
+            <input type="email" name="email" required placeholder="you@company.com">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Company / Organisation</label>
+            <input type="text" name="company" placeholder="Your company name">
+          </div>
+          <div class="form-group">
+            <label>Service Required <span class="required">*</span></label>
+            <select name="service" id="serviceSelect" required>
+              <option value="" disabled selected>Select a service</option>
+              <option value="CORS &amp; Origin Policy Audit">CORS &amp; Origin Policy Audit — from &pound;499</option>
+              <option value="API &amp; GraphQL Security Review">API &amp; GraphQL Security Review — from &pound;1,499</option>
+              <option value="External Penetration Test">External Penetration Test — from &pound;2,999</option>
+              <option value="Internal Network Pentest">Internal Network Pentest — from &pound;3,999</option>
+              <option value="Cloud Security Audit">Cloud Security Audit — from &pound;1,999</option>
+              <option value="Attack Surface Monitoring">Attack Surface Monitoring — &pound;299/month</option>
+              <option value="Multiple Services">Multiple Services / Custom Scope</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group full">
+            <label>Application URL(s)</label>
+            <input type="text" name="urls" placeholder="https://yourapp.com (or multiple, comma-separated)">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group full">
+            <label>Budget Range</label>
+            <select name="budget">
+              <option value="" disabled selected>Select your budget range</option>
+              <option value="Under £1,000">Under &pound;1,000</option>
+              <option value="£1,000 - £3,000">&pound;1,000 - &pound;3,000</option>
+              <option value="£3,000 - £5,000">&pound;3,000 - &pound;5,000</option>
+              <option value="£5,000+">&pound;5,000+</option>
+              <option value="Ongoing retainer">Ongoing retainer</option>
+              <option value="Not sure yet">Not sure yet</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group full">
+            <label>Tell Us About Your Requirements <span class="required">*</span></label>
+            <textarea name="requirements" required placeholder="Describe your application, what you need tested, any compliance requirements, preferred timeline, etc."></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="form-submit">Submit Quote Request</button>
+        <p class="form-note">We typically respond within 24 hours. Your information is kept confidential and will never be shared.</p>
+      </form>
+
+      <div id="formSuccess" style="display:none;text-align:center;padding:32px 0;">
+        <div style="font-size:48px;margin-bottom:16px;">&#x2705;</div>
+        <h3 style="color:var(--accent2);font-size:20px;margin-bottom:8px;">Quote Request Received</h3>
+        <p style="color:var(--muted);font-size:14px;">We will review your requirements and get back to you within 24 hours with a tailored proposal.</p>
+      </div>
+    </div>
   </div>
 
 </div>
@@ -894,16 +1246,40 @@
     const item = btn.closest('.faq-item');
     const isOpen = item.classList.contains('open');
 
-    // Close all other items
     document.querySelectorAll('.faq-item.open').forEach(function(openItem) {
       openItem.classList.remove('open');
       openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
     });
 
-    // Toggle the clicked item
     if (!isOpen) {
       item.classList.add('open');
       btn.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  function preselectService(name) {
+    var sel = document.getElementById('serviceSelect');
+    if (sel) {
+      for (var i = 0; i < sel.options.length; i++) {
+        if (sel.options[i].value === name) {
+          sel.selectedIndex = i;
+          break;
+        }
+      }
+    }
+  }
+
+  // Show success message if redirected back after submission
+  if (window.location.search.indexOf('submitted=true') !== -1) {
+    var form = document.getElementById('quoteFormEl');
+    var success = document.getElementById('formSuccess');
+    if (form && success) {
+      form.style.display = 'none';
+      success.style.display = 'block';
+    }
+    // Clean URL without reload
+    if (window.history.replaceState) {
+      window.history.replaceState(null, '', window.location.pathname + '#quote-form');
     }
   }
 </script>
