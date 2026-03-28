@@ -19,6 +19,63 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What do I actually receive at the end of an engagement?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You receive a professional PDF report containing an executive summary, a detailed breakdown of every vulnerability found (classified by severity using CVSS scoring), proof-of-concept demonstrations, and specific remediation guidance with code examples where applicable."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How quickly can you start testing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most engagements begin within 2-3 business days of signing the authorisation agreement. For urgent requirements, we can sometimes start within 24 hours."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will testing disrupt my live application?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We take every precaution to avoid disruption. We recommend testing against a staging environment where possible, but we are experienced in testing production applications safely."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer re-testing after we fix the issues?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Every engagement includes one free re-test within 30 days of delivering the report. We verify that each finding has been properly remediated and issue an updated report."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if you do not find any vulnerabilities?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You still receive a full report documenting the testing methodology, scope covered, and confirmation that no significant vulnerabilities were identified. A clean report is valuable evidence for compliance and client assurance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you test applications behind authentication?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. We regularly test authenticated areas including admin panels, user dashboards, and API endpoints. We test for privilege escalation and broken access controls between user roles."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Valo Security",
     "description": "Freelance penetration testing and web application security audits specialising in CORS, GraphQL, and API security.",
@@ -802,6 +859,23 @@
   </div>
 
 </div>
+
+<!-- Related Articles -->
+<section style="max-width:900px;margin:40px auto;padding:0 20px;">
+  <h3 style="color:var(--accent);font-size:18px;margin-bottom:16px;">From Our Security Blog</h3>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;">
+    <a href="posts/how-to-find-cors-misconfigurations-bug-bounty-guide-2026.html" style="background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:18px;text-decoration:none;color:var(--text);transition:border-color .15s;">
+      <div style="color:var(--accent);font-size:12px;margin-bottom:6px;">METHODOLOGY</div>
+      <div style="font-weight:600;font-size:14px;">How to Find CORS Misconfigurations — The Complete Guide</div>
+      <div style="color:var(--muted);font-size:12px;margin-top:8px;">7 bypass vectors, automation scripts, and report templates</div>
+    </a>
+    <a href="posts/how-to-boost-fps-valorant-windows-11-2026.html" style="background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:18px;text-decoration:none;color:var(--text);transition:border-color .15s;">
+      <div style="color:var(--accent);font-size:12px;margin-bottom:6px;">POPULAR</div>
+      <div style="font-weight:600;font-size:14px;">How to Boost FPS in VALORANT — 12 Proven Tweaks</div>
+      <div style="color:var(--muted);font-size:12px;margin-top:8px;">Our most-read guide with 40-60 FPS gains</div>
+    </a>
+  </div>
+</section>
 
 <!-- Footer -->
 <footer>
