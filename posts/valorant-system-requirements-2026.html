@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valorant System Requirements 2026: Minimum, Recommended & Competitive Specs</title>
+  <meta name="description" content="Complete VALORANT system requirements for 2026. Covers minimum specs, recommended builds, competitive 240fps setups, CPU vs GPU priorities, RAM, SSD, and budget build guides at 3 price tiers.">
+  <meta name="keywords" content="valorant system requirements 2026, valorant minimum specs, valorant recommended specs, valorant pc build, valorant 240fps build, valorant cpu or gpu, valorant ram requirements, valorant ssd vs hdd">
+  <link rel="canonical" href="https://blog.valooptimise.com/posts/valorant-system-requirements-2026.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Valorant System Requirements 2026: Minimum, Recommended & Competitive Specs">
+  <meta property="og:description" content="Complete VALORANT system requirements for 2026. Covers minimum specs, recommended builds, competitive 240fps setups, CPU vs GPU priorities, RAM, SSD, and budget">
+  <meta property="og:image" content="https://valooptimise.com/docs/assets/og-image.png">
+  <meta property="og:url" content="https://blog.valooptimise.com/posts/valorant-system-requirements-2026.html">
+  <meta property="og:site_name" content="Valo Optimise Blog">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Valorant System Requirements 2026: Minimum, Recommended & Competitive Specs">
+  <meta name="twitter:description" content="Complete VALORANT system requirements for 2026. Covers minimum specs, recommended builds, competitive 240fps setups, CPU vs GPU priorities, RAM, SSD, and budget">
+  <meta name="twitter:image" content="https://valooptimise.com/docs/assets/og-image.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Valorant System Requirements 2026: Minimum, Recommended & Competitive Specs",
+        "description": "Complete VALORANT system requirements for 2026. Covers minimum specs, recommended builds, competitive 240fps setups, CPU vs GPU priorities, RAM, SSD, and budget build guides at 3 price tiers.",
+        "image": "https://valooptimise.com/docs/assets/og-image.png",
+        "author": { "@type": "Person", "name": "Harvey Jenkins" },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Valo Optimise",
+          "logo": { "@type": "ImageObject", "url": "https://valooptimise.com/docs/assets/icon_256.png" }
+        },
+        "datePublished": "2026-03-29",
+        "dateModified": "2026-03-29",
+        "mainEntityOfPage": "https://blog.valooptimise.com/posts/valorant-system-requirements-2026.html"
+      },
+      {
+        "@type": "HowTo",
+        "name": "Valorant System Requirements 2026: Minimum, Recommended & Competitive Specs",
+        "totalTime": "PT10M",
+        "step": [
+          { "@type": "HowToStep", "position": 1, "name": "Check official spec tiers", "text": "Review Riot Games official minimum, recommended, and high-end spec requirements for VALORANT." },
+          { "@type": "HowToStep", "position": 2, "name": "Understand CPU vs GPU priority", "text": "Learn why VALORANT is CPU-bound and which processor matters most for FPS." },
+          { "@type": "HowToStep", "position": 3, "name": "Configure RAM correctly", "text": "Set up 16GB dual-channel RAM with XMP/EXPO enabled for optimal performance." },
+          { "@type": "HowToStep", "position": 4, "name": "SSD vs HDD comparison", "text": "Understand why an SSD dramatically improves load times and reduces stuttering." },
+          { "@type": "HowToStep", "position": 5, "name": "Identify your bottleneck", "text": "Use Task Manager and in-game metrics to find whether CPU, GPU, or RAM is limiting you." },
+          { "@type": "HowToStep", "position": 6, "name": "Budget build recommendations", "text": "See recommended PC builds at three price tiers for VALORANT in 2026." },
+          { "@type": "HowToStep", "position": 7, "name": "Use Valo Optimise", "text": "Download Valo Optimise to automatically detect bottlenecks and optimise your system." }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="icon" href="https://valooptimise.com/docs/assets/icon_256.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4629819662160550" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #09090b;
+      --panel: #131316;
+      --panel2: #1a1a1f;
+      --accent: #10b981;
+      --accent2: #10b981;
+      --text: #fafafa;
+      --muted: #71717a;
+      --border: #27272a;
+      --warn: #f59e0b;
+      --font: 'Inter', system-ui, -apple-system, sans-serif;
+      --radius: 10px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    #progress-bar {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      width: 0%;
+      background: var(--accent);
+      z-index: 9999;
+      transition: width 0.1s linear;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(9,9,11,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 100;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .nav-logo span { color: var(--text); }
+    .nav-links { display: flex; align-items: center; gap: 20px; }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta {
+      background: var(--accent);
+      color: #fff !important;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 13px !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover, .nav-cta:focus-visible { opacity: 0.9; background: var(--accent) !important; }
+    .nav-cta:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
+
+    .article-hero {
+      max-width: 800px;
+      margin: 48px auto 0;
+      padding: 0 24px;
+    }
+
+    .tags { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+
+    .tag {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      color: var(--accent2);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .article-hero h1 {
+      font-size: clamp(24px, 4vw, 38px);
+      line-height: 1.25;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .article-hero h1 em { font-style: normal; color: var(--accent); }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .read-time {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent2);
+    }
+
+    .hook-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .hook-box {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent2);
+      padding: 12px 16px;
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .progress-tracker {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .tracker-label { font-size: 14px; font-weight: 600; }
+    .tracker-label span { color: var(--accent2); }
+
+    .tracker-bar-wrap {
+      flex: 1;
+      background: var(--panel2);
+      height: 8px;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .tracker-bar {
+      height: 100%;
+      width: 0%;
+      background: var(--accent);
+      border-radius: 4px;
+      transition: width 0.3s ease;
+    }
+
+    .article-layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .toc {
+      position: sticky;
+      top: 72px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+
+    .toc-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .toc ol { list-style: none; counter-reset: toc; }
+
+    .toc ol li {
+      counter-increment: toc;
+      margin-bottom: 6px;
+    }
+
+    .toc ol li a {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      line-height: 1.4;
+      padding: 4px 8px;
+      border-radius: 6px;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .toc ol li a::before {
+      content: counter(toc);
+      background: var(--panel2);
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 700;
+      min-width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+
+    .toc ol li a:hover,
+    .toc ol li a:focus-visible,
+    .toc ol li a.active { background: var(--panel2); color: var(--text); }
+
+    .toc ol li a:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
+
+    .toc ol li a.active::before { background: var(--accent); color: #fff; }
+
+    .toc-cta { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border); }
+
+    .toc-cta a {
+      display: block;
+      background: var(--accent);
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .toc-cta a:hover, .toc-cta a:focus-visible { background: var(--accent); }
+    .toc-cta a:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
+
+    article { min-width: 0; }
+
+    .article-intro {
+      font-size: 17px;
+      line-height: 1.8;
+      color: #c8d0e0;
+      margin-bottom: 32px;
+      padding: 24px;
+      background: var(--panel);
+      border-radius: var(--radius);
+      border-left: 3px solid var(--accent);
+    }
+
+    .article-intro strong { color: var(--text); }
+
+    /* Frame time explainer visual */
+    .frame-viz {
+      background: #070b14;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin: 24px 0;
+      font-family: 'Consolas', monospace;
+      font-size: 13px;
+    }
+
+    .frame-viz-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 16px;
+      font-family: var(--font);
+    }
+
+    .frame-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .frame-label {
+      width: 120px;
+      font-size: 12px;
+      color: var(--muted);
+      font-family: var(--font);
+      flex-shrink: 0;
+    }
+
+    .frame-bars {
+      display: flex;
+      gap: 3px;
+      align-items: flex-end;
+      height: 40px;
+    }
+
+    .frame-bar {
+      width: 8px;
+      background: var(--accent2);
+      border-radius: 2px 2px 0 0;
+      transition: height 0.3s;
+    }
+
+    .frame-bar.spike { background: var(--accent); }
+
+    .frame-value {
+      font-size: 13px;
+      font-weight: 700;
+      margin-left: 8px;
+    }
+
+    .frame-value.good { color: var(--accent2); }
+    .frame-value.bad  { color: var(--accent); }
+
+    .tip-section {
+      margin-bottom: 48px;
+      scroll-margin-top: 80px;
+    }
+
+    .tip-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .tip-checkbox-wrap { margin-top: 4px; flex-shrink: 0; }
+
+    .tip-check {
+      width: 20px;
+      height: 20px;
+      accent-color: var(--accent2);
+      cursor: pointer;
+    }
+
+    .tip-heading {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--text);
+    }
+
+    .tip-heading .num {
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .tip-section p {
+      color: #c8d0e0;
+      margin-bottom: 14px;
+      line-height: 1.8;
+    }
+
+    .code-block {
+      background: #070b14;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 20px;
+      font-family: 'Consolas', 'Courier New', monospace;
+      font-size: 13px;
+      color: var(--accent2);
+      margin: 16px 0;
+      overflow-x: auto;
+      position: relative;
+    }
+
+    .code-block .copy-code {
+      position: absolute;
+      top: 10px; right: 10px;
+      background: var(--panel2);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: var(--font);
+      transition: color 0.2s;
+    }
+
+    .code-block .copy-code:hover { color: var(--text); }
+
+    .steps { list-style: none; counter-reset: steps; margin: 16px 0; }
+
+    .steps li {
+      counter-increment: steps;
+      display: flex;
+      gap: 14px;
+      margin-bottom: 12px;
+      color: #c8d0e0;
+    }
+
+    .steps li::before {
+      content: counter(steps);
+      background: var(--accent);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      min-width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .callout {
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin: 20px 0;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .callout-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+
+    .callout-body { font-size: 14px; line-height: 1.7; }
+
+    .callout-body strong { display: block; margin-bottom: 4px; font-size: 15px; }
+
+    .callout.fps-gain {
+      background: rgba(0,212,170,0.08);
+      border: 1px solid rgba(0,212,170,0.25);
+    }
+
+    .callout.fps-gain .callout-body { color: var(--accent2); }
+
+    .callout.warning {
+      background: rgba(245,158,11,0.08);
+      border: 1px solid rgba(245,158,11,0.25);
+    }
+
+    .callout.warning .callout-body { color: #f59e0b; }
+
+    .callout.fomo {
+      background: rgba(255,70,85,0.08);
+      border: 1px solid rgba(255,70,85,0.25);
+    }
+
+    .callout.fomo .callout-body { color: #ff9ea6; }
+
+    .settings-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+
+    .settings-table th {
+      text-align: left;
+      padding: 10px 14px;
+      background: var(--panel2);
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .settings-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      color: #c8d0e0;
+      vertical-align: top;
+    }
+
+    .settings-table tr:last-child td { border-bottom: none; }
+    .settings-table td:first-child { color: var(--text); font-weight: 600; }
+    .val-set { color: var(--accent2); font-weight: 700; }
+
+    /* Stutter type diagnosis table */
+    .diag-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+
+    .diag-table th {
+      text-align: left;
+      padding: 10px 14px;
+      background: var(--panel2);
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .diag-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      color: #c8d0e0;
+      vertical-align: top;
+    }
+
+    .diag-table tr:last-child td { border-bottom: none; }
+
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+
+    .email-capture {
+      background: linear-gradient(135deg, #131316, #1a1a1f);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 28px;
+      margin: 48px 0;
+      text-align: center;
+    }
+
+    .email-capture h3 { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+
+    .email-capture p { color: var(--muted); font-size: 14px; margin-bottom: 20px; }
+
+    .email-form { display: flex; gap: 10px; max-width: 440px; margin: 0 auto; }
+
+    .email-form input {
+      flex: 1;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 16px;
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .email-form input:focus { border-color: var(--accent2); }
+
+    .email-form button {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 22px;
+      font-family: var(--font);
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+
+    .email-form button:hover { background: var(--accent); }
+    .email-note { font-size: 12px; color: var(--muted); margin-top: 10px; }
+
+    .final-cta {
+      background: linear-gradient(135deg, #0f1824, #1a0d10);
+      border: 1px solid rgba(255,70,85,0.3);
+      border-radius: 14px;
+      padding: 36px;
+      margin: 48px 0;
+      text-align: center;
+    }
+
+    .final-cta h2 { font-size: 26px; font-weight: 800; margin-bottom: 10px; }
+    .final-cta h2 em { font-style: normal; color: var(--accent); }
+
+    .final-cta p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 24px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 14px 36px;
+      border-radius: 8px;
+      transition: background 0.2s, transform 0.2s;
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+
+    .cta-btn:hover, .cta-btn:focus-visible { background: var(--accent); transform: translateY(-2px); animation: none; }
+    .cta-btn:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(255,70,85,0.4); }
+      50% { box-shadow: 0 0 0 10px rgba(255,70,85,0); }
+    }
+
+    .cta-sub { font-size: 13px; color: var(--muted); margin-top: 12px; }
+
+    .share-section {
+      margin: 48px 0;
+      padding: 28px;
+      background: var(--panel);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .share-section h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+    .share-section p { color: var(--muted); font-size: 14px; margin-bottom: 20px; }
+
+    .share-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    .share-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: none;
+      font-family: var(--font);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+      text-decoration: none;
+    }
+
+    .share-btn:hover, .share-btn:focus-visible { opacity: 0.85; transform: translateY(-1px); }
+    .share-btn:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
+    .share-btn.twitter  { background: #1da1f2; color: #fff; }
+    .share-btn.reddit   { background: #ff4500; color: #fff; }
+    .share-btn.whatsapp { background: #25d366; color: #fff; }
+    .share-btn.copy     { background: var(--panel2); color: var(--text); border: 1px solid var(--border); }
+
+    #completion-banner {
+      display: none;
+      background: linear-gradient(135deg, rgba(0,212,170,0.15), rgba(0,212,170,0.05));
+      border: 1px solid rgba(0,212,170,0.4);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      text-align: center;
+      margin: 32px 0;
+      animation: fadeIn 0.5s ease;
+    }
+
+    #completion-banner h3 { color: var(--accent2); font-size: 20px; margin-bottom: 6px; }
+    #completion-banner p { color: var(--muted); font-size: 14px; }
+
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; } }
+
+    #floating-cta {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--accent);
+      color: #fff;
+      padding: 14px 22px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 4px 24px rgba(255,70,85,0.4);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.3s, transform 0.3s;
+      pointer-events: none;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    #floating-cta.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
+    #floating-cta:hover { background: var(--accent); }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .related-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .related-card:hover { border-color: var(--accent2); transform: translateY(-2px); }
+    .related-card h4 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px; line-height: 1.4; }
+    .related-card p { font-size: 13px; color: var(--muted); }
+
+    footer {
+      background: var(--panel);
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    footer a { color: var(--accent2); text-decoration: none; }
+    footer p { color: var(--muted); font-size: 13px; }
+
+    @media (max-width: 860px) {
+      .article-layout { grid-template-columns: 1fr; }
+      .toc { position: static; }
+      .email-form { flex-direction: column; }
+    }
+
+    @media (max-width: 600px) {
+      .article-hero h1 { font-size: 24px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+    }
+  </style>
+</head>
+<body>
+<div id="progress-bar"></div>
+<nav role="navigation" aria-label="Main navigation">
+  <a href="../index.html" class="nav-logo">
+    <span style="display:inline-flex;width:24px;height:24px;border-radius:6px;background:#10b981;align-items:center;justify-content:center;"><svg viewBox="0 0 16 16" fill="none" style="width:14px;height:14px;"><path d="M4 12V4l4 4-4 4zm4 0V4l4 4-4 4z" fill="#fff" opacity="0.95"/></svg></span>
+    Valo Optimise Blog
+  </a>
+  <div class="nav-links">
+    <a href="../index.html">All Articles</a>
+    <a href="https://discord.gg/Fpx4SnxF" target="_blank" rel="noopener noreferrer">Discord</a>
+    <a href="https://valooptimise.com" target="_blank" rel="noopener noreferrer" class="nav-cta">Download</a>
+  </div>
+</nav>
+
+<div class="article-hero">
+  <div class="tags">
+    <span class="tag">System Requirements</span>
+    <span class="tag">Hardware</span>
+    <span class="tag">PC Build</span>
+    <span class="tag">2026</span>
+  </div>
+  <h1>Valorant System Requirements 2026 &mdash; <em>Minimum, Recommended &amp; Competitive Specs</em></h1>
+  <div class="article-meta">
+    <span>March 29, 2026</span>
+    <span style="opacity:0.4">&middot;</span>
+    <span>Harvey Jenkins</span>
+    <span style="opacity:0.4">&middot;</span>
+    <span class="read-time">&#9201; 9 min read</span>
+  </div>
+  <div class="hook-grid">
+    <div class="hook-box"><span>&#128187;</span> All 3 spec tiers covered</div>
+    <div class="hook-box"><span>&#10003;</span> Budget build guides included</div>
+    <div class="hook-box"><span>&#9201;</span> Bottleneck check in 2 min</div>
+    <div class="hook-box"><span>&#127381;</span> Updated for 2026 patches</div>
+  </div>
+  <div class="progress-tracker">
+    <div class="tracker-label">Steps completed: <span id="counter-display">0/7</span></div>
+    <div class="tracker-bar-wrap">
+      <div class="tracker-bar" id="tracker-bar"></div>
+    </div>
+    <div style="font-size:13px;color:var(--muted);white-space:nowrap">Tick each as you go</div>
+  </div>
+</div>
+
+<div class="article-layout">
+  <aside class="toc">
+    <div class="toc-title">Contents</div>
+    <ol>
+      <li><a href="#tweak-1">Official Spec Tiers</a></li>
+      <li><a href="#tweak-2">CPU vs GPU: What Matters More</a></li>
+      <li><a href="#tweak-3">RAM: How Much You Need</a></li>
+      <li><a href="#tweak-4">SSD vs HDD for VALORANT</a></li>
+      <li><a href="#tweak-5">Identify Your Bottleneck</a></li>
+      <li><a href="#tweak-6">Budget Build Guides (3 Tiers)</a></li>
+      <li><a href="#tweak-7">One-Click: Valo Optimise</a></li>
+    </ol>
+    <div class="toc-cta">
+      <a href="https://valooptimise.com" target="_blank" rel="noopener noreferrer">&#9889; Free Download</a>
+    </div>
+  </aside>
+  <article>
+    <div class="article-intro">
+      <strong>VALORANT is one of the lightest competitive shooters on the market &mdash; but that does not mean any PC can run it well.</strong> Running VALORANT is not the same as running it <em>competitively</em>. To hold 240+ fps consistently (which you need for a 240Hz monitor advantage), you need specific hardware priorities that differ from most other games.<br><br>
+      This guide covers the official 2026 requirements, explains what hardware actually matters, helps you identify your specific bottleneck, and includes budget build recommendations at three price tiers.
+    </div>
+
+    <div style="margin: 24px 0; text-align: center;">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4629819662160550" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+      <div class="callout fomo">
+        <span class="callout-icon">&#9889;</span>
+        <div class="callout-body">
+          <strong>FPS below your monitor refresh rate = wasted potential.</strong>
+          If you have a 144Hz monitor but only get 120fps, you are not seeing every frame. If you have a 240Hz monitor at 180fps, your input latency is higher than it needs to be. Match your FPS to your refresh rate.
+        </div>
+      </div>
+
+    <div class="tip-section" id="tweak-1">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark Section 1 as complete">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Section 01</span>
+          Official VALORANT System Requirements (2026)
+        </div>
+      </div>
+      <p>Riot Games lists three spec tiers. These are the <strong>official</strong> requirements &mdash; but keep in mind that "minimum" means the game launches, not that it runs well.</p>
+
+      <table class="settings-table">
+        <thead><tr><th>Component</th><th>Minimum (30fps)</th><th>Recommended (60fps)</th><th>Competitive (144fps+)</th></tr></thead>
+        <tbody>
+          <tr><td><strong>CPU</strong></td><td>Intel i3-4150 / AMD FX-4350</td><td>Intel i5-9400F / Ryzen 5 2600</td><td><span class="val-set">Intel i5-12400F / Ryzen 5 5600X</span></td></tr>
+          <tr><td><strong>GPU</strong></td><td>Intel HD 4000 / Radeon R5 200</td><td>GTX 1050 Ti / RX 560</td><td><span class="val-set">RTX 3060 / RX 6600 XT</span></td></tr>
+          <tr><td><strong>RAM</strong></td><td>4 GB</td><td>8 GB</td><td><span class="val-set">16 GB (dual channel)</span></td></tr>
+          <tr><td><strong>Storage</strong></td><td>30 GB HDD</td><td>30 GB HDD</td><td><span class="val-set">NVMe SSD</span></td></tr>
+          <tr><td><strong>OS</strong></td><td>Windows 10 64-bit</td><td>Windows 10/11 64-bit</td><td><span class="val-set">Windows 11 64-bit</span></td></tr>
+          <tr><td><strong>Target FPS</strong></td><td>30 fps (720p Low)</td><td>60 fps (1080p Medium)</td><td><span class="val-set">240+ fps (1080p Low)</span></td></tr>
+        </tbody>
+      </table>
+      <p><strong>Important:</strong> The competitive tier above is what you should aim for if you play ranked. Holding 240+ fps consistently means your game feels responsive even during chaotic fights with multiple abilities.</p>
+
+      <p>For 360fps (360Hz monitors), you need a top-tier CPU: Intel i7-13700K / Ryzen 7 7800X3D or better. The GPU barely matters at this level &mdash; VALORANT is almost entirely CPU-bound at high frame rates.</p>
+
+      <div class="callout fps-gain">
+        <span class="callout-icon">&#10003;</span>
+        <div class="callout-body">
+          <strong>If you can only upgrade one component, upgrade your CPU</strong>
+          VALORANT at competitive settings (1080p Low) is 85% CPU-bound. A better GPU helps much less than you expect.
+        </div>
+      </div>
+
+    </div>
+    <hr class="section-divider">
+
+    <div class="tip-section" id="tweak-2">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark Section 2 as complete">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Section 02</span>
+          CPU vs GPU: What Actually Matters for VALORANT
+        </div>
+      </div>
+      <p>VALORANT is <strong>CPU-bound</strong> at competitive settings. This means your processor is almost always the limiting factor for FPS, not your graphics card.</p>
+
+      <p><strong>Why?</strong> Competitive players run Low/Medium settings at 1080p to reduce visual clutter. At these settings, the GPU finishes rendering each frame extremely quickly and spends most of its time waiting for the CPU to process game logic, physics, networking, and ability calculations.</p>
+
+      <table class="settings-table">
+        <thead><tr><th>Component</th><th>Impact on FPS</th><th>Priority</th></tr></thead>
+        <tbody>
+          <tr><td>CPU (single-thread speed)</td><td>Highest &mdash; directly determines max FPS</td><td><span class="val-set">Priority #1</span></td></tr>
+          <tr><td>RAM (speed + dual channel)</td><td>High &mdash; 10-20% FPS difference</td><td><span class="val-set">Priority #2</span></td></tr>
+          <tr><td>GPU</td><td>Medium &mdash; only matters at high resolution/settings</td><td>Priority #3</td></tr>
+          <tr><td>Storage (SSD)</td><td>Low FPS impact but reduces load times/stutters</td><td>Priority #4</td></tr>
+        </tbody>
+      </table>
+      <p><strong>Best CPUs for VALORANT in 2026:</strong></p>
+
+      <table class="settings-table">
+        <thead><tr><th>CPU</th><th>Avg FPS (1080p Low)</th><th>Price Tier</th></tr></thead>
+        <tbody>
+          <tr><td>Ryzen 7 7800X3D</td><td><span class="val-set">500+ fps</span></td><td>High-end</td></tr>
+          <tr><td>Intel i5-14600K</td><td><span class="val-set">450+ fps</span></td><td>Mid-range (best value)</td></tr>
+          <tr><td>Ryzen 5 5600X</td><td><span class="val-set">350+ fps</span></td><td>Budget (still excellent)</td></tr>
+          <tr><td>Intel i5-12400F</td><td><span class="val-set">300+ fps</span></td><td>Budget</td></tr>
+          <tr><td>Ryzen 5 3600</td><td><span class="val-set">220+ fps</span></td><td>Older but viable</td></tr>
+        </tbody>
+      </table>
+      <div class="callout warning">
+        <span class="callout-icon">&#9888;&#65039;</span>
+        <div class="callout-body">
+          <strong>Do not overspend on GPU for VALORANT.</strong>
+          An RTX 4090 gives you maybe 5% more FPS than an RTX 3060 at 1080p Low. Spend that money on a better CPU or a 240Hz monitor instead.
+        </div>
+      </div>
+
+    </div>
+    <hr class="section-divider">
+
+    <div class="tip-section" id="tweak-3">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark Section 3 as complete">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Section 03</span>
+          RAM: How Much You Need and How to Configure It
+        </div>
+      </div>
+      <p><strong>16 GB is the recommended amount</strong> for VALORANT in 2026. The game itself uses 4&ndash;6 GB, but Windows, background apps, and Vanguard consume the rest. With 8 GB total, you are running at the edge &mdash; any background app can push you into page file territory and cause stutters.</p>
+
+      <p><strong>Configuration matters more than capacity:</strong></p>
+
+      <table class="settings-table">
+        <thead><tr><th>Setting</th><th>Impact</th><th>Recommendation</th></tr></thead>
+        <tbody>
+          <tr><td>Dual Channel</td><td>15&ndash;25% FPS increase over single channel</td><td><span class="val-set">Always use 2 sticks</span></td></tr>
+          <tr><td>XMP/EXPO</td><td>10&ndash;20% FPS increase when enabled</td><td><span class="val-set">Enable in BIOS</span></td></tr>
+          <tr><td>Speed (MHz)</td><td>Higher is better up to a point</td><td><span class="val-set">DDR4: 3200-3600 / DDR5: 5600-6000</span></td></tr>
+          <tr><td>CAS Latency</td><td>Lower is better</td><td>CL16 for DDR4, CL30-36 for DDR5</td></tr>
+        </tbody>
+      </table>
+      <ol class="steps">
+        <li>Open <strong>Task Manager</strong> &gt; Performance &gt; Memory</li>
+        <li>Check: <strong>Speed</strong> &mdash; should match your RAM rated speed</li>
+        <li>Check: <strong>Slots used</strong> &mdash; should be 2 of 4 (or 2 of 2)</li>
+        <li>If speed is lower than rated: enter BIOS and enable <strong>XMP</strong> (Intel) or <strong>EXPO</strong> (AMD)</li>
+      </ol>
+      <div class="callout fps-gain">
+        <span class="callout-icon">&#10003;</span>
+        <div class="callout-body">
+          <strong>Enabling XMP/EXPO is free performance &mdash; your RAM is already capable, you just need to unlock it</strong>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin: 24px 0; text-align: center;">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4629819662160550" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+    <hr class="section-divider">
+
+    <div class="tip-section" id="tweak-4">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark Section 4 as complete">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Section 04</span>
+          SSD vs HDD: Why Storage Matters
+        </div>
+      </div>
+      <p>An SSD does not directly increase FPS. However, it dramatically improves three things:</p>
+
+      <table class="settings-table">
+        <thead><tr><th>Metric</th><th>HDD</th><th>SATA SSD</th><th>NVMe SSD</th></tr></thead>
+        <tbody>
+          <tr><td>Game load time</td><td>45-90s</td><td>15-25s</td><td><span class="val-set">5-10s</span></td></tr>
+          <tr><td>Map load time</td><td>20-40s</td><td>8-12s</td><td><span class="val-set">3-6s</span></td></tr>
+          <tr><td>Asset stutters</td><td>Common</td><td>Rare</td><td><span class="val-set">Eliminated</span></td></tr>
+          <tr><td>Windows feel</td><td>Sluggish</td><td>Good</td><td><span class="val-set">Instant</span></td></tr>
+        </tbody>
+      </table>
+      <p>Asset streaming stutters are the main reason for an SSD. New textures mid-game cause micro-freezes on HDD.</p>
+
+      <p><strong>Recommended SSDs:</strong></p>
+
+      <ol class="steps">
+        <li><strong>Budget:</strong> Kingston NV2 500GB NVMe (~0)</li>
+        <li><strong>Mid:</strong> WD Blue SN580 1TB NVMe (~5)</li>
+        <li><strong>Best:</strong> Samsung 990 Pro 1TB NVMe (~0)</li>
+      </ol>
+      <div class="callout fps-gain">
+        <span class="callout-icon">&#10003;</span>
+        <div class="callout-body">
+          <strong>If still on HDD, an SSD is the single biggest quality-of-life upgrade</strong>
+        </div>
+      </div>
+
+    </div>
+    <hr class="section-divider">
+
+    <div class="tip-section" id="tweak-5">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark Section 5 as complete">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Section 05</span>
+          Identify Your Specific Bottleneck
+        </div>
+      </div>
+      <p>Before spending money, find what limits your FPS. VALORANT tells you directly.</p>
+
+      <ol class="steps">
+        <li>Press <strong>Shift + F1</strong> in-game for performance overlay</li>
+        <li>Compare <strong>CPU Frame Time</strong> vs <strong>GPU Frame Time</strong> (ms)</li>
+        <li>The higher number is your bottleneck</li>
+      </ol>
+      <table class="settings-table">
+        <thead><tr><th>Scenario</th><th>CPU Time</th><th>GPU Time</th><th>Fix</th></tr></thead>
+        <tbody>
+          <tr><td>CPU-bound (typical)</td><td><span class="val-set">8ms</span></td><td>3ms</td><td>Upgrade CPU or close background apps</td></tr>
+          <tr><td>GPU-bound (rare)</td><td>3ms</td><td><span class="val-set">8ms</span></td><td>Lower settings or upgrade GPU</td></tr>
+          <tr><td>Balanced</td><td>6ms</td><td>5ms</td><td>Both working hard - good</td></tr>
+          <tr><td>RAM-bound</td><td>Spiking</td><td>Spiking</td><td>Enable XMP, add RAM, fix page file</td></tr>
+        </tbody>
+      </table>
+      <p><strong>Task Manager check:</strong></p>
+
+      <ol class="steps">
+        <li>CPU: if any core hits 100% = CPU bottleneck</li>
+        <li>GPU: if below 80% usage = CPU is the bottleneck</li>
+        <li>Memory: above 85% = need more RAM</li>
+      </ol>
+      <div class="callout fps-gain">
+        <span class="callout-icon">&#10003;</span>
+        <div class="callout-body">
+          <strong>Most players are CPU-bound without knowing it</strong>
+          GPU at 30% while CPU at 95% means a GPU upgrade does nothing.
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin: 24px 0; text-align: center;">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4629819662160550" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+    <hr class="section-divider">
+
+    <div class="tip-section" id="tweak-6">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark Section 6 as complete">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Section 06</span>
+          Budget Build Recommendations (3 Tiers)
+        </div>
+      </div>
+      <p>These builds are optimised for VALORANT competitive play in 2026. CPU budget is prioritised.</p>
+
+      <p><strong>Tier 1: Budget (~$400-500) &mdash; Solid 144fps</strong></p>
+
+      <table class="settings-table">
+        <thead><tr><th>Component</th><th>Pick</th><th>Price</th></tr></thead>
+        <tbody>
+          <tr><td>CPU</td><td><span class="val-set">Ryzen 5 5500</span></td><td>~$85</td></tr>
+          <tr><td>GPU</td><td>RX 6500 XT / GTX 1650</td><td>~$100</td></tr>
+          <tr><td>RAM</td><td>16GB DDR4-3200 CL16 (2x8)</td><td>~$35</td></tr>
+          <tr><td>Storage</td><td>Kingston NV2 500GB</td><td>~$30</td></tr>
+          <tr><td>Mobo</td><td>B450/B550 mATX</td><td>~$65</td></tr>
+          <tr><td>PSU</td><td>500W 80+ Bronze</td><td>~$40</td></tr>
+          <tr><td>Case</td><td>Budget mATX</td><td>~$40</td></tr>
+        </tbody>
+      </table>
+      <p><strong>Tier 2: Mid-Range (~$700-800) &mdash; Consistent 240fps</strong></p>
+
+      <table class="settings-table">
+        <thead><tr><th>Component</th><th>Pick</th><th>Price</th></tr></thead>
+        <tbody>
+          <tr><td>CPU</td><td><span class="val-set">Ryzen 5 5600X</span></td><td>~$130</td></tr>
+          <tr><td>GPU</td><td>RTX 3060 12GB / RX 6600 XT</td><td>~$200</td></tr>
+          <tr><td>RAM</td><td>16GB DDR4-3600 CL16 (2x8)</td><td>~$45</td></tr>
+          <tr><td>Storage</td><td>WD SN580 1TB</td><td>~$55</td></tr>
+          <tr><td>Mobo</td><td>B550 ATX</td><td>~$90</td></tr>
+          <tr><td>PSU</td><td>650W 80+ Gold</td><td>~$60</td></tr>
+          <tr><td>Case</td><td>Mesh mid-tower</td><td>~$55</td></tr>
+        </tbody>
+      </table>
+      <p><strong>Tier 3: Competitive (~$1200-1400) &mdash; 360+ fps</strong></p>
+
+      <table class="settings-table">
+        <thead><tr><th>Component</th><th>Pick</th><th>Price</th></tr></thead>
+        <tbody>
+          <tr><td>CPU</td><td><span class="val-set">Ryzen 7 7800X3D</span></td><td>~$350</td></tr>
+          <tr><td>GPU</td><td>RTX 4060 Ti / RX 7700 XT</td><td>~$300</td></tr>
+          <tr><td>RAM</td><td>32GB DDR5-6000 CL30 (2x16)</td><td>~$100</td></tr>
+          <tr><td>Storage</td><td>Samsung 990 Pro 1TB</td><td>~$90</td></tr>
+          <tr><td>Mobo</td><td>B650 ATX</td><td>~$140</td></tr>
+          <tr><td>PSU</td><td>750W 80+ Gold</td><td>~$80</td></tr>
+          <tr><td>Case</td><td>Airflow mid-tower</td><td>~$70</td></tr>
+        </tbody>
+      </table>
+      <div class="callout fps-gain">
+        <span class="callout-icon">&#10003;</span>
+        <div class="callout-body">
+          <strong>Tier 2 (~$750) is the sweet spot for most competitive players</strong>
+          240fps + 240Hz monitor is where the real competitive advantage lives. Beyond that, returns diminish sharply.
+        </div>
+      </div>
+
+    </div>
+    <hr class="section-divider">
+
+    <div class="tip-section" id="tweak-7">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark Section 7 as complete">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Section 07</span>
+          Let Valo Optimise Maximise Your Hardware
+        </div>
+      </div>
+      <p><strong>Valo Optimise</strong> detects your hardware and applies tailored optimisations &mdash; CPU priority, GPU settings, RAM checks, power plan, background processes.</p>
+
+      <p>Includes a <strong>System Health Score</strong> (0-100) showing exactly where to improve.</p>
+
+      <div class="callout fps-gain">
+        <span class="callout-icon">&#128640;</span>
+        <div class="callout-body">
+          <strong>Get every frame your hardware can produce</strong>
+          Most PCs leave 20-40% of VALORANT performance on the table due to default Windows settings.
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin: 24px 0; text-align: center;">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4629819662160550" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <div id="completion-banner">
+      <h3>&#127942; All 7 Sections Complete</h3>
+      <p>You have worked through every step. Share this guide with your squad.</p>
+    </div>
+    <div class="final-cta">
+      <h2>Get Every Frame Your PC Can <em>Deliver.</em></h2>
+      <p>Valo Optimise detects your hardware and applies tailored optimisations. Free, Vanguard-safe, one click.</p>
+      <a href="https://valooptimise.com" class="cta-btn" target="_blank" rel="noopener noreferrer">&#9889; Download Free &mdash; Windows 11/10</a>
+      <p class="cta-sub">No account required &middot; Vanguard-safe &middot; 7-day free Pro trial included</p>
+    </div>
+    <div class="email-capture">
+      <h3>Get the Next Guide First</h3>
+      <p>We publish one deep-dive VALORANT optimisation guide every week. No spam, just performance.</p>
+      <form class="email-form" onsubmit="handleEmailSubmit(event)">
+        <input type="email" id="email-input" placeholder="you@email.com" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="email-note" id="email-feedback">Free &middot; Weekly &middot; Unsubscribe anytime</p>
+    </div>
+    <div class="share-section">
+      <h3>Know Someone Building a VALORANT PC?</h3>
+      <p>Share this guide. Specs, bottlenecks, and budget builds covered.</p>
+      <div class="share-btns">
+        <button class="share-btn twitter" onclick="shareTwitter()">&#120143; Share on X</button>
+        <button class="share-btn reddit" onclick="shareReddit()">Share on Reddit</button>
+        <button class="share-btn whatsapp" onclick="shareWhatsApp()">&#128241; WhatsApp</button>
+        <button class="share-btn copy" onclick="copyLink(this)">&#128279; Copy Link</button>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-size:18px;font-weight:700;margin-bottom:16px;">Keep Optimising</h3>
+      <div class="related-grid">
+        <a class="related-card" href="how-to-boost-fps-valorant-windows-11-2026.html">
+          <div class="tags"><span class="tag">FPS Boost</span></div>
+          <h4>Boost FPS in VALORANT (2026)</h4>
+          <p>Software tweaks for existing hardware.</p>
+        </a>
+        <a class="related-card" href="valorant-crashing-fix-2026.html">
+          <div class="tags"><span class="tag">Crash Fix</span></div>
+          <h4>Fix VALORANT Crashing in 2026</h4>
+          <p>13 fixes for every crash type.</p>
+        </a>
+        <a class="related-card" href="best-mouse-settings-valorant-2026.html">
+          <div class="tags"><span class="tag">Aim</span></div>
+          <h4>Best Mouse Settings for Valorant 2026</h4>
+          <p>Sensitivity, DPI, and pro data.</p>
+        </a>
+      </div>
+    </div>
+  </article>
+</div>
+
+<a href="https://valooptimise.com" id="floating-cta" target="_blank" rel="noopener noreferrer">
+  &#9889; Free Download &mdash; Valo Optimise
+</a>
+
+
+<section style="max-width:800px;margin:40px auto;padding:0 20px;">
+  <h3 style="color:var(--accent);font-size:18px;margin-bottom:16px;">Keep Reading</h3>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;">
+    <a href="how-to-boost-fps-valorant-windows-11-2026.html" style="background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:18px;text-decoration:none;color:var(--text);transition:border-color .15s;">
+      <div style="color:var(--accent);font-size:12px;margin-bottom:6px;">PERFORMANCE</div>
+      <div style="font-weight:600;font-size:14px;">12 Tweaks to Boost FPS</div>
+    </a>
+    <a href="valorant-crashing-fix-2026.html" style="background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:18px;text-decoration:none;color:var(--text);transition:border-color .15s;">
+      <div style="color:var(--accent);font-size:12px;margin-bottom:6px;">CRASH FIX</div>
+      <div style="font-weight:600;font-size:14px;">Fix VALORANT Crashing in 2026</div>
+    </a>
+    <a href="best-mouse-settings-valorant-2026.html" style="background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:18px;text-decoration:none;color:var(--text);transition:border-color .15s;">
+      <div style="color:var(--accent);font-size:12px;margin-bottom:6px;">AIM</div>
+      <div style="font-weight:600;font-size:14px;">Best Mouse Settings 2026</div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p style="margin-bottom:8px;">
+    <a href="../index.html">Blog</a> &nbsp;&middot;&nbsp;
+    <a href="https://discord.gg/Fpx4SnxF" target="_blank" rel="noopener noreferrer">Discord</a> &nbsp;&middot;&nbsp;
+    <a href="https://valooptimise.com" target="_blank" rel="noopener noreferrer">Valo Optimise</a> &nbsp;&middot;&nbsp;
+    <a href="https://valooptimise.com/privacy.html" target="_blank" rel="noopener noreferrer">Privacy</a>
+  </p>
+  <p>&copy; 2026 Valo Optimise Ltd. Not affiliated with Riot Games.</p>
+</footer>
+<script>
+  window.addEventListener("scroll", () => {
+    const scrolled = window.scrollY;
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    document.getElementById("progress-bar").style.width = Math.min(100, (scrolled / total) * 100) + "%";
+    const cta = document.getElementById("floating-cta");
+    if (scrolled > 500) cta.classList.add("visible");
+    else cta.classList.remove("visible");
+  });
+  function updateTracker() {
+    const checks = document.querySelectorAll(".tip-check");
+    const done   = document.querySelectorAll(".tip-check:checked").length;
+    const total  = checks.length;
+    document.getElementById("counter-display").textContent = done + "/" + total;
+    document.getElementById("tracker-bar").style.width = (done / total * 100) + "%";
+    if (done === total) {
+      document.getElementById("completion-banner").style.display = "block";
+      document.getElementById("completion-banner").scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+    document.querySelectorAll(".tip-check").forEach(cb => {
+      const heading = cb.closest(".tip-header").querySelector(".tip-heading");
+      heading.style.opacity = cb.checked ? "0.5" : "1";
+      heading.style.textDecoration = cb.checked ? "line-through" : "none";
+    });
+  }
+  function copyCode(btn) {
+    const code = btn.parentElement.textContent.replace("Copy", "").trim();
+    navigator.clipboard.writeText(code).then(() => {
+      btn.textContent = "Copied!";
+      setTimeout(() => btn.textContent = "Copy", 2000);
+    });
+  }
+  function shareTwitter() {
+    const text = encodeURIComponent("Building a VALORANT PC? Here are the specs that matter");
+    const url  = encodeURIComponent(window.location.href);
+    window.open("https://twitter.com/intent/tweet?text=" + text + "&url=" + url, "_blank");
+  }
+  function shareReddit() {
+    const title = encodeURIComponent("Valorant System Requirements 2026 - Complete Spec Guide");
+    const url   = encodeURIComponent(window.location.href);
+    window.open("https://reddit.com/submit?title=" + title + "&url=" + url, "_blank");
+  }
+  function shareWhatsApp() {
+    const text = encodeURIComponent("VALORANT system requirements with budget builds: " + window.location.href);
+    window.open("https://wa.me/?text=" + text, "_blank");
+  }
+  function copyLink(btn) {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      btn.textContent = "✓ Copied!";
+      setTimeout(() => btn.textContent = "🔗 Copy Link", 2000);
+    });
+  }
+  function handleEmailSubmit(e) {
+    e.preventDefault();
+    var fb = document.getElementById("email-feedback");
+    fb.textContent = "✓ You're in! We'll notify you when the next guide drops.";
+    fb.style.color = "var(--accent2)";
+    document.getElementById("email-input").value = "";
+    document.querySelector(".email-form button").textContent = "✓ Done";
+    document.querySelector(".email-form button").disabled = true;
+  }
+  var sections = document.querySelectorAll(".tip-section");
+  var tocLinks = document.querySelectorAll(".toc a");
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        tocLinks.forEach(function(link) {
+          link.classList.toggle("active", link.getAttribute("href") === "#" + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: "-60px 0px -70% 0px" });
+  sections.forEach(function(s) { observer.observe(s); });
+</script>
+</body>
+</html>

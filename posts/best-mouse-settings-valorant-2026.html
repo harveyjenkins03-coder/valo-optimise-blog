@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best Mouse Settings for Valorant in 2026: Sensitivity, DPI & Polling Rate Guide</title>
+  <meta name="description" content="Find the perfect mouse sensitivity for VALORANT. Covers DPI, eDPI calculation, polling rate, raw input, mouse acceleration, and what pro players actually use in 2026.">
+  <meta name="keywords" content="valorant sensitivity, valorant dpi, valorant mouse settings, valorant edpi, best valorant sensitivity 2026, valorant polling rate, valorant mouse acceleration, valorant pro settings">
+  <link rel="canonical" href="https://blog.valooptimise.com/posts/best-mouse-settings-valorant-2026.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Best Mouse Settings for Valorant in 2026: Sensitivity, DPI & Polling Rate Guide">
+  <meta property="og:description" content="Find the perfect mouse sensitivity for VALORANT. Covers DPI, eDPI calculation, polling rate, raw input, mouse acceleration, and what pro players actually use in">
+  <meta property="og:image" content="https://valooptimise.com/docs/assets/og-image.png">
+  <meta property="og:url" content="https://blog.valooptimise.com/posts/best-mouse-settings-valorant-2026.html">
+  <meta property="og:site_name" content="Valo Optimise Blog">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Best Mouse Settings for Valorant in 2026: Sensitivity, DPI & Polling Rate Guide">
+  <meta name="twitter:description" content="Find the perfect mouse sensitivity for VALORANT. Covers DPI, eDPI calculation, polling rate, raw input, mouse acceleration, and what pro players actually use in">
+  <meta name="twitter:image" content="https://valooptimise.com/docs/assets/og-image.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Best Mouse Settings for Valorant in 2026: Sensitivity, DPI & Polling Rate Guide",
+        "description": "Find the perfect mouse sensitivity for VALORANT. Covers DPI, eDPI calculation, polling rate, raw input, mouse acceleration, and what pro players actually use in 2026.",
+        "image": "https://valooptimise.com/docs/assets/og-image.png",
+        "author": { "@type": "Person", "name": "Harvey Jenkins" },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Valo Optimise",
+          "logo": { "@type": "ImageObject", "url": "https://valooptimise.com/docs/assets/icon_256.png" }
+        },
+        "datePublished": "2026-03-29",
+        "dateModified": "2026-03-29",
+        "mainEntityOfPage": "https://blog.valooptimise.com/posts/best-mouse-settings-valorant-2026.html"
+      },
+      {
+        "@type": "HowTo",
+        "name": "Best Mouse Settings for Valorant in 2026: Sensitivity, DPI & Polling Rate Guide",
+        "totalTime": "PT12M",
+        "step": [
+          { "@type": "HowToStep", "position": 1, "name": "Understand DPI vs sensitivity", "text": "Learn the difference between hardware DPI and in-game sensitivity and how they combine." },
+          { "@type": "HowToStep", "position": 2, "name": "Choose your DPI", "text": "Pick a DPI between 400-1600 based on your mouse sensor and playstyle." },
+          { "@type": "HowToStep", "position": 3, "name": "Calculate your eDPI", "text": "Multiply DPI by in-game sensitivity to find your effective DPI for comparison." },
+          { "@type": "HowToStep", "position": 4, "name": "Set polling rate", "text": "Configure 1000Hz or higher polling rate for minimal input delay." },
+          { "@type": "HowToStep", "position": 5, "name": "Enable raw input", "text": "Turn on raw input in VALORANT settings to bypass Windows mouse processing." },
+          { "@type": "HowToStep", "position": 6, "name": "Disable mouse acceleration", "text": "Remove mouse acceleration in Windows and any mouse software." },
+          { "@type": "HowToStep", "position": 7, "name": "Compare with pro settings", "text": "Use the pro player settings table to find a good starting eDPI range." },
+          { "@type": "HowToStep", "position": 8, "name": "Use Valo Optimise", "text": "Download Valo Optimise to automatically configure optimal mouse settings." }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="icon" href="https://valooptimise.com/docs/assets/icon_256.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4629819662160550" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #09090b;
+      --panel: #131316;
+      --panel2: #1a1a1f;
+      --accent: #10b981;
+      --accent2: #10b981;
+      --text: #fafafa;
+      --muted: #71717a;
+      --border: #27272a;
+      --warn: #f59e0b;
+      --font: 'Inter', system-ui, -apple-system, sans-serif;
+      --radius: 10px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    #progress-bar {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      width: 0%;
+      background: var(--accent);
+      z-index: 9999;
+      transition: width 0.1s linear;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(9,9,11,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 100;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .nav-logo span { color: var(--text); }
+    .nav-links { display: flex; align-items: center; gap: 20px; }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta {
+      background: var(--accent);
+      color: #fff !important;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 13px !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover, .nav-cta:focus-visible { opacity: 0.9; background: var(--accent) !important; }
+    .nav-cta:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
+
+    .article-hero {
+      max-width: 800px;
+      margin: 48px auto 0;
+      padding: 0 24px;
+    }
+
+    .tags { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+
+    .tag {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      color: var(--accent2);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .article-hero h1 {
+      font-size: clamp(24px, 4vw, 38px);
+      line-height: 1.25;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .article-hero h1 em { font-style: normal; color: var(--accent); }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .read-time {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent2);
+    }
+
+    .hook-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .hook-box {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent2);
+      padding: 12px 16px;
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .progress-tracker {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .tracker-label { font-size: 14px; font-weight: 600; }
+    .tracker-label span { color: var(--accent2); }
+
+    .tracker-bar-wrap {
+      flex: 1;
+      background: var(--panel2);
+      height: 8px;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .tracker-bar {
+      height: 100%;
+      width: 0%;
+      background: var(--accent);
+      border-radius: 4px;
+      transition: width 0.3s ease;
+    }
+
+    .article-layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .toc {
+      position: sticky;
+      top: 72px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+
+    .toc-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .toc ol { list-style: none; counter-reset: toc; }
+
+    .toc ol li {
+      counter-increment: toc;
+      margin-bottom: 6px;
+    }
+
+    .toc ol li a {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      line-height: 1.4;
+      padding: 4px 8px;
+      border-radius: 6px;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .toc ol li a::before {
+      content: counter(toc);
+      background: var(--panel2);
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 700;
+      min-width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+
+    .toc ol li a:hover,
+    .toc ol li a:focus-visible,
+    .toc ol li a.active { background: var(--panel2); color: var(--text); }
+
+    .toc ol li a:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
+
+    .toc ol li a.active::before { background: var(--accent); color: #fff; }
+
+    .toc-cta { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border); }
+
+    .toc-cta a {
+      display: block;
+      background: var(--accent);
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .toc-cta a:hover, .toc-cta a:focus-visible { background: var(--accent); }
+    .toc-cta a:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
+
+    article { min-width: 0; }
+
+    .article-intro {
+      font-size: 17px;
+      line-height: 1.8;
+      color: #c8d0e0;
+      margin-bottom: 32px;
+      padding: 24px;
+      background: var(--panel);
+      border-radius: var(--radius);
+      border-left: 3px solid var(--accent);
+    }
+
+    .article-intro strong { color: var(--text); }
+
+    /* Frame time explainer visual */
+    .frame-viz {
+      background: #070b14;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin: 24px 0;
+      font-family: 'Consolas', monospace;
+      font-size: 13px;
+    }
+
+    .frame-viz-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 16px;
+      font-family: var(--font);
+    }
+
+    .frame-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .frame-label {
+      width: 120px;
+      font-size: 12px;
+      color: var(--muted);
+      font-family: var(--font);
+      flex-shrink: 0;
+    }
+
+    .frame-bars {
+      display: flex;
+      gap: 3px;
+      align-items: flex-end;
+      height: 40px;
+    }
+
+    .frame-bar {
+      width: 8px;
+      background: var(--accent2);
+      border-radius: 2px 2px 0 0;
+      transition: height 0.3s;
+    }
+
+    .frame-bar.spike { background: var(--accent); }
+
+    .frame-value {
+      font-size: 13px;
+      font-weight: 700;
+      margin-left: 8px;
+    }
+
+    .frame-value.good { color: var(--accent2); }
+    .frame-value.bad  { color: var(--accent); }
+
+    .tip-section {
+      margin-bottom: 48px;
+      scroll-margin-top: 80px;
+    }
+
+    .tip-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .tip-checkbox-wrap { margin-top: 4px; flex-shrink: 0; }
+
+    .tip-check {
+      width: 20px;
+      height: 20px;
+      accent-color: var(--accent2);
+      cursor: pointer;
+    }
+
+    .tip-heading {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--text);
+    }
+
+    .tip-heading .num {
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .tip-section p {
+      color: #c8d0e0;
+      margin-bottom: 14px;
+      line-height: 1.8;
+    }
+
+    .code-block {
+      background: #070b14;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 20px;
+      font-family: 'Consolas', 'Courier New', monospace;
+      font-size: 13px;
+      color: var(--accent2);
+      margin: 16px 0;
+      overflow-x: auto;
+      position: relative;
+    }
+
+    .code-block .copy-code {
+      position: absolute;
+      top: 10px; right: 10px;
+      background: var(--panel2);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: var(--font);
+      transition: color 0.2s;
+    }
+
+    .code-block .copy-code:hover { color: var(--text); }
+
+    .steps { list-style: none; counter-reset: steps; margin: 16px 0; }
+
+    .steps li {
+      counter-increment: steps;
+      display: flex;
+      gap: 14px;
+      margin-bottom: 12px;
+      color: #c8d0e0;
+    }
+
+    .steps li::before {
+      content: counter(steps);
+      background: var(--accent);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      min-width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .callout {
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin: 20px 0;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .callout-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+
+    .callout-body { font-size: 14px; line-height: 1.7; }
+
+    .callout-body strong { display: block; margin-bottom: 4px; font-size: 15px; }
+
+    .callout.fps-gain {
+      background: rgba(0,212,170,0.08);
+      border: 1px solid rgba(0,212,170,0.25);
+    }
+
+    .callout.fps-gain .callout-body { color: var(--accent2); }
+
+    .callout.warning {
+      background: rgba(245,158,11,0.08);
+      border: 1px solid rgba(245,158,11,0.25);
+    }
+
+    .callout.warning .callout-body { color: #f59e0b; }
+
+    .callout.fomo {
+      background: rgba(255,70,85,0.08);
+      border: 1px solid rgba(255,70,85,0.25);
+    }
+
+    .callout.fomo .callout-body { color: #ff9ea6; }
+
+    .settings-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+
+    .settings-table th {
+      text-align: left;
+      padding: 10px 14px;
+      background: var(--panel2);
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .settings-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      color: #c8d0e0;
+      vertical-align: top;
+    }
+
+    .settings-table tr:last-child td { border-bottom: none; }
+    .settings-table td:first-child { color: var(--text); font-weight: 600; }
+    .val-set { color: var(--accent2); font-weight: 700; }
+
+    /* Stutter type diagnosis table */
+    .diag-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+
+    .diag-table th {
+      text-align: left;
+      padding: 10px 14px;
+      background: var(--panel2);
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .diag-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      color: #c8d0e0;
+      vertical-align: top;
+    }
+
+    .diag-table tr:last-child td { border-bottom: none; }
+
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+
+    .email-capture {
+      background: linear-gradient(135deg, #131316, #1a1a1f);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 28px;
+      margin: 48px 0;
+      text-align: center;
+    }
+
+    .email-capture h3 { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+
+    .email-capture p { color: var(--muted); font-size: 14px; margin-bottom: 20px; }
+
+    .email-form { display: flex; gap: 10px; max-width: 440px; margin: 0 auto; }
+
+    .email-form input {
+      flex: 1;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 16px;
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .email-form input:focus { border-color: var(--accent2); }
+
+    .email-form button {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 22px;
+      font-family: var(--font);
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+
+    .email-form button:hover { background: var(--accent); }
+    .email-note { font-size: 12px; color: var(--muted); margin-top: 10px; }
+
+    .final-cta {
+      background: linear-gradient(135deg, #0f1824, #1a0d10);
+      border: 1px solid rgba(255,70,85,0.3);
+      border-radius: 14px;
+      padding: 36px;
+      margin: 48px 0;
+      text-align: center;
+    }
+
+    .final-cta h2 { font-size: 26px; font-weight: 800; margin-bottom: 10px; }
+    .final-cta h2 em { font-style: normal; color: var(--accent); }
+
+    .final-cta p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 24px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 14px 36px;
+      border-radius: 8px;
+      transition: background 0.2s, transform 0.2s;
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+
+    .cta-btn:hover, .cta-btn:focus-visible { background: var(--accent); transform: translateY(-2px); animation: none; }
+    .cta-btn:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(255,70,85,0.4); }
+      50% { box-shadow: 0 0 0 10px rgba(255,70,85,0); }
+    }
+
+    .cta-sub { font-size: 13px; color: var(--muted); margin-top: 12px; }
+
+    .share-section {
+      margin: 48px 0;
+      padding: 28px;
+      background: var(--panel);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .share-section h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+    .share-section p { color: var(--muted); font-size: 14px; margin-bottom: 20px; }
+
+    .share-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    .share-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: none;
+      font-family: var(--font);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+      text-decoration: none;
+    }
+
+    .share-btn:hover, .share-btn:focus-visible { opacity: 0.85; transform: translateY(-1px); }
+    .share-btn:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
+    .share-btn.twitter  { background: #1da1f2; color: #fff; }
+    .share-btn.reddit   { background: #ff4500; color: #fff; }
+    .share-btn.whatsapp { background: #25d366; color: #fff; }
+    .share-btn.copy     { background: var(--panel2); color: var(--text); border: 1px solid var(--border); }
+
+    #completion-banner {
+      display: none;
+      background: linear-gradient(135deg, rgba(0,212,170,0.15), rgba(0,212,170,0.05));
+      border: 1px solid rgba(0,212,170,0.4);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      text-align: center;
+      margin: 32px 0;
+      animation: fadeIn 0.5s ease;
+    }
+
+    #completion-banner h3 { color: var(--accent2); font-size: 20px; margin-bottom: 6px; }
+    #completion-banner p { color: var(--muted); font-size: 14px; }
+
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; } }
+
+    #floating-cta {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--accent);
+      color: #fff;
+      padding: 14px 22px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 4px 24px rgba(255,70,85,0.4);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.3s, transform 0.3s;
+      pointer-events: none;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    #floating-cta.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
+    #floating-cta:hover { background: var(--accent); }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .related-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .related-card:hover { border-color: var(--accent2); transform: translateY(-2px); }
+    .related-card h4 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px; line-height: 1.4; }
+    .related-card p { font-size: 13px; color: var(--muted); }
+
+    footer {
+      background: var(--panel);
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    footer a { color: var(--accent2); text-decoration: none; }
+    footer p { color: var(--muted); font-size: 13px; }
+
+    @media (max-width: 860px) {
+      .article-layout { grid-template-columns: 1fr; }
+      .toc { position: static; }
+      .email-form { flex-direction: column; }
+    }
+
+    @media (max-width: 600px) {
+      .article-hero h1 { font-size: 24px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+    }
+  </style>
+</head>
+<body>
+<div id="progress-bar"></div>
+<nav role="navigation" aria-label="Main navigation">
+  <a href="../index.html" class="nav-logo">
+    <span style="display:inline-flex;width:24px;height:24px;border-radius:6px;background:#10b981;align-items:center;justify-content:center;"><svg viewBox="0 0 16 16" fill="none" style="width:14px;height:14px;"><path d="M4 12V4l4 4-4 4zm4 0V4l4 4-4 4z" fill="#fff" opacity="0.95"/></svg></span>
+    Valo Optimise Blog
+  </a>
+  <div class="nav-links">
+    <a href="../index.html">All Articles</a>
+    <a href="https://discord.gg/Fpx4SnxF" target="_blank" rel="noopener noreferrer">Discord</a>
+    <a href="https://valooptimise.com" target="_blank" rel="noopener noreferrer" class="nav-cta">Download</a>
+  </div>
+</nav>
+
+<div class="article-hero">
+  <div class="tags">
+    <span class="tag">Mouse Settings</span>
+    <span class="tag">Aim Guide</span>
+    <span class="tag">Sensitivity</span>
+    <span class="tag">2026</span>
+  </div>
+  <h1>Best Mouse Settings for Valorant in 2026 &mdash; <em>Sensitivity, DPI &amp; Polling Rate Guide</em></h1>
+  <div class="article-meta">
+    <span>March 29, 2026</span>
+    <span style="opacity:0.4">&middot;</span>
+    <span>Harvey Jenkins</span>
+    <span style="opacity:0.4">&middot;</span>
+    <span class="read-time">&#9201; 10 min read</span>
+  </div>
+  <div class="hook-grid">
+    <div class="hook-box"><span>&#127919;</span> Science-backed aim settings</div>
+    <div class="hook-box"><span>&#10003;</span> Pro player data included</div>
+    <div class="hook-box"><span>&#9201;</span> Configured in 5 minutes</div>
+    <div class="hook-box"><span>&#127381;</span> Works with any mouse</div>
+  </div>
+  <div class="progress-tracker">
+    <div class="tracker-label">Steps completed: <span id="counter-display">0/8</span></div>
+    <div class="tracker-bar-wrap">
+      <div class="tracker-bar" id="tracker-bar"></div>
+    </div>
+    <div style="font-size:13px;color:var(--muted);white-space:nowrap">Tick each as you go</div>
+  </div>
+</div>
+
+<div class="article-layout">
+  <aside class="toc">
+    <div class="toc-title">Contents</div>
+    <ol>
+      <li><a href="#tweak-1">DPI vs Sensitivity Explained</a></li>
+      <li><a href="#tweak-2">Choose Your DPI</a></li>
+      <li><a href="#tweak-3">Calculate Your eDPI</a></li>
+      <li><a href="#tweak-4">Set Polling Rate</a></li>
+      <li><a href="#tweak-5">Enable Raw Input</a></li>
+      <li><a href="#tweak-6">Disable Mouse Acceleration</a></li>
+      <li><a href="#tweak-7">Pro Player Settings Table</a></li>
+      <li><a href="#tweak-8">One-Click: Valo Optimise</a></li>
+    </ol>
+    <div class="toc-cta">
+      <a href="https://valooptimise.com" target="_blank" rel="noopener noreferrer">&#9889; Free Download</a>
+    </div>
+  </aside>
+  <article>
+    <div class="article-intro">
+      <strong>Your aim is only as good as your mouse settings.</strong> You can practice aim trainers for hours, but if your DPI is wrong, your sensitivity is inconsistent, or mouse acceleration is secretly enabled, you are training muscle memory on a broken foundation.<br><br>
+      This guide explains exactly how to configure your mouse for VALORANT in 2026 &mdash; from hardware DPI to in-game sensitivity to polling rate &mdash; with data from pro players to back it up.
+    </div>
+
+    <div style="margin: 24px 0; text-align: center;">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4629819662160550" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+      <div class="callout fomo">
+        <span class="callout-icon">&#9889;</span>
+        <div class="callout-body">
+          <strong>Bad mouse settings cap your rank.</strong>
+          At higher ELOs, the difference between hitting and missing a headshot is often sub-pixel precision. If your effective sensitivity is too high or acceleration is on, you physically cannot aim consistently.
+        </div>
+      </div>
+
+    <div class="tip-section" id="tweak-1">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark Step 1 as complete">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Step 01</span>
+          Understand DPI vs In-Game Sensitivity
+        </div>
+      </div>
+      <p><strong>DPI (Dots Per Inch)</strong> is a hardware setting on your mouse. It controls how many pixels your cursor moves per inch of physical mouse movement. Higher DPI = more cursor movement per inch.</p>
+
+      <p><strong>In-game sensitivity</strong> is a multiplier applied on top of DPI. VALORANT takes your raw mouse input and multiplies it by this value to determine how far your crosshair moves.</p>
+
+      <p>The combination of both is what actually matters. Two players with identical crosshair speed might use completely different DPI and sensitivity values:</p>
+
+      <table class="settings-table">
+        <thead><tr><th>Player</th><th>DPI</th><th>Sensitivity</th><th>eDPI</th></tr></thead>
+        <tbody>
+          <tr><td>Player A</td><td>400</td><td>0.5</td><td>200</td></tr>
+          <tr><td>Player B</td><td>800</td><td>0.25</td><td>200</td></tr>
+          <tr><td>Player C</td><td>1600</td><td>0.125</td><td>200</td></tr>
+        </tbody>
+      </table>
+      <p>All three players above have the same <strong>effective DPI (eDPI)</strong> of 200 &mdash; meaning their crosshair moves the same distance per inch of mouse movement. The DPI itself does not matter as long as your eDPI is the same.</p>
+
+      <div class="callout fps-gain">
+        <span class="callout-icon">&#10003;</span>
+        <div class="callout-body">
+          <strong>eDPI is the only number that matters for comparing sensitivity between players</strong>
+          DPI = hardware, Sensitivity = software, eDPI = DPI x Sensitivity = what you actually feel.
+        </div>
+      </div>
+
+    </div>
+    <hr class="section-divider">
+
+    <div class="tip-section" id="tweak-2">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark Step 2 as complete">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Step 02</span>
+          Choose Your Hardware DPI
+        </div>
+      </div>
+      <p>For VALORANT, set your mouse DPI to <strong>800</strong>. This is the sweet spot for most players and the most common DPI among pros.</p>
+
+      <p><strong>Why 800?</strong></p>
+
+      <ol class="steps">
+        <li>Modern sensors are optimised for 800&ndash;1600 DPI &mdash; no smoothing, interpolation, or jitter</li>
+        <li>800 gives you a good range of in-game sensitivity values (0.2&ndash;0.5) that are easy to fine-tune</li>
+        <li>Windows cursor speed is comfortable at 800 for desktop use</li>
+        <li>Higher DPI like 1600 works fine too &mdash; just halve your in-game sensitivity</li>
+      </ol>
+      <p><strong>How to set DPI:</strong> Use your mouse manufacturer software (Logitech G Hub, Razer Synapse, SteelSeries Engine, etc.) or the DPI button on your mouse.</p>
+
+      <table class="settings-table">
+        <thead><tr><th>DPI</th><th>Best For</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>400</td><td>Large mousepads, arm aimers</td><td>Classic CS setting, needs high in-game sens</td></tr>
+          <tr><td><span class="val-set">800</span></td><td>Most players (recommended)</td><td>Best sensor accuracy, easy tuning</td></tr>
+          <tr><td>1600</td><td>Small mousepads, wrist aimers</td><td>Halve your sensitivity value</td></tr>
+        </tbody>
+      </table>
+      <div class="callout warning">
+        <span class="callout-icon">&#9888;&#65039;</span>
+        <div class="callout-body">
+          <strong>Avoid DPI above 3200 for VALORANT.</strong>
+          Extremely high DPI amplifies hand micro-tremors, making pixel-precise aim harder. Pros almost never go above 1600.
+        </div>
+      </div>
+
+    </div>
+    <hr class="section-divider">
+
+    <div class="tip-section" id="tweak-3">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark Step 3 as complete">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Step 03</span>
+          Calculate Your eDPI
+        </div>
+      </div>
+      <p>Your <strong>effective DPI (eDPI)</strong> is the single number that defines your sensitivity:</p>
+
+      <div class="code-block">
+        <button class="copy-code" onclick="copyCode(this)">Copy</button>
+        eDPI = Mouse DPI x In-Game Sensitivity
+      </div>
+      <p>The average pro VALORANT eDPI in 2026 is around <strong>250&ndash;280</strong>. Most pros fall in the <strong>200&ndash;400</strong> range.</p>
+
+      <p><strong>What eDPI should you use?</strong></p>
+
+      <table class="settings-table">
+        <thead><tr><th>eDPI Range</th><th>Playstyle</th><th>Who Uses This</th></tr></thead>
+        <tbody>
+          <tr><td>150&ndash;220</td><td>Very low &mdash; pure arm aim</td><td>Entry fraggers who need max precision</td></tr>
+          <tr><td><span class="val-set">220&ndash;320</span></td><td>Low-medium (recommended)</td><td>Most pros &mdash; balance of precision and mobility</td></tr>
+          <tr><td>320&ndash;450</td><td>Medium &mdash; arm + wrist hybrid</td><td>Controller/Sentinel mains, small mousepad</td></tr>
+          <tr><td>450+</td><td>High &mdash; wrist dominant</td><td>Not recommended for competitive</td></tr>
+        </tbody>
+      </table>
+      <p><strong>Quick setup for 800 DPI:</strong> Start at <strong>0.3 sensitivity</strong> (eDPI 240). Play 5 deathmatch games. If you overshoot, lower by 0.02. If you undershoot, raise by 0.02.</p>
+
+      <div class="callout fps-gain">
+        <span class="callout-icon">&#10003;</span>
+        <div class="callout-body">
+          <strong>Lower eDPI = more consistent aim at the cost of slower 180-degree turns</strong>
+          In VALORANT, crosshair placement matters more than flicking. Lower sensitivity rewards good positioning.
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin: 24px 0; text-align: center;">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4629819662160550" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+    <hr class="section-divider">
+
+    <div class="tip-section" id="tweak-4">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark Step 4 as complete">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Step 04</span>
+          Set Your Polling Rate
+        </div>
+      </div>
+      <p><strong>Polling rate</strong> is how often your mouse reports its position to your PC, measured in Hz. Higher = smoother, more responsive cursor movement.</p>
+
+      <table class="settings-table">
+        <thead><tr><th>Polling Rate</th><th>Report Interval</th><th>Recommendation</th></tr></thead>
+        <tbody>
+          <tr><td>125 Hz</td><td>8ms</td><td>Too slow for competitive</td></tr>
+          <tr><td>500 Hz</td><td>2ms</td><td>Acceptable minimum</td></tr>
+          <tr><td><span class="val-set">1000 Hz</span></td><td>1ms</td><td>Standard for competitive (recommended)</td></tr>
+          <tr><td>4000 Hz</td><td>0.25ms</td><td>Diminishing returns, higher CPU use</td></tr>
+          <tr><td>8000 Hz</td><td>0.125ms</td><td>Minimal real-world benefit</td></tr>
+        </tbody>
+      </table>
+      <p>Set polling rate in your mouse software. <strong>1000 Hz</strong> is the sweet spot &mdash; lower polling rates add measurable input lag, while going above 1000 Hz provides minimal benefit and increases CPU overhead.</p>
+
+      <p>If you have a 4000 Hz mouse (Razer Viper V3, Logitech G Pro X Superlight 2), you can use 4000 Hz in VALORANT &mdash; the game supports it. But the difference from 1000 Hz is nearly imperceptible.</p>
+
+      <div class="callout fps-gain">
+        <span class="callout-icon">&#10003;</span>
+        <div class="callout-body">
+          <strong>Going from 125 Hz to 1000 Hz reduces mouse input delay by 7ms &mdash; that is significant</strong>
+        </div>
+      </div>
+
+    </div>
+    <hr class="section-divider">
+
+    <div class="tip-section" id="tweak-5">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark Step 5 as complete">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Step 05</span>
+          Enable Raw Input in VALORANT
+        </div>
+      </div>
+      <p><strong>Raw input</strong> tells VALORANT to read mouse data directly from the hardware, bypassing any Windows mouse processing (smoothing, scaling, pointer speed adjustments).</p>
+
+      <p>This is critical. Without raw input, Windows applies its own cursor acceleration curve on top of your settings, making your aim inconsistent.</p>
+
+      <ol class="steps">
+        <li>Open VALORANT &gt; <strong>Settings</strong> &gt; <strong>General</strong></li>
+        <li>Scroll to <strong>Mouse</strong> section</li>
+        <li>Set <strong>Raw Input Buffer</strong> to <strong>On</strong></li>
+      </ol>
+      <p>With raw input enabled, your Windows pointer speed setting (Control Panel &gt; Mouse &gt; Pointer Options) has <strong>zero effect</strong> on in-game aim. Only your DPI and in-game sensitivity matter.</p>
+
+      <div class="callout fps-gain">
+        <span class="callout-icon">&#10003;</span>
+        <div class="callout-body">
+          <strong>Raw input eliminates Windows mouse processing entirely</strong>
+          This gives you a direct 1:1 relationship between hand movement and crosshair movement.
+        </div>
+      </div>
+
+    </div>
+    <hr class="section-divider">
+
+    <div class="tip-section" id="tweak-6">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark Step 6 as complete">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Step 06</span>
+          Disable Mouse Acceleration Everywhere
+        </div>
+      </div>
+      <p><strong>Mouse acceleration</strong> makes your cursor move further when you move the mouse faster, even if you move the same physical distance. This destroys muscle memory because the same hand movement produces different results depending on speed.</p>
+
+      <p><strong>Disable in Windows:</strong></p>
+
+      <ol class="steps">
+        <li>Open <strong>Control Panel</strong> &gt; <strong>Mouse</strong> &gt; <strong>Pointer Options</strong></li>
+        <li><strong>Uncheck</strong> &ldquo;Enhance pointer precision&rdquo; &mdash; this is Windows mouse acceleration</li>
+        <li>Click <strong>Apply</strong></li>
+      </ol>
+      <p><strong>Disable in mouse software:</strong></p>
+
+      <ol class="steps">
+        <li>Logitech G Hub: Settings &gt; uncheck any acceleration option</li>
+        <li>Razer Synapse: Calibration &gt; ensure acceleration is Off</li>
+        <li>SteelSeries Engine: check that acceleration multiplier is 0</li>
+      </ol>
+      <p><strong>Disable in VALORANT:</strong> There is no in-game mouse acceleration in VALORANT, but having it enabled in Windows or mouse software still affects your aim if raw input is somehow off.</p>
+
+      <div class="callout warning">
+        <span class="callout-icon">&#9888;&#65039;</span>
+        <div class="callout-body">
+          <strong>Enhance pointer precision is ENABLED by default in Windows.</strong>
+          Most people have mouse acceleration on without knowing it. This single setting change will feel dramatically different at first but will make your aim far more consistent within a week.
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin: 24px 0; text-align: center;">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4629819662160550" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+    <hr class="section-divider">
+
+    <div class="tip-section" id="tweak-7">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark Step 7 as complete">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Step 07</span>
+          Compare With Pro Player Settings (2026)
+        </div>
+      </div>
+      <p>Here are the mouse settings of top VALORANT pros as of early 2026. Use this as a reference range, not a prescription &mdash; your ideal sensitivity depends on your mousepad size, hand size, grip style, and role.</p>
+
+      <table class="settings-table">
+        <thead><tr><th>Player</th><th>Team</th><th>DPI</th><th>Sens</th><th>eDPI</th><th>Polling</th></tr></thead>
+        <tbody>
+          <tr><td>TenZ</td><td>SEN</td><td>800</td><td>0.3</td><td><span class="val-set">240</span></td><td>1000 Hz</td></tr>
+          <tr><td>yay</td><td>C9</td><td>800</td><td>0.27</td><td><span class="val-set">216</span></td><td>1000 Hz</td></tr>
+          <tr><td>Aspas</td><td>LEV</td><td>800</td><td>0.32</td><td><span class="val-set">256</span></td><td>1000 Hz</td></tr>
+          <tr><td>Demon1</td><td>EG</td><td>800</td><td>0.26</td><td><span class="val-set">208</span></td><td>1000 Hz</td></tr>
+          <tr><td>cNed</td><td>FUT</td><td>400</td><td>0.65</td><td><span class="val-set">260</span></td><td>1000 Hz</td></tr>
+          <tr><td>Chronicle</td><td>FNC</td><td>400</td><td>0.55</td><td><span class="val-set">220</span></td><td>1000 Hz</td></tr>
+          <tr><td>ScreaM</td><td>KOI</td><td>400</td><td>0.78</td><td><span class="val-set">312</span></td><td>1000 Hz</td></tr>
+          <tr><td>nAts</td><td>BBL</td><td>800</td><td>0.31</td><td><span class="val-set">248</span></td><td>1000 Hz</td></tr>
+        </tbody>
+      </table>
+      <p><strong>Key takeaways:</strong></p>
+
+      <ol class="steps">
+        <li>Average pro eDPI: ~<strong>250</strong></li>
+        <li>Range: <strong>200&ndash;320</strong> covers 90% of pros</li>
+        <li>All use <strong>1000 Hz</strong> polling rate</li>
+        <li>Most use <strong>800 DPI</strong> (some use 400)</li>
+        <li>Zero pros use mouse acceleration</li>
+      </ol>
+      <div class="callout fps-gain">
+        <span class="callout-icon">&#10003;</span>
+        <div class="callout-body">
+          <strong>If your eDPI is above 400, you are almost certainly holding yourself back</strong>
+          Try lowering to 280 and give it one week. You will lose some flick speed but gain significantly more consistency.
+        </div>
+      </div>
+
+    </div>
+    <hr class="section-divider">
+
+    <div class="tip-section" id="tweak-8">
+      <div class="tip-header">
+        <div class="tip-checkbox-wrap">
+          <input type="checkbox" class="tip-check" onchange="updateTracker()" aria-label="Mark Step 8 as complete">
+        </div>
+        <div class="tip-heading">
+          <span class="num">Step 08</span>
+          Let Valo Optimise Configure It Automatically
+        </div>
+      </div>
+      <p><strong>Valo Optimise</strong> handles the OS-level mouse optimisations automatically: disabling mouse acceleration, configuring raw input, setting the correct Windows pointer speed, and ensuring no mouse software is adding hidden processing.</p>
+
+      <p>It also monitors your mouse polling rate and warns you if it drops below 1000 Hz during gameplay (which can happen with wireless mice on weak Bluetooth connections).</p>
+
+      <div class="callout fps-gain">
+        <span class="callout-icon">&#128640;</span>
+        <div class="callout-body">
+          <strong>The mouse settings that Windows resets after updates stay permanently applied</strong>
+          Valo Optimise re-applies your optimal mouse configuration on every boot.
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin: 24px 0; text-align: center;">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4629819662160550" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <div id="completion-banner">
+      <h3>&#127942; All 8 Steps Complete</h3>
+      <p>You have worked through every step. Share this guide with your squad.</p>
+    </div>
+    <div class="final-cta">
+      <h2>Stop Missing. Start <em>Hitting.</em></h2>
+      <p>Valo Optimise disables acceleration, configures raw input, and locks your mouse settings permanently. Free, Vanguard-safe.</p>
+      <a href="https://valooptimise.com" class="cta-btn" target="_blank" rel="noopener noreferrer">&#9889; Download Free &mdash; Windows 11/10</a>
+      <p class="cta-sub">No account required &middot; Vanguard-safe &middot; 7-day free Pro trial included</p>
+    </div>
+    <div class="email-capture">
+      <h3>Get the Next Guide First</h3>
+      <p>We publish one deep-dive VALORANT optimisation guide every week. No spam, just performance.</p>
+      <form class="email-form" onsubmit="handleEmailSubmit(event)">
+        <input type="email" id="email-input" placeholder="you@email.com" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="email-note" id="email-feedback">Free &middot; Weekly &middot; Unsubscribe anytime</p>
+    </div>
+    <div class="share-section">
+      <h3>Know Someone With Bad Mouse Settings?</h3>
+      <p>Share this guide. It takes 5 minutes to configure and the aim improvement is immediate.</p>
+      <div class="share-btns">
+        <button class="share-btn twitter" onclick="shareTwitter()">&#120143; Share on X</button>
+        <button class="share-btn reddit" onclick="shareReddit()">Share on Reddit</button>
+        <button class="share-btn whatsapp" onclick="shareWhatsApp()">&#128241; WhatsApp</button>
+        <button class="share-btn copy" onclick="copyLink(this)">&#128279; Copy Link</button>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-size:18px;font-weight:700;margin-bottom:16px;">Keep Optimising</h3>
+      <div class="related-grid">
+        <a class="related-card" href="how-to-boost-fps-valorant-windows-11-2026.html">
+          <div class="tags"><span class="tag">FPS Boost</span></div>
+          <h4>Boost FPS in VALORANT (2026)</h4>
+          <p>Higher FPS = smoother aim tracking.</p>
+        </a>
+        <a class="related-card" href="valorant-crashing-fix-2026.html">
+          <div class="tags"><span class="tag">Crash Fix</span></div>
+          <h4>Fix VALORANT Crashing in 2026</h4>
+          <p>13 fixes for every crash type.</p>
+        </a>
+        <a class="related-card" href="valorant-system-requirements-2026.html">
+          <div class="tags"><span class="tag">Hardware</span></div>
+          <h4>Valorant System Requirements 2026</h4>
+          <p>Minimum, recommended, and competitive specs.</p>
+        </a>
+      </div>
+    </div>
+  </article>
+</div>
+
+<a href="https://valooptimise.com" id="floating-cta" target="_blank" rel="noopener noreferrer">
+  &#9889; Free Download &mdash; Valo Optimise
+</a>
+
+
+<section style="max-width:800px;margin:40px auto;padding:0 20px;">
+  <h3 style="color:var(--accent);font-size:18px;margin-bottom:16px;">Keep Reading</h3>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;">
+    <a href="how-to-boost-fps-valorant-windows-11-2026.html" style="background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:18px;text-decoration:none;color:var(--text);transition:border-color .15s;">
+      <div style="color:var(--accent);font-size:12px;margin-bottom:6px;">PERFORMANCE</div>
+      <div style="font-weight:600;font-size:14px;">12 Tweaks to Boost FPS</div>
+    </a>
+    <a href="valorant-crashing-fix-2026.html" style="background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:18px;text-decoration:none;color:var(--text);transition:border-color .15s;">
+      <div style="color:var(--accent);font-size:12px;margin-bottom:6px;">CRASH FIX</div>
+      <div style="font-weight:600;font-size:14px;">Fix VALORANT Crashing in 2026</div>
+    </a>
+    <a href="valorant-system-requirements-2026.html" style="background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:18px;text-decoration:none;color:var(--text);transition:border-color .15s;">
+      <div style="color:var(--accent);font-size:12px;margin-bottom:6px;">HARDWARE</div>
+      <div style="font-weight:600;font-size:14px;">Valorant System Requirements 2026</div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p style="margin-bottom:8px;">
+    <a href="../index.html">Blog</a> &nbsp;&middot;&nbsp;
+    <a href="https://discord.gg/Fpx4SnxF" target="_blank" rel="noopener noreferrer">Discord</a> &nbsp;&middot;&nbsp;
+    <a href="https://valooptimise.com" target="_blank" rel="noopener noreferrer">Valo Optimise</a> &nbsp;&middot;&nbsp;
+    <a href="https://valooptimise.com/privacy.html" target="_blank" rel="noopener noreferrer">Privacy</a>
+  </p>
+  <p>&copy; 2026 Valo Optimise Ltd. Not affiliated with Riot Games.</p>
+</footer>
+<script>
+  window.addEventListener("scroll", () => {
+    const scrolled = window.scrollY;
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    document.getElementById("progress-bar").style.width = Math.min(100, (scrolled / total) * 100) + "%";
+    const cta = document.getElementById("floating-cta");
+    if (scrolled > 500) cta.classList.add("visible");
+    else cta.classList.remove("visible");
+  });
+  function updateTracker() {
+    const checks = document.querySelectorAll(".tip-check");
+    const done   = document.querySelectorAll(".tip-check:checked").length;
+    const total  = checks.length;
+    document.getElementById("counter-display").textContent = done + "/" + total;
+    document.getElementById("tracker-bar").style.width = (done / total * 100) + "%";
+    if (done === total) {
+      document.getElementById("completion-banner").style.display = "block";
+      document.getElementById("completion-banner").scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+    document.querySelectorAll(".tip-check").forEach(cb => {
+      const heading = cb.closest(".tip-header").querySelector(".tip-heading");
+      heading.style.opacity = cb.checked ? "0.5" : "1";
+      heading.style.textDecoration = cb.checked ? "line-through" : "none";
+    });
+  }
+  function copyCode(btn) {
+    const code = btn.parentElement.textContent.replace("Copy", "").trim();
+    navigator.clipboard.writeText(code).then(() => {
+      btn.textContent = "Copied!";
+      setTimeout(() => btn.textContent = "Copy", 2000);
+    });
+  }
+  function shareTwitter() {
+    const text = encodeURIComponent("Your mouse settings are holding you back. Here is the complete guide to fix them");
+    const url  = encodeURIComponent(window.location.href);
+    window.open("https://twitter.com/intent/tweet?text=" + text + "&url=" + url, "_blank");
+  }
+  function shareReddit() {
+    const title = encodeURIComponent("Best Mouse Settings for Valorant 2026 - Sensitivity, DPI, Polling Rate Guide");
+    const url   = encodeURIComponent(window.location.href);
+    window.open("https://reddit.com/submit?title=" + title + "&url=" + url, "_blank");
+  }
+  function shareWhatsApp() {
+    const text = encodeURIComponent("VALORANT mouse settings guide with pro player data: " + window.location.href);
+    window.open("https://wa.me/?text=" + text, "_blank");
+  }
+  function copyLink(btn) {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      btn.textContent = "✓ Copied!";
+      setTimeout(() => btn.textContent = "🔗 Copy Link", 2000);
+    });
+  }
+  function handleEmailSubmit(e) {
+    e.preventDefault();
+    var fb = document.getElementById("email-feedback");
+    fb.textContent = "✓ You're in! We'll notify you when the next guide drops.";
+    fb.style.color = "var(--accent2)";
+    document.getElementById("email-input").value = "";
+    document.querySelector(".email-form button").textContent = "✓ Done";
+    document.querySelector(".email-form button").disabled = true;
+  }
+  var sections = document.querySelectorAll(".tip-section");
+  var tocLinks = document.querySelectorAll(".toc a");
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        tocLinks.forEach(function(link) {
+          link.classList.toggle("active", link.getAttribute("href") === "#" + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: "-60px 0px -70% 0px" });
+  sections.forEach(function(s) { observer.observe(s); });
+</script>
+</body>
+</html>
