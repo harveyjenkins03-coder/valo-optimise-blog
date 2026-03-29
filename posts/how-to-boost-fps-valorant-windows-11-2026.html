@@ -70,18 +70,23 @@
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4629819662160550" crossorigin="anonymous"></script>
 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg: #0a0e1a;
-      --panel: #111827;
-      --panel2: #1c2a3a;
-      --accent: #ff4655;
-      --accent2: #00d4aa;
-      --text: #f0f4ff;
-      --muted: #6b7a99;
-      --border: #1e2d42;
+      --bg: #09090b;
+      --panel: #131316;
+      --panel2: #1a1a1f;
+      --accent: #10b981;
+      --accent2: #10b981;
+      --text: #fafafa;
+      --muted: #71717a;
+      --border: #27272a;
       --warn: #f59e0b;
-      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --font: 'Inter', system-ui, -apple-system, sans-serif;
       --radius: 10px;
     }
 
@@ -103,7 +108,7 @@
       top: 0; left: 0;
       height: 3px;
       width: 0%;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      background: var(--accent);
       z-index: 9999;
       transition: width 0.1s linear;
     }
@@ -112,8 +117,8 @@
     nav {
       position: sticky;
       top: 0;
-      background: rgba(10,14,26,0.95);
-      backdrop-filter: blur(12px);
+      background: rgba(9,9,11,0.85);
+      backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
       padding: 14px 24px;
       display: flex;
@@ -132,7 +137,7 @@
       font-size: 15px;
     }
 
-    .nav-logo span { color: var(--accent); }
+    .nav-logo span { color: var(--text); }
 
     .nav-links { display: flex; align-items: center; gap: 20px; }
 
@@ -155,7 +160,7 @@
       transition: background 0.2s, transform 0.2s !important;
     }
 
-    .nav-cta:hover, .nav-cta:focus-visible { background: #e63946 !important; transform: translateY(-1px); }
+    .nav-cta:hover, .nav-cta:focus-visible { opacity: 0.9; background: var(--accent) !important; transform: translateY(-1px); }
     .nav-cta:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
 
     /* ── Article Hero ─────────────────────────────────────────── */
@@ -265,7 +270,7 @@
     .tracker-bar {
       height: 100%;
       width: 0%;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      background: var(--accent);
       border-radius: 4px;
       transition: width 0.3s ease;
     }
@@ -365,7 +370,7 @@
       transition: background 0.2s;
     }
 
-    .toc-cta a:hover, .toc-cta a:focus-visible { background: #e63946; }
+    .toc-cta a:hover, .toc-cta a:focus-visible { background: var(--accent); }
     .toc-cta a:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
 
     /* ── Article Body ─────────────────────────────────────────── */
@@ -573,7 +578,7 @@
 
     /* Mid-article email capture */
     .email-capture {
-      background: linear-gradient(135deg, #111827, #0f1c2e);
+      background: linear-gradient(135deg, #131316, #1a1a1f);
       border: 1px solid var(--border);
       border-top: 2px solid var(--accent);
       border-radius: var(--radius);
@@ -630,7 +635,7 @@
       transition: background 0.2s;
     }
 
-    .email-form button:hover { background: #e63946; }
+    .email-form button:hover { background: var(--accent); }
 
     .email-note { font-size: 12px; color: var(--muted); margin-top: 10px; }
 
@@ -674,7 +679,7 @@
       animation: pulse 2.5s ease-in-out infinite;
     }
 
-    .cta-btn:hover, .cta-btn:focus-visible { background: #e63946; transform: translateY(-2px); animation: none; }
+    .cta-btn:hover, .cta-btn:focus-visible { background: var(--accent); transform: translateY(-2px); animation: none; }
     .cta-btn:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
 
     @keyframes pulse {
@@ -777,7 +782,7 @@
     }
 
     #floating-cta.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
-    #floating-cta:hover { background: #e63946; }
+    #floating-cta:hover { background: var(--accent); }
 
     /* Related articles */
     .related-grid {
@@ -842,12 +847,13 @@
 <!-- Nav -->
 <nav role="navigation" aria-label="Main navigation">
   <a href="../index.html" class="nav-logo">
-    <span>VALO</span> OPTIMISE BLOG
+    <span style="display:inline-flex;width:24px;height:24px;border-radius:6px;background:#10b981;align-items:center;justify-content:center;"><svg viewBox="0 0 16 16" fill="none" style="width:14px;height:14px;"><path d="M4 12V4l4 4-4 4zm4 0V4l4 4-4 4z" fill="#fff" opacity="0.95"/></svg></span>
+    Valo Optimise Blog
   </a>
   <div class="nav-links">
     <a href="../index.html">All Articles</a>
-    <a href="https://discord.gg/Fpx4SnxF" target="_blank" rel="noopener noreferrer">💬 Discord</a>
-    <a href="https://valooptimise.com" target="_blank" rel="noopener noreferrer" class="nav-cta">⚡ Free Download</a>
+    <a href="https://discord.gg/Fpx4SnxF" target="_blank" rel="noopener noreferrer">Discord</a>
+    <a href="https://valooptimise.com" target="_blank" rel="noopener noreferrer" class="nav-cta">Download</a>
   </div>
 </nav>
 
@@ -1533,11 +1539,12 @@
 <!-- Footer -->
 <footer>
   <p style="margin-bottom:8px;">
-    <a href="../index.html">Blog Home</a> &nbsp;·&nbsp;
-    <a href="https://valooptimise.com" target="_blank" rel="noopener noreferrer">Valo Optimise App</a> &nbsp;·&nbsp;
-    <a href="https://valooptimise.com/docs/privacy.html" target="_blank" rel="noopener noreferrer">Privacy</a>
+    <a href="../index.html">Blog</a> &nbsp;·&nbsp;
+    <a href="https://discord.gg/Fpx4SnxF" target="_blank" rel="noopener noreferrer">Discord</a> &nbsp;·&nbsp;
+    <a href="https://valooptimise.com" target="_blank" rel="noopener noreferrer">Valo Optimise</a> &nbsp;·&nbsp;
+    <a href="https://valooptimise.com/privacy.html" target="_blank" rel="noopener noreferrer">Privacy</a>
   </p>
-  <p>© 2026 Valo Optimise Ltd · Not affiliated with Riot Games · All optimisations are OS-level and Vanguard-safe</p>
+  <p>© 2026 Valo Optimise Ltd. Not affiliated with Riot Games.</p>
 </footer>
 
 <script>
