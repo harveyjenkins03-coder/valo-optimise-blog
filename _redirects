@@ -1,2 +1,4 @@
 /blog/* /:splat 301
 /feed /index.html 301
+/services https://valo-sec.com 301
+/services.html https://valo-sec.com 301
